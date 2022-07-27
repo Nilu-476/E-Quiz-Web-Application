@@ -1,0 +1,54 @@
+teacher->
+registration with teacher id ,login,update profile,view the teacher details which are registered in system.
+create quiz schedule,crud operations on quiz schedule,add questions module wise,
+crud operations for teacher on added questions,
+view student wise performance,view all students records,forget password,view quiz wise question paper.
+
+student ->
+registration,login,update profile, view schedule of quiz that are arranged by teacher,
+select/start quiz,view guidelines/instructions for quiz,can attempt mock test for practice,
+view his/her performance under performance category and
+assess him/her by seeing his score in attempted quiz .
+
+
+Main Webpage:(Home)
+1.Student Registration.
+2.Faculty Registration.
+3.Login
+4.View Availaible Quiz Schedule
+
+webpages under Student module->
+1.profile page(View )
+2.view Schedule
+3.Mock test
+4.Update Profile page
+5.view performance.
+6.Give exam.
+
+
+webpages under Teacher module->
+1.profile
+2.Add quiz schedule
+3.Create Quiz.
+4.Update quiz
+5.Delete Quiz
+6.View Quiz.
+7.View Results.
+8.Edit profile.
+9.View Students Details.
+10.view quiz shedule,Edit quiz Schedule,delete Quiz schedule
+
+
+Tables->
+
+ 
+
+
+
+
+
+
+
+
+
+
