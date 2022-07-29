@@ -28,7 +28,7 @@ user type:student/teacher.(select tag)
 Email address,old password,new password,confirm password,change password button.
 
 
-4.View Availaible Quiz Schedule->
+5.View Availaible Quiz Schedule->
 schedule table will be printed from Quiz schedule table.
 Quiz id,quiz topic,scheduled date,time,marks,total questions.
 
@@ -94,11 +94,11 @@ first Name,Middle name,Last name,dateofbirth,email,mobno,username,password,prnno
 table will be printed:
 Quiz id(auto increment),quiz topic,total questions,scheduled date,time,marks
 
-Edit quiz Schedule->
+11.Edit quiz Schedule->
 list of all quiz schedules will be shown. and below it this fields
 Quiz id(auto increment),quiz topic,total questions,scheduled date,time,marks
 
 
-delete Quiz schedule->
+12.delete Quiz schedule->
 list of all quiz schedules will be shown. and below it this fields
 quiz id,delete quiz button.
