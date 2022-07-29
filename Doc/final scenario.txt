@@ -12,43 +12,93 @@ assess him/her by seeing his score in attempted quiz .
 
 
 Main Webpage:(Home)
-1.Student Registration.
-2.Faculty Registration.
-3.Login
-4.View Availaible Quiz Schedule
+1.Student Registration.->
+first Name,Middle name,Last name,dateofbirth,email,mobno,username,password,prnno,photo.
+
+2.Faculty Registration.->
+first Name,Middle name,Last name,dateofbirth,email,phoneno,username,password,faculty id,photo.
+
+3.Login->
+user type:student/teacher.
+student->Username,password.
+teacher->Username,password.
+
+4.forgot password->
+user type:student/teacher.(select tag)
+Email address,old password,new password,confirm password,change password button.
+
+
+4.View Availaible Quiz Schedule->
+schedule table will be printed from Quiz schedule table.
+Quiz id,quiz topic,scheduled date,time,marks,total questions.
 
 webpages under Student module->
 1.profile page(View )
+full Name,dateofbirth,email,mobno,username,password,prnno,photo.
+
 2.view Schedule
-3.Mock test
+schedule table will be printed from Quiz schedule table.
+
+3.Mock test(Demo)
+static webpages of exam demo will be put here.(5 webpages of question)
+
 4.Update Profile page
+full Name,dateofbirth,email,mobno,username,password,prnno,photo.
+
 5.view performance.
+tale will be printed of student result 
+quiz id,quiz name,his/her name,test given date,marks obtained,total marks,total questions in quiz. 
+
 6.Give exam.
+Instructions webpage,start exam page.
+
 
 
 webpages under Teacher module->
+
 1.profile
+faculty id,first Name,Middle name,Last name,dateofbirth,email,mobno,username,password,prnno,photo.
+
 2.Add quiz schedule
-3.Create Quiz.
-4.Update quiz
-5.Delete Quiz
-6.View Quiz.
-7.View Results.
-8.Edit profile.
-9.View Students Details.
-10.view quiz shedule,Edit quiz Schedule,delete Quiz schedule
+Quiz id(auto increment),quiz topic,total questions,scheduled date,time,marks
+
+3.Create Quiz->
+Text based question->
+quiz id,question id(auto increment),question(Textbox),option1(Textbox),option2(Textbox),option3(Textbox),
+option4(Textbox), correct answer(Textbox).
+
+4.Update question->
+quiz id,question id(auto increment),question(Textbox),option1(Textbox),option2(Textbox),option3(Textbox),
+option4(Textbox), correct answer(Textbox).
+
+5.Delete Question->
+question id,quiz id 
+
+6.View Quiz paper->
+quiz id(Textbox),submit.
+table will be printed with question list,with given quiz id.
+
+7.View Results.->
+tale will be printed of student result 
+quiz id,quiz name,his/her name,test given date,marks obtained,total marks,total questions in quiz. 
 
 
-Tables->
+8.Edit profile.->
+faculty id,first Name,Middle name,Last name,dateofbirth,email,mobno,username,password,prnno,photo.
 
- 
+9.View Students Details.->
+table will be printed.
+first Name,Middle name,Last name,dateofbirth,email,mobno,username,password,prnno,photo.
+
+10.view quiz shedule->
+table will be printed:
+Quiz id(auto increment),quiz topic,total questions,scheduled date,time,marks
+
+Edit quiz Schedule->
+list of all quiz schedules will be shown. and below it this fields
+Quiz id(auto increment),quiz topic,total questions,scheduled date,time,marks
 
 
-
-
-
-
-
-
-
-
+delete Quiz schedule->
+list of all quiz schedules will be shown. and below it this fields
+quiz id,delete quiz button.
