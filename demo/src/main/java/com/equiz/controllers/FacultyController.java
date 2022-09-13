@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.equiz.entities.FacultyEntity;
+import com.equiz.entities.StudentEntity;
 import com.equiz.repositories.FacultyRepo;
 
 
@@ -63,6 +64,50 @@ public class FacultyController {
 		
 	}
 	
+	@PostMapping(value="/editfacultyprofile")
+	public String editFacultyProfile(@RequestBody FacultyEntity f)
+	{
+		if(f.getFirstName() != "")
+		{
+			repo.updateFirstName(f.getFirstName(), f.getFacultyId());
+		}
+		if(f.getMiddleName() != "")
+		{
+			repo.updateMiddleName(f.getMiddleName(),f.getFacultyId());
+		}
+		if(f.getLastName() != "")
+		{
+			repo.updateLastName(f.getLastName(), f.getFacultyId());
+		}
+		if(f.getEmail() != "")
+		{
+			repo.updateEmail(f.getEmail(), f.getFacultyId());
+		}
+		if(f.getMobileNo() != 0)
+		{
+		   repo.updateMobileNo(f.getMobileNo(), f.getFacultyId());
+		}
+		if(f.getGender()!= "")
+		{
+			repo.updateGender(f.getGender(), f.getFacultyId());
+		}
+		if(f.getDateOfBirth()!="")
+		{
+			repo.updateDateOfBirth(f.getDateOfBirth(), f.getFacultyId());
+		}
+		if(f.getUserName()!="")
+		{
+			repo.updateUsername(f.getUserName(), f.getFacultyId());
+		}
+		if(f.getPassword()!="")
+		{
+			repo.updatePassword(f.getPassword(), f.getFacultyId());
+		}
+		
+		return "profile updated Sucessfully....";
+		
+		
+	}
 	
 	
 }

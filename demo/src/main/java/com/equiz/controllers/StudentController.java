@@ -59,6 +59,52 @@ public class StudentController {
 		return stud_info;
 		
 	}
+	
+	
+	@PostMapping(value="/editstudentprofile")
+	public String editStudentProfile(@RequestBody StudentEntity stud)
+	{
+		if(stud.getFirstName() != "")
+		{
+			repo.updateFirstName(stud.getFirstName(), stud.getPrnNo());
+		}
+		if(stud.getMiddleName() != "")
+		{
+			repo.updateMiddleName(stud.getMiddleName(),stud.getPrnNo());
+		}
+		if(stud.getLastName() != "")
+		{
+			repo.updateLastName(stud.getLastName(), stud.getPrnNo());
+		}
+		if(stud.getEmail() != "")
+		{
+			repo.updateEmail(stud.getEmail(), stud.getPrnNo());
+		}
+		if(stud.getMobileNo() != 0)
+		{
+		   repo.updateMobileNo(stud.getMobileNo(), stud.getPrnNo());
+		}
+		if(stud.getGender()!= "")
+		{
+			repo.updateGender(stud.getGender(), stud.getPrnNo());
+		}
+		if(stud.getDateOfBirth()!="")
+		{
+			repo.updateDateOfBirth(stud.getDateOfBirth(), stud.getPrnNo());
+		}
+		if(stud.getUsername()!="")
+		{
+			repo.updateUsername(stud.getUsername(), stud.getPrnNo());
+		}
+		if(stud.getPassword()!="")
+		{
+			repo.updatePassword(stud.getPassword(), stud.getPrnNo());
+		}
+		
+		return "profile updated Sucessfully....";
+		
+		
+	}
 
 
 }
