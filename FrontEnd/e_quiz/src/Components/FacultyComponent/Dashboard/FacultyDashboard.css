@@ -1,0 +1,146 @@
+
+    /* Style the main content */
+    .main {
+      background-image: url("https://t4.ftcdn.net/jpg/04/39/13/37/360_F_439133763_FrLdhZsd5aGC23r9ATARuKJBr8ifZjIe.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-x: center;
+    }
+    
+    /* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
+    @media screen and (max-height: 450px) {
+      .sidebar {padding-top: 15px;}
+      .sidebar a {font-size: 18px;}
+    }
+
+
+.header 
+{
+  padding: 10px; /* some padding */
+  text-align: center; /* center the text */
+  background:#19547c ; /* green background */
+  color: wheat; /* white text color */
+}
+
+.header h1 {
+  font-size: 4em;
+}
+
+.navbar {
+  overflow: hidden; /* Hide overflow */
+  background-color: #333; /* Dark background color */
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: right; /* Make sure that the links stay side-by-side */
+  display: block; /* Change the display to block, for responsive reasons (see below) */
+  color: white; /* White text color */
+  text-align: center; /* Center the text */
+  padding: 14px 20px; /* Add some padding */
+  text-decoration: none; /* Remove underline */
+}
+.navbar a:hover
+  {
+        background-color: bisque; /* Grey background color */
+        color: black; /* Black text color */
+        
+  }
+
+  /* The dropdown container */
+.dropdown {
+  float: inherit;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: bisque;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn
+{
+  background-color:bisque;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: list-item;
+  position: absolute;
+  background-color: #333;
+  min-width: 190px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: inline-start;
+  padding: 12px 16px;
+  text-decoration: solid;
+  display: table-column;
+  text-align: justify;
+}
+.dropdown-content a:hover {
+  background-color: aquamarine;
+}
+.dropdown:hover .dropdown-content 
+{
+  display: contents;
+}
+
+/* The side navigation menu */
+.sidenav {
+      height: 100%; /* 100% Full-height */
+      width: 0; /* 0 width - change this with JavaScript */
+      position: absolute; /* Stay in place */
+      z-index: 1; /* Stay on top */
+      top: 0; /* Stay at the top */
+      right: 0;
+      background-color: #111; /* Black*/
+      overflow-x: auto; /* Disable horizontal scroll */
+      padding-top: 60px; /* Place content 60px from the top */
+      transition: 1.5s; /* 1.5 second transition effect to slide in the sidenav */
+    }
+    
+    /* The navigation menu links */
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: none;
+    }
+    
+    /* When you mouse over the navigation links, change their color */
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+    
+    /* Position and style the close button (top right corner) */
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      left: 25px;
+      font-size: 36px;
+      margin-right: 50px;
+    }
+    
+    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+    #main {
+      padding: 20px;
+    }
+    
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
