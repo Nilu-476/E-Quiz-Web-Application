@@ -1,0 +1,8 @@
+E-Quiz Web Based Application (reactJs ,springboot, restapi, jpa, hibernate, mySQL)
+
+We have designed this web based application with the purpose of allowing the students to give quiz and view their results.  
+This application is an attempt to remove the existing flaws in the manual system of conducting exams. 
+Faculties are be able to create Quiz's of various topics and can schedule them. The performance of the student will  be  fully  monitored  by Faculty.  
+Faculty can manage the quiz in which he can add, delete or update the questions in the quiz.
+Students can view the quiz schedule in his/her profile after login into their particular account in system.
+Students are provided the flexibility to choose the quiz among different topics and can view their result.
