@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function AddQuizSchedule()
 {
       return(
-            < div className="border border-dark">
+            < div className="shadow-none p-4 xl-5 bg-info bg-gradient">
             <section className="h-100 h-custom">
   <div className="container py-5 h-100">
     <div className="row d-flex justify-content-center align-items-center h-100">
@@ -19,6 +19,11 @@ export default function AddQuizSchedule()
             <div className="form-outline mb-4">
                 <input type="number"  className="form-control" />
                 <label className="form-label"><b>Faculty ID :</b></label>
+              </div>
+
+              <div className="form-outline mb-4">
+                <input type="number"  className="form-control" />
+                <label className="form-label"><b>Quiz ID :</b></label>
               </div>
 
               <div className="form-outline mb-4">
@@ -50,13 +55,13 @@ export default function AddQuizSchedule()
 
               <div className="row">
                   <div className="col-md-4 mb-4"> 
-                  <button type="submit" className="btn btn-success btn-lg mb-1">Schedule</button>
+                  <button type="submit" className="btn btn-success btn-mb mb-1">Schedule</button>
                   </div>
                   <div className="col-md-4 mb-4"> 
-                  <button type="submit" className="btn btn-danger btn-lg mb-1">Reset</button>
+                  <button type="submit" className="btn btn-danger btn-mb mb-1">Reset</button>
                   </div>
                   <div className="col-md-4 mb-4">
-                      <Link to="/FacultyDashboard" className="btn btn-info btn-lg mb-1">Back</Link>
+                      <Link to="/FacultyDashboard" className="btn btn-info btn-mb mb-1">Back</Link>
                   </div>
               </div>
             </form>

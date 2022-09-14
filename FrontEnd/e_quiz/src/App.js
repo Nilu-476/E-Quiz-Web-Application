@@ -14,6 +14,7 @@ import FacultyDashboard from './Components/FacultyComponent/Dashboard/FacultyDas
 import UpdateQuestion from './Components/FacultyComponent/Question/UpdateQuestion';
 import DeleteQuestion from './Components/FacultyComponent/Question/DeleteQuestion';
 import DemoQuiz from './Components/DemoQuiz';
+import StartExam from './Components/StudentComponent/Exam/StartExam';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route exact path='/UpdateQuestion' element={<UpdateQuestion/>}></Route>
         <Route exact path='/DeleteQuestion' element={<DeleteQuestion/>}></Route>
         <Route exact path='/DemoQuiz' element={<DemoQuiz/>}></Route>
+        <Route exact path='/StartExam' element={<StartExam/>}></Route>
         <Route exact path='/Logout' element={<Logout/>}></Route>
       </Routes>
       </BrowserRouter>

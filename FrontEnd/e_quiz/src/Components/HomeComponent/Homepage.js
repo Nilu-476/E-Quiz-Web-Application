@@ -5,7 +5,7 @@ export default function Homepage()
  
       
         return(
-      <body className="main col-xl-12">
+      <body className="main col-xl-12 w-100 p-3">
       <div className="header">
             <h1>E-Quiz Web Application</h1>
       </div>
