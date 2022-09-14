@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function AddQuizSchedule()
 {
       return(
@@ -47,11 +49,14 @@ export default function AddQuizSchedule()
               </div>
 
               <div className="row">
-                  <div className="col-md-6 mb-4"> 
-                  <button type="submit" className="btn btn-success btn-lg mb-1">Schedule Quiz</button>
+                  <div className="col-md-4 mb-4"> 
+                  <button type="submit" className="btn btn-success btn-lg mb-1">Schedule</button>
                   </div>
-                  <div className="col-md-6 mb-4"> 
+                  <div className="col-md-4 mb-4"> 
                   <button type="submit" className="btn btn-danger btn-lg mb-1">Reset</button>
+                  </div>
+                  <div className="col-md-4 mb-4">
+                      <Link to="/FacultyDashboard" className="btn btn-info btn-lg mb-1">Back</Link>
                   </div>
               </div>
             </form>

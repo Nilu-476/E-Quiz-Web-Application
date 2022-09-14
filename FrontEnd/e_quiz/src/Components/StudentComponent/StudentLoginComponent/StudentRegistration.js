@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 export default function StudentRegistration()
 {
       
@@ -81,12 +82,15 @@ export default function StudentRegistration()
               </div>
               
               <div className="row">
-                    <div className="col-md-6 mb-4">
-                    <button type="submit" className="btn btn-success btn-lg mb-1">Create Account</button>
+                    <div className="col-md-4 mb-4">
+                    <button type="submit" className="btn btn-success btn-lg mb-1">Create</button>
                     </div>
-                    <div className="col-md-6 mb-4">
+                    <div className="col-md-4 mb-4">
                     <button type="reset" className="btn btn-danger btn-lg mb-1">Reset</button>
                     </div>
+                    <div className="col-md-4 mb-4">
+                      <Link to="/" className="btn btn-info btn-lg mb-1">Home</Link>
+                  </div>
                     </div>
             </form>
           </div>

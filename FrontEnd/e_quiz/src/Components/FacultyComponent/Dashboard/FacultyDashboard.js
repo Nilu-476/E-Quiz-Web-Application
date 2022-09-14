@@ -30,6 +30,7 @@ export default class FacultyDashboard extends Component
                   <Link to="/UpdateQuestion">Update Paper</Link>
                   <a href="./DeletePaper.html">Delete Paper</a>
                   <a href="./Results.html">Results</a>
+                  <Link to="/" >Home</Link>
                   <Link to="/Logout">LogOut</Link>
                   <div className="dropdown">
                         <button className="dropbtn">Shedule a Quiz

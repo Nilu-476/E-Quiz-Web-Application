@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 export default function AddQuestion()
 {
@@ -46,11 +47,14 @@ export default function AddQuestion()
         </div>
         <br/><br/>
         <div className="row">
-          <div className="col-md-6 mb-4">
+          <div className="col-md-4 mb-4">
           <button type="submit" className="btn btn-success btn-lg mb-1">Add Question</button>
           </div>
-          <div className="col-md-6 mb-4">
+          <div className="col-md-4 mb-4">
           <button type="reset" className="btn btn-danger btn-lg mb-1">Reset</button>
+          </div>
+          <div className="col-md-4 mb-4">
+                      <Link to="/FacultyDashboard" className="btn btn-info btn-lg mb-1">Back</Link>
           </div>
           </div>
         </form>

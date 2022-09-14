@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function UpdateQuestion()
 {
       return(
@@ -19,8 +21,15 @@ export default function UpdateQuestion()
             <b>Faculty ID :</b> &emsp;<input type="number"  className="form-control" />
             </div>
             <div className="form-outline mb-4">
-            <b>Quiz ID :</b> &emsp;<input type="number"  className="form-control" />
             </div>
+            <div className="row">
+                    <div className="col-md-6 mb-4">
+                    <b>Quiz ID :</b><input type="number"  className="form-control" />
+                      </div>
+                      <div className="col-md-6 mb-4">
+                      <button type="submit" className="btn btn-info btn-lg mb-1">Find Question</button>
+                      </div>
+                    </div>
             <div className="form-outline mb-4">
             <b>Question :</b> &emsp;<textarea type="text"  className="form-control" />
             </div>
@@ -44,11 +53,14 @@ export default function UpdateQuestion()
             </div>
             <br/><br/>
             <div className="row">
-              <div className="col-md-6 mb-4">
-              <button type="submit" className="btn btn-success btn-lg mb-1">Update Question</button>
+              <div className="col-md-4 mb-4">
+              <button type="submit" className="btn btn-success btn-lg mb-1">Update</button>
               </div>
-              <div className="col-md-6 mb-4">
+              <div className="col-md-4 mb-4">
               <button type="reset" className="btn btn-danger btn-lg mb-1">Reset</button>
+              </div>
+              <div className="col-md-4 mb-4">
+              <Link to="/FacultyDashboard" className="btn btn-info btn-lg mb-1">Back</Link>
               </div>
               </div>
             </form>

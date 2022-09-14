@@ -1,10 +1,31 @@
 import { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class FacultyRegistration extends Component
 {
+  
       render()
       {
-            
+        let vadlidate = function()
+        {
+          'use strict'
+        
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.querySelectorAll('.needs-validation')
+        
+          // Loop over them and prevent submission
+          Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+              form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                  event.preventDefault()
+                  event.stopPropagation()
+                }
+        
+                form.classList.add('was-validated')
+              }, false)
+            })
+        }
             return(
                   < div className="shadow-none p-3 mb-5 bg-info bg-gradient">
                   <section className="h-100 h-custom">
@@ -83,12 +104,15 @@ export default class FacultyRegistration extends Component
                       <label className="form-label"><b>ReEnter Password :</b></label>
                     </div>
                     <div className="row">
-                    <div className="col-md-6 mb-4">
-                    <button type="submit" className="btn btn-success btn-lg mb-1">Create Account</button>
+                    <div className="col-md-4 mb-4">
+                    <button type="submit" className="btn btn-success btn-lg mb-1">Create</button>
                     </div>
-                    <div className="col-md-6 mb-4">
+                    <div className="col-md-4 mb-4">
                     <button type="reset" className="btn btn-danger btn-lg mb-1">Reset</button>
                     </div>
+                    <div className="col-md-4 mb-4">
+                      <Link to="/" className="btn btn-info btn-lg mb-1">Home</Link>
+                  </div>
                     </div>
       
                   </form>
