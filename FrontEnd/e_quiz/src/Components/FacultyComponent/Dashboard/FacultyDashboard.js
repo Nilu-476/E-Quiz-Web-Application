@@ -6,17 +6,6 @@ export default class FacultyDashboard extends Component
       
       render()
       {
-            function openNav()
-            {
-                  document.getElementById("mySidenav").style.width = "320px";
-            }
-
-            /* Set the width of the side navigation to 0 */
-            function closeNav() 
-            {
-                  document.getElementById("mySidenav").style.width = "0";
-            }
-
             return(
                   <>
                   <body className="main">
@@ -26,12 +15,10 @@ export default class FacultyDashboard extends Component
             </div>
        
             <div className="navbar">
-                  <Link to="/AddQuestion">Create Paper</Link>
-                  <Link to="/UpdateQuestion">Update Paper</Link>
-                  <a href="./DeletePaper.html">Delete Paper</a>
+                  <Link to="/AddQuestion">Add Question</Link>
+                  <Link to="/UpdateQuestion">Update Question</Link>
+                  <Link to="/DeleteQuestion">Delete Question</Link>
                   <a href="./Results.html">Results</a>
-                  <Link to="/" >Home</Link>
-                  <Link to="/Logout">LogOut</Link>
                   <div className="dropdown">
                         <button className="dropbtn">Shedule a Quiz
                           <i className="fa fa-caret-down"></i>
@@ -44,22 +31,60 @@ export default class FacultyDashboard extends Component
                         </div>
                   </div>
                   <div className="navbar">
-                        <div >
-                              <a className="rows" href="./sss" onClick={openNav}><b>&#9776;&emsp;Menu</b> </a>
-                              <br/>
-                        </div>
+                  <Link to="/" >Home</Link>
+                  <Link to="/Logout">LogOut</Link>
                   </div>
-                  </div>                  
-          
-            <div id="mySidenav" className="sidenav">
-                  <a href="../Homepage.html"><i className="fa fa-fw fa-home"></i> Home</a>
-                  <a href="./services"><i className="fa fa-fw fa-wrench"></i> Services</a>
-                  <a href="./clients"><i className="fa fa-fw fa-user"></i> Profile</a>   
-                  <a href="./contact"><i className="fa fa-fw fa-envelope"></i> Contact</a>
-                  <a href="./javascript" className="closebtn" onClick={closeNav}>&times;</a>
-                </div>  
-                   
-</body>
+                  </div>                   
+            </body>
+            <br/><br/><br/><br/>
+            <table className="table align-middle mb-0 bg-white text=-dark">
+
+  <thead className="bg-dark text-light align-items-center">
+    <tr>
+      <th>Faculty ID</th>
+      <th>Quiz Topic</th>
+      <th>Quiz Description</th>
+      <th>Schedule Date</th>
+      <th>Schedule Time</th>
+      <th>Duration</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div className="d-flex align-items-center">
+          <div className="ms-3">
+            <p className="fw-bold mb-1">Kate Hunington</p>
+            <p className="text-muted mb-0">kate.hunington@gmail.com</p>
+          </div>
+        </div>
+      </td>
+      <td>
+        <p className="fw-normal mb-1">Designer</p>
+        <p className="text-muted mb-0">UI/UX</p>
+      </td>
+      <td>
+        <span className="badge badge-warning rounded-pill d-inline">Awaiting</span>
+      </td>
+      <td>Senior</td>
+      
+      <td>
+                  Date
+            </td>
+            <td>
+                  Time
+            </td>
+      <td>
+      <div >
+      <button type="submit" className="btn btn-success btn-sm mb-1">View</button>&emsp;
+      <button type="submit" className="btn btn-primary btn-sm mb-1">Edit</button>&emsp;
+      <button type="submit" className="btn btn-danger btn-sm mb-1">Delete</button>
+      </div>
+      </td>
+    </tr>
+  </tbody>
+</table>     
                   </>
             )
       }

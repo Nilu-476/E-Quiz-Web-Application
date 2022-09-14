@@ -12,6 +12,8 @@ import StudentRegistration from './Components/StudentComponent/StudentLoginCompo
 import StudentDashboard from './Components/StudentComponent/Dashboard/StudentDashboard';
 import FacultyDashboard from './Components/FacultyComponent/Dashboard/FacultyDashboard';
 import UpdateQuestion from './Components/FacultyComponent/Question/UpdateQuestion';
+import DeleteQuestion from './Components/FacultyComponent/Question/DeleteQuestion';
+import DemoQuiz from './Components/DemoQuiz';
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
         <Route exact path='/AddQuizSchedule' element={<AddQuizSchedule/>}></Route>
         <Route exact path='/AddQuestion' element={<AddQuestion/>} ></Route>
         <Route exact path='/UpdateQuestion' element={<UpdateQuestion/>}></Route>
+        <Route exact path='/DeleteQuestion' element={<DeleteQuestion/>}></Route>
+        <Route exact path='/DemoQuiz' element={<DemoQuiz/>}></Route>
         <Route exact path='/Logout' element={<Logout/>}></Route>
       </Routes>
       </BrowserRouter>

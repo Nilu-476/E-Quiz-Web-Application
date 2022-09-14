@@ -13,7 +13,7 @@ export default function Homepage()
       <div className="navbar">
             <Link to="/StudentLogin">Student Login</Link>
             <Link to="/FacultyLogin">Faculty Login</Link>
-            <a href="./DemoQuiz">Demo Quiz</a>
+            <Link to="/DemoQuiz">Demo Quiz</Link>
             <div className="dropdown">
                   <button className="dropbtn">Create a Account
                     <i className="fa fa-caret-down"></i>
