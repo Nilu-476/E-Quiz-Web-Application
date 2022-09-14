@@ -14,6 +14,7 @@ import FacultyDashboard from './Components/FacultyComponent/Dashboard/FacultyDas
 import UpdateQuestion from './Components/FacultyComponent/Question/UpdateQuestion';
 import DeleteQuestion from './Components/FacultyComponent/Question/DeleteQuestion';
 import DemoQuiz from './Components/DemoQuiz';
+import Feedback from './feedback';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route exact path='/DeleteQuestion' element={<DeleteQuestion/>}></Route>
         <Route exact path='/DemoQuiz' element={<DemoQuiz/>}></Route>
         <Route exact path='/Logout' element={<Logout/>}></Route>
+        <Route exact path='/Feedback' element={<Feedback/>}></Route>
       </Routes>
       </BrowserRouter>
 </div>

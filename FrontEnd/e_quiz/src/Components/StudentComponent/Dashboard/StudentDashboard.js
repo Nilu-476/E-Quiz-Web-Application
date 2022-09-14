@@ -15,10 +15,11 @@ export default class StudentDashboard extends Component
             <div className="navbar">
                   <a href="./CreatePaper.html">Attempt Quiz</a>
                   <a href="./Updatepaper.html">View Results</a>
-                  <a href="./DeletePaper.html">Give Feedback</a>
+                  <Link to="/Feedback">Give Feedback</Link>
                   <a href="./Results.html">Performance Statastics</a>
                   <Link to="/">Home</Link>
                   <Link to="/Logout">LogOut</Link>
+                  
                   </div>    
                  </body>
                   </>
