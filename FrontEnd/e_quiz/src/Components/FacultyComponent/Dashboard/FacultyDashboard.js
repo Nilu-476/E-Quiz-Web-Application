@@ -19,29 +19,17 @@ export default class FacultyDashboard extends Component
                   <Link to="/UpdateQuestion">Update Question</Link>
                   <Link to="/DeleteQuestion">Delete Question</Link>
                   <a href="./Results.html">Results</a>
-                  <div className="dropdown">
-                        <button className="dropbtn">Shedule a Quiz
-                          <i className="fa fa-caret-down"></i>
-                        </button>
-                        <div className="dropdown-content">
-                              <Link to="/AddQuizSchedule">Add Quiz Schedule</Link>
-                          <a href="./sss">Show Quiz Schedule</a>
-                          <a href="./sss">Update Quiz Schedule</a>
-                          <a href="./sss">Delete Quiz Schedule</a>
-                        </div>
-                  </div>
-                  <div className="navbar">
                   <Link to="/" >Home</Link>
                   <Link to="/Logout">LogOut</Link>
-                  </div>
                   </div>                   
             </body>
             <br/><br/><br/><br/>
-            <table className="table align-middle mb-0 bg-white text=-dark">
+            <table className="table align-middle mb-0 border border-dark  bg-white text-dark">
 
-  <thead className="bg-dark text-light align-items-center">
+  <thead className="bg-warning text-dark align-items-center">
     <tr>
       <th>Faculty ID</th>
+      <th>Quiz ID</th>
       <th>Quiz Topic</th>
       <th>Quiz Description</th>
       <th>Schedule Date</th>
@@ -50,41 +38,56 @@ export default class FacultyDashboard extends Component
       <th>Actions</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody className="border border-dark align-items-center">
     <tr>
       <td>
-        <div className="d-flex align-items-center">
-          <div className="ms-3">
-            <p className="fw-bold mb-1">Kate Hunington</p>
-            <p className="text-muted mb-0">kate.hunington@gmail.com</p>
+          <div className="ms-3 fw-bolder">
+            2153
           </div>
-        </div>
       </td>
       <td>
-        <p className="fw-normal mb-1">Designer</p>
-        <p className="text-muted mb-0">UI/UX</p>
+          <div className="ms-3 fw-bolder">
+            ADVJ
+          </div>
       </td>
       <td>
-        <span className="badge badge-warning rounded-pill d-inline">Awaiting</span>
+      <div className="ms-3 fw-bolder">
+            Advanced Java
+          </div>
       </td>
-      <td>Senior</td>
-      
       <td>
-                  Date
-            </td>
-            <td>
-                  Time
-            </td>
+      <div className="ms-3 fw-bolder">
+            Spring Boot Rest Api
+      </div> 
+      </td>
+      <td>
+      <div className="ms-3 fw-bolder">
+            14/09/2022
+      </div>
+      </td>
+      <td>
+      <div className="ms-3 fw-bolder">
+            4.00 PM
+      </div>
+      </td>
+      <td><div className="ms-3 fw-bolder">
+            60 min
+      </div>
+      </td>
       <td>
       <div >
       <button type="submit" className="btn btn-success btn-sm mb-1">View</button>&emsp;
-      <button type="submit" className="btn btn-primary btn-sm mb-1">Edit</button>&emsp;
+      <Link to="/UpdateQuizSchedule" className="btn btn-primary btn-sm mb-1">Edit</Link>&emsp;
       <button type="submit" className="btn btn-danger btn-sm mb-1">Delete</button>
       </div>
       </td>
     </tr>
   </tbody>
-</table>     
+</table>  
+<br/><br/>
+<div className="col-md-4 mb-4">
+<Link to="/AddQuizSchedule" className="btn btn-dark text-light btn-mb mb-1">Add Quiz Schedule</Link>
+</div>   
                   </>
             )
       }

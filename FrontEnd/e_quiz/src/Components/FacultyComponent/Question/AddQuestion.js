@@ -5,7 +5,7 @@ export default function AddQuestion()
        
       return(
         <>
-        <div className="shadow-none p-3 mb-5 bg-info bg-gradient ">
+        <div className="shadow-none p-4 xl-5 bg-info bg-gradient ">
         <section className="h-100 h-custom">
         <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
@@ -48,13 +48,13 @@ export default function AddQuestion()
         <br/><br/>
         <div className="row">
           <div className="col-md-4 mb-4">
-          <button type="submit" className="btn btn-success btn-lg mb-1">Add Question</button>
+          <button type="submit" className="btn btn-success btn-mb mb-1">Add Question</button>
           </div>
           <div className="col-md-4 mb-4">
-          <button type="reset" className="btn btn-danger btn-lg mb-1">Reset</button>
+          <button type="reset" className="btn btn-danger btn-mb mb-1">Reset</button>
           </div>
           <div className="col-md-4 mb-4">
-                      <Link to="/FacultyDashboard" className="btn btn-info btn-lg mb-1">Back</Link>
+                      <Link to="/FacultyDashboard" className="btn btn-info btn-mb mb-1">Back</Link>
           </div>
           </div>
         </form>
