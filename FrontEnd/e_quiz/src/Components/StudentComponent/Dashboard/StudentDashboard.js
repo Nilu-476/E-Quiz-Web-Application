@@ -22,12 +22,6 @@ export default class StudentDashboard extends Component
                   <a href="./Results.html">Performance Statastics</a>
                   <Link to="/">Home</Link>
                   <Link to="/Logout">LogOut</Link>
-<<<<<<< HEAD
-                  
-                  </div>    
-                 </body>
-                  </>
-=======
                   </div>                   
             </body>
             <br/><br/><br/><br/>
@@ -88,7 +82,6 @@ export default class StudentDashboard extends Component
 <Link to="/AddQuizSchedule" className="btn btn-dark text-light btn-mb mb-1">Add Quiz Schedule</Link>
 </div>   
       </>
->>>>>>> fab4f87a2ec8541fda246a5dfd27ab4a4f002027
             )
       }
 }

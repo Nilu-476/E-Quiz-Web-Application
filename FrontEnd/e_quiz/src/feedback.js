@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom';
 import './feedback.css';
  
 export default function Feedback()
 {
     return(
         <>
-        < div className="shadow-none p-3 mb-5 bg-info bg-gradient">
+        < div className="shadow-none p-3 xl-5 bg-info bg-gradient">
                   <section className="h-100 h-custom">
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100 ">
@@ -87,12 +88,11 @@ export default function Feedback()
       <div className="row">    
         <input type="submit" value="Submit"/>    
       </div> 
-
+      <div className="col-md-4 mb-4 ">
+      <Link to="/" className="btn btn-warning btn-mb mb-1">Home</Link>
+      </div>
     </form>    
   </div> 
-
-
-{/*----------------------------------------------------------------------------------------------------*/}
 
                   </form>
                 </div>
