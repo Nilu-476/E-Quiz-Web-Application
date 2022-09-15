@@ -14,11 +14,11 @@ import FacultyDashboard from './Components/FacultyComponent/Dashboard/FacultyDas
 import UpdateQuestion from './Components/FacultyComponent/Question/UpdateQuestion';
 import DeleteQuestion from './Components/FacultyComponent/Question/DeleteQuestion';
 import DemoQuiz from './Components/DemoQuiz';
-<<<<<<< HEAD
+ 
 import Feedback from './feedback';
-=======
+
 import StartExam from './Components/StudentComponent/Exam/StartExam';
->>>>>>> fab4f87a2ec8541fda246a5dfd27ab4a4f002027
+
 
 function App() {
   return (

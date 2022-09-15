@@ -2,7 +2,7 @@ export default function DemoQuiz()
 {
       return(
             <>
-           < div className="shadow-none p-3 mb-5 bg-info bg-gradient">
+           < div className="shadow-none p-3 xl-5 bg-info bg-gradient">
                   <section className="h-100 h-custom">
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100 ">
