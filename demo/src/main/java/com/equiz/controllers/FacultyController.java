@@ -1,5 +1,6 @@
 package com.equiz.controllers;
 
+
 import java.util.ArrayList;
 
 
@@ -15,7 +16,7 @@ import com.equiz.entities.StudentEntity;
 import com.equiz.repositories.FacultyRepo;
 
 
-@CrossOrigin
+@CrossOrigin("*")
 @RestController
 @RequestMapping(path = "faculty")
 public class FacultyController {
@@ -34,9 +35,9 @@ public class FacultyController {
 		if(collegecode == 7834562)
 		{
 			repo.save(faculty);
-			return "Registrtion Successfull...";
+			return "Registration Successfull...";
 		}
-		return "Registrtion unsuccessfull..."; 
+		return "Registration unsuccessfull..."; 
 	}
 	
 	@PostMapping(value="/facultylogin/{username}/{password}")
@@ -56,14 +57,16 @@ public class FacultyController {
 		return "Fail";
 	}
 
+	//@GetMapping
 	@PostMapping(value="/getfacultyprofile/{uname}")
-	public FacultyEntity getFacultyProfile(@PathVariable String uname)
+	public FacultyEntity getFacultyProfile(@PathVariable String uname) //int facultyid
 	{
 		FacultyEntity faculty_info = repo.findByUserName3(uname);
 		return faculty_info;
 		
 	}
 	
+	//@PutMapping
 	@PostMapping(value="/editfacultyprofile")
 	public String editFacultyProfile(@RequestBody FacultyEntity f)
 	{

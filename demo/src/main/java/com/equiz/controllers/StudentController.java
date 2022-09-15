@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.equiz.entities.StudentEntity;
 import com.equiz.repositories.StudentRepo;
 
-@CrossOrigin
+@CrossOrigin("*")
 @RestController
 @RequestMapping(path = "student")
 public class StudentController {
