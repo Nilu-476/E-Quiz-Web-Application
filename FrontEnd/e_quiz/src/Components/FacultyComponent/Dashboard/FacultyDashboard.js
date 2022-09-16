@@ -15,19 +15,21 @@ export default class FacultyDashboard extends Component
             </div>
        
             <div className="navbar">
-                  <Link to="/AddQuestion">Add Question</Link>
-                  <Link to="/UpdateQuestion">Update Question</Link>
-                  <Link to="/DeleteQuestion">Delete Question</Link>
+                  <Link to="/ViewQuiz">View Quiz</Link>
                   <a href="./Results.html">Results</a>
                   <Link to="/" >Home</Link>
                   <Link to="/Logout">LogOut</Link>
                   </div>                   
             </body>
+    
             <br/><br/><br/><br/>
-            <table className="table align-middle mb-0 border border-dark  bg-white text-dark">
-
-  <thead className="bg-warning text-dark align-items-center">
-    <tr>
+            <div className="col-md-4 mb-4">
+            <Link to="/AddQuizSchedule" className="btn btn-dark text-light btn-mb mb-1">Add Quiz Schedule</Link>
+            </div>
+            
+      <table className="table align-items-center container border border-dark  bg-white text-dark fw-bolder">
+      <thead className="bg-warning text-dark ">
+      <tr>
       <th>Faculty ID</th>
       <th>Quiz ID</th>
       <th>Quiz Topic</th>
@@ -76,7 +78,7 @@ export default class FacultyDashboard extends Component
       </td>
       <td>
       <div >
-      <button type="submit" className="btn btn-success btn-sm mb-1">View</button>&emsp;
+      <button type="submit" className="btn btn-success btn-sm mb-1 ">View</button>&emsp;
       <Link to="/UpdateQuizSchedule" className="btn btn-primary btn-sm mb-1">Edit</Link>&emsp;
       <button type="submit" className="btn btn-danger btn-sm mb-1">Delete</button>
       </div>
@@ -85,9 +87,8 @@ export default class FacultyDashboard extends Component
   </tbody>
 </table>  
 <br/><br/>
-<div className="col-md-4 mb-4">
-<Link to="/AddQuizSchedule" className="btn btn-dark text-light btn-mb mb-1">Add Quiz Schedule</Link>
-</div>   
+
+   
                   </>
             )
       }
