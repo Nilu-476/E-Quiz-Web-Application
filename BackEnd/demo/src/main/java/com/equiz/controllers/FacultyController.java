@@ -27,15 +27,11 @@ public class FacultyController {
 		System.out.println("My Index controller created");
 	}
 	
-	@PostMapping(value="/addfaculty/{collegecode}")
-	public String insert(@RequestBody FacultyEntity faculty,@PathVariable int collegecode)
+	@PostMapping(value="/addfaculty")
+	public String insert(@RequestBody FacultyEntity faculty)
 	{
-		if(collegecode == 7834562)
-		{
 			repo.save(faculty);
-			return "Registrtion Successfull...";
-		}
-		return "Registrtion unsuccessfull..."; 
+		return "Registrtion successfull..."; 
 	}
 	
 	@PostMapping(value="/facultylogin/{username}/{password}")

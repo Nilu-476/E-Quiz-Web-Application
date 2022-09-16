@@ -15,6 +15,7 @@ export default function StudentRegistration()
         mobileNo:"",
         gender:"",
         dateOfBirth:"",
+        
         username:"",
         password:"",
   })
@@ -31,6 +32,7 @@ export default function StudentRegistration()
 
   const Registration= (e) =>{
     e.preventDefault();
+    console.log("Something ...")
     axios.post("http://localhost:8080/student/insert",  {
       prnno:student.prnno,
       firstName:student.firstName,

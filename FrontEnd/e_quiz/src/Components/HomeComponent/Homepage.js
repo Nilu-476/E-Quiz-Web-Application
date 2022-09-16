@@ -6,7 +6,7 @@ export default function Homepage()
       
         return(
             <>
-      <body className="main col xl-12">
+      <body className="main">
       <div className="header">
             <h1>E-Quiz Web Application</h1>
       </div>
@@ -23,7 +23,16 @@ export default function Homepage()
                   </div>
             </div>
             </div>    
-          
+            <div className="card  bg-secondary ">
+      <img src="https://icon-library.com/images/questions-icon/questions-icon-8.jpg" className="card-img-top" style={{width:"300px",height:"300px",alignSelf:"center"}} alt="..."/>
+      <div className="card-body">
+      <div className="card-title"><h3>Demo Test</h3></div>
+      <h4><p className="card-text text-dark">
+            Take a Demo test
+            </p></h4>
+            <Link to="/DemoQuiz" className="btn btn-primary sm-12">Demo Quiz</Link>
+  </div>
+</div>
 
       <div className='row  xl navbar bg-danger light' >
       <div className='col-xl-4  text-light'>
@@ -76,16 +85,6 @@ export default function Homepage()
                 <div className=" card " align="center">
             <img src="https://cdn.images.express.co.uk/img/dynamic/130/590x/Easy-quiz-questions-1282929.jpg?r=1621866486163" alt="" />
             </div>   
-      <div className="card  bg-secondary ">
-      <img src="https://icon-library.com/images/questions-icon/questions-icon-8.jpg" className="card-img-top" style={{width:"300px",height:"300px",alignSelf:"center"}} alt="..."/>
-      <div className="card-body">
-      <div className="card-title"><h3>Demo Test</h3></div>
-      <h4><p className="card-text text-dark">
-            Take a Demo test
-            </p></h4>
-            <Link to="/DemoQuiz" className="btn btn-primary sm-12">Demo Quiz</Link>
-  </div>
-</div>
 </div> 
       <div className="footer main">
             <b><center>All Rights Reserverd @Cdac-March-2022</center></b>   
