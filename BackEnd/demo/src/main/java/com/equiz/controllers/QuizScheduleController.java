@@ -20,7 +20,7 @@ import com.equiz.repositories.FacultyRepo;
 import com.equiz.repositories.QuestionTextRepo;
 import com.equiz.repositories.QuizScheduleRepo;
 
-@CrossOrigin
+@CrossOrigin("*")
 @RestController
 @RequestMapping(path = "quizscheule")
 public class QuizScheduleController {

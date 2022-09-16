@@ -16,6 +16,7 @@ import DeleteQuestion from './Components/FacultyComponent/Question/DeleteQuestio
 import DemoQuiz from './Components/DemoQuiz';
 import Feedback from './feedback';
 import StartExam from './Components/StudentComponent/Exam/StartExam';
+import ViewQuiz from './Components/FacultyComponent/Question/ViewQuiz';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route exact path='/FacultyLogin' element={<FacultyLogin/>}></Route>
         <Route exact path='/FacultyRegistration' element={<FacultyRegistration/>}></Route>
         <Route exact path='/FacultyDashboard' element={<FacultyDashboard/>}></Route>
+        <Route exact path='/ViewQuiz' element={<ViewQuiz/>}></Route>
         <Route exact path='/AddQuizSchedule' element={<AddQuizSchedule/>}></Route>
         <Route exact path='/AddQuestion' element={<AddQuestion/>} ></Route>
         <Route exact path='/UpdateQuestion' element={<UpdateQuestion/>}></Route>
@@ -37,6 +39,7 @@ function App() {
         <Route exact path='/StartExam' element={<StartExam/>}></Route>
         <Route exact path='/Logout' element={<Logout/>}></Route>
         <Route exact path='/Feedback' element={<Feedback/>}></Route>
+
       </Routes>
       </BrowserRouter>
 </div>

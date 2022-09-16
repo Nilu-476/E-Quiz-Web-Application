@@ -3,7 +3,7 @@
     .main {
       background-image: url("https://t4.ftcdn.net/jpg/03/10/40/41/240_F_310404162_SoQ3pGc5ctHO3B40f3YM2tnwWrV4XFlq.jpg");
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: 100%;
       background-position-x: center;
       font-family: 'Times New Roman', Times, serif;
       color: aqua;
@@ -132,5 +132,7 @@
     {
     padding: 20px; /* Some padding */
     text-align: center; /* Center text*/
-    background: rgb(5, 5, 5); /* Grey background */
+    background: #19547c; /* Grey background */
+    color:wheat;
+    font: bolder;
     }

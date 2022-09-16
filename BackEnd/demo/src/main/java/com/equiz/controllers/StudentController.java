@@ -19,9 +19,9 @@ import com.equiz.entities.StudentEntity;
 import com.equiz.repositories.QuestionTextRepo;
 import com.equiz.repositories.StudentRepo;
 
-@CrossOrigin
+@CrossOrigin("*")
 @RestController
-@RequestMapping(path = "student")
+@RequestMapping(path = "/student")
 public class StudentController {
 	
 	@Autowired
@@ -35,11 +35,11 @@ public class StudentController {
 		System.out.println("My Index controller created");
 	}
 	
-	@PostMapping("/inserts")
+	@PostMapping("/insert")
 	public String insert(@RequestBody StudentEntity stud)
 	{
 		repo.save(stud);
-		return "student added....";
+		return "Suceess";
 	}
 	
 	@PostMapping(value="/studentlogin/{username}/{password}")
@@ -59,9 +59,10 @@ public class StudentController {
 		return "Fail";
 	}
 	
-	@PostMapping(value="/getstudentprofile/{uname}")
+	@GetMapping(value="/getstudentprofile/{uname}")
 	public StudentEntity getStudentProfile(@PathVariable String uname)
 	{
+		System.out.println("4000 error");
 		StudentEntity stud_info = repo.findByUsername(uname);
 		return stud_info;
 		
