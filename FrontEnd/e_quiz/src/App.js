@@ -14,11 +14,8 @@ import FacultyDashboard from './Components/FacultyComponent/Dashboard/FacultyDas
 import UpdateQuestion from './Components/FacultyComponent/Question/UpdateQuestion';
 import DeleteQuestion from './Components/FacultyComponent/Question/DeleteQuestion';
 import DemoQuiz from './Components/DemoQuiz';
- 
 import Feedback from './feedback';
-
 import StartExam from './Components/StudentComponent/Exam/StartExam';
-
 
 function App() {
   return (

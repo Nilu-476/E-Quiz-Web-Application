@@ -20,16 +20,16 @@ export default function DemoQuiz()
       <div className="col-12">
     <p className="fw-bold">1. Which class is used to create EntityManagerFactory ?</p><div> 
     <div> 
-        <input type="radio" name="box" id="five"/> 
+        <input type="radio" name="box1" id="five"/> 
             <span className="subject"> Persistence </span> 
         <br/>
-        <input type="radio" name="box" id="six"/>
+        <input type="radio" name="box1" id="six"/>
             <span className="subject"> EntityManager </span>
             <br/>  
-        <input type="radio" name="box" id="seven"/> 
+        <input type="radio" name="box1" id="seven"/> 
             <span className="subject"> EntityTranscation</span> 
             <br/>
-        <input type="radio" name="box" id="eight"/> 
+        <input type="radio" name="box1" id="eight"/> 
            <span className="subject"> EntityFactory </span> 
     </div> 
     </div> 
@@ -42,16 +42,16 @@ export default function DemoQuiz()
     <div className="container mb-5"> <div className="row"> <div className="col-12">
     <p className="fw-bold mt-5">2. The hibernate configuration file name is ?</p> 
     <div> 
-        <input type="radio" name="box" id="five"/> 
+        <input type="radio" name="box2" id="five"/> 
             <span className="subject"> http.conf</span> 
         <br/>
-        <input type="radio" name="box" id="six"/>
+        <input type="radio" name="box2" id="six"/>
             <span className="subject"> web.config </span>
             <br/>  
-        <input type="radio" name="box" id="seven"/> 
+        <input type="radio" name="box2" id="seven"/> 
             <span className="subject"> persistence.xml </span> 
             <br/>
-        <input type="radio" name="box" id="eight"/> 
+        <input type="radio" name="box2" id="eight"/> 
            <span className="subject"> hibernate.cfg.xml </span> 
     </div> 
     </div>
@@ -63,16 +63,16 @@ export default function DemoQuiz()
     <div className="container mb-5"> <div className="row"> <div className="col-12">
     <p className="fw-bold mt-5">3. The process of CPU switching to other process is called as ___________ switching ?</p> 
     <div> 
-        <input type="radio" name="box" id="five"/> 
+        <input type="radio" name="box3" id="five"/> 
             <span className="subject"> Context</span> 
         <br/>
-        <input type="radio" name="box" id="six"/>
+        <input type="radio" name="box3" id="six"/>
             <span className="subject"> Process </span>
             <br/>  
-        <input type="radio" name="box" id="seven"/> 
+        <input type="radio" name="box3" id="seven"/> 
             <span className="subject"> Scheduler </span> 
             <br/>
-        <input type="radio" name="box" id="eight"/> 
+        <input type="radio" name="box3" id="eight"/> 
            <span className="subject"> Thread </span> 
     </div> 
     </div>
@@ -85,16 +85,16 @@ export default function DemoQuiz()
     <p className="fw-bold mt-5">4. The FCFS CPU scheduling policy can be conveniently implemented using the 
     following data structure: ?</p> 
     <div> 
-        <input type="radio" name="box" id="five"/> 
+        <input type="radio" name="box4" id="five"/> 
             <span className="subject"> LIFO-stack</span> 
         <br/>
-        <input type="radio" name="box" id="six"/>
+        <input type="radio" name="box4" id="six"/>
             <span className="subject"> Binary tree </span>
             <br/>  
-        <input type="radio" name="box" id="seven"/> 
+        <input type="radio" name="box4" id="seven"/> 
             <span className="subject"> Directed acylic graph </span> 
             <br/>
-        <input type="radio" name="box" id="eight"/> 
+        <input type="radio" name="box4" id="eight"/> 
            <span className="subject"> Queue</span> 
     </div> 
     </div>
@@ -106,16 +106,16 @@ export default function DemoQuiz()
 <div className="container mb-5"> <div className="row"> <div className="col-12">
     <p className="fw-bold mt-5">5. Which of the following is a valid type of function java script supports ?</p> 
     <div> 
-        <input type="radio" name="box" id="five"/> 
+        <input type="radio" name="box5" id="five"/> 
             <span className="subject"> named function</span> 
         <br/>
-        <input type="radio" name="box" id="six"/>
+        <input type="radio" name="box5" id="six"/>
             <span className="subject"> anonymous function </span>
             <br/>  
-        <input type="radio" name="box" id="seven"/> 
+        <input type="radio" name="box5" id="seven"/> 
             <span className="subject"> Both of the above </span> 
             <br/>
-        <input type="radio" name="box" id="eight"/> 
+        <input type="radio" name="box5" id="eight"/> 
            <span className="subject"> None of the above </span> 
     </div> 
     </div>
@@ -127,16 +127,16 @@ export default function DemoQuiz()
     <div className="container mb-5"> <div className="row"> <div className="col-12">
     <p className="fw-bold mt-5">6. What is the order of events when a key is typed ?</p> 
     <div> 
-        <input type="radio" name="box" id="five"/> 
+        <input type="radio" name="box6" id="five"/> 
             <span className="subject"> Keydown, Keypress, keyup</span> 
         <br/>
-        <input type="radio" name="box" id="six"/>
+        <input type="radio" name="box6" id="six"/>
             <span className="subject"> keypress, ketdown, keyup </span>
             <br/>  
-        <input type="radio" name="box" id="seven"/> 
+        <input type="radio" name="box6" id="seven"/> 
             <span className="subject"> keyup, keydown, keypress </span> 
             <br/>
-        <input type="radio" name="box" id="eight"/> 
+        <input type="radio" name="box6" id="eight"/> 
            <span className="subject"> keydown, keyup, keypress </span> 
     </div> 
     </div>
@@ -149,16 +149,16 @@ export default function DemoQuiz()
     <div className="container mb-5"> <div className="row"> <div className="col-12">
     <p className="fw-bold mt-5">7. What is Callback ?</p> 
     <div> 
-        <input type="radio" name="box" id="five"/> 
+        <input type="radio" name="box7" id="five"/> 
             <span className="subject"> Callback is an asynchronous equivalent for a function</span> 
         <br/>
-        <input type="radio" name="box" id="six"/>
+        <input type="radio" name="box7" id="six"/>
             <span className="subject"> Call-back is a technique in which a method call back the caller method </span>
             <br/>  
-        <input type="radio" name="box" id="seven"/> 
+        <input type="radio" name="box7" id="seven"/> 
             <span className="subject"> Both of the above </span> 
             <br/>
-        <input type="radio" name="box" id="eight"/> 
+        <input type="radio" name="box7" id="eight"/> 
            <span className="subject"> None of the above </span> 
     </div> 
     </div>
@@ -170,16 +170,16 @@ export default function DemoQuiz()
     <div className="container mb-5"> <div className="row"> <div className="col-12">
     <p className="fw-bold mt-5">8. Which of the following testing is also known as white-box testing ?</p> 
     <div> 
-        <input type="radio" name="box" id="five"/> 
+        <input type="radio" name="box8" id="five"/> 
             <span className="subject"> Structural testing</span> 
         <br/>
-        <input type="radio" name="box" id="six"/>
+        <input type="radio" name="box8" id="six"/>
             <span className="subject"> Error guessing technique </span>
             <br/>  
-        <input type="radio" name="box" id="seven"/> 
+        <input type="radio" name="box8" id="seven"/> 
             <span className="subject"> Design based testing </span> 
             <br/>
-        <input type="radio" name="box" id="eight"/> 
+        <input type="radio" name="box8" id="eight"/> 
            <span className="subject"> None of the above </span> 
     </div> 
     </div>
@@ -191,16 +191,16 @@ export default function DemoQuiz()
     <div className="container mb-5"> <div className="row"> <div className="col-12">
     <p className="fw-bold mt-5">9. To Handel exception in C# you must use ?</p> 
     <div> 
-        <input type="radio" name="box" id="five"/> 
+        <input type="radio" name="box9" id="five"/> 
             <span className="subject"> Try catch block</span> 
         <br/>
-        <input type="radio" name="box" id="six"/>
+        <input type="radio" name="box9" id="six"/>
             <span className="subject"> Only try </span>
             <br/>  
-        <input type="radio" name="box" id="seven"/> 
+        <input type="radio" name="box9" id="seven"/> 
             <span className="subject"> Try – finally </span> 
             <br/>
-        <input type="radio" name="box" id="eight"/> 
+        <input type="radio" name="box9" id="eight"/> 
            <span className="subject"> None of the above </span> 
     </div> 
     </div>
@@ -212,16 +212,16 @@ export default function DemoQuiz()
     <div className="container mb-5"> <div className="row"> <div className="col-12">
     <p className="fw-bold mt-5">10. From which one of the following locations does the garbage collector remove objects ?</p> 
     <div> 
-        <input type="radio" name="box" id="five"/> 
+        <input type="radio" name="box10" id="five"/> 
             <span className="subject"> The system registry</span> 
         <br/>
-        <input type="radio" name="box" id="six"/>
+        <input type="radio" name="box10" id="six"/>
             <span className="subject"> The thread stack </span>
             <br/>  
-        <input type="radio" name="box" id="seven"/> 
+        <input type="radio" name="box10" id="seven"/> 
             <span className="subject"> The managed heap </span> 
             <br/>
-        <input type="radio" name="box" id="eight"/> 
+        <input type="radio" name="box10" id="eight"/> 
            <span className="subject"> None of the above </span> 
     </div> 
     </div>

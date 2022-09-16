@@ -35,7 +35,20 @@
         input[type=submit]:hover {    
           background-color: #45a049;    
         }    
+        
+        input[type=Home] {    
+          background-color: rgb(11, 156, 240);    
+          color: rgb(2, 2, 2);    
+          padding: 12px 20px;    
+          border: none;    
+          border-radius: 4px;    
+          cursor: pointer;    
+          float: right;    
+        }    
             
+        input[type=Home]:hover {    
+          background-color: #d91313;    
+        } 
           
             
         .col-25 {    

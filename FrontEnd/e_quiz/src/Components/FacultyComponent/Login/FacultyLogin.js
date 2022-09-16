@@ -1,34 +1,39 @@
 
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
 import {useState} from "react";
+
+
 export default function FacultyLogin()
 {
-      
-     const [email,setEmail]=useState('')
-     const [password,setPassword]=useState('')
-      console.log({email,password})
-     const handleEmail=(e)=>{
-        setEmail(e.target.value)
-     }
-      
-     const handlePassword=(e)=>{
-        setPassword(e.target.value)
-     }
+  const [uname,setUname]=useState('')
+  const [password,setPassword]=useState('')
+  
+  const handleUname=(e)=>{
+     setUname(e.target.value)
      
-     const handleApi=()=>{
-      setPassword({email,password})
-      axios.post('https://reqres.in/api/login',{
-       email:email,
-       password:password
-      })
-       .then(result=>{console.log(result)})
-      .catch(error=>{
-        console.log(error)
-      })
-      
-      
-   }
+  }
+   
+  const handlePassword=(e)=>{
+     setPassword(e.target.value)
+     
+  }
+  
+  const handleApi=()=>{
+   setPassword({uname,password})
+   axios.post(`http://localhost:8080/faculty/facultylogin/${uname}/${password}`,
+   {uname:uname,
+  password:password})
+    .then(result=>{console.log(result.data)
+     alert('success')
+     Navigate("/FacultyDashboard")
+   })
+   .catch(error=>{
+     alert('invalid login')
+     console.log(error)
+   })
+  }  
+
       
           return(
             <>
@@ -46,18 +51,18 @@ export default function FacultyLogin()
             <form className="px-md-1">
             
             <div className="form-outline mb-4">
-                <input value={email} onChange={handleEmail} type="email"  className="form-control" />
-                <label className="form-label"><b>Email :</b></label>
+                <input value={uname} type="text" onChange={handleUname} className="form-control" />
+                <label className="form-label"><b>Username :</b></label>
               </div>
               <div className="form-outline mb-4">
-                <input value={password} onChange={handlePassword} type="password"  className="form-control" />
+                <input value={password} type="password" onChange={handlePassword} className="form-control" />
                 <label className="form-label"><b>Password :</b></label>
               </div>
               
 
               <div className="row">
                   <div className="col-md-4 mb-4"> 
-                  <button onClick={handleApi} type="submit" className="btn btn-success btn-mb mb-1">Login</button>
+                  <button value={uname} onClick={handleApi} type="submit" className="btn btn-success btn-mb mb-1">Login</button>
                   </div>
                   <div className="col-md-4 mb-4"> 
                   <button type="reset" className="btn btn-danger btn-mb mb-1">Reset</button>
@@ -77,5 +82,4 @@ export default function FacultyLogin()
       </>
 
           )
-      
-}
+  }
