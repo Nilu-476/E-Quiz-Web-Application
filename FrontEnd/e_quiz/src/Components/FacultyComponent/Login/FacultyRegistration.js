@@ -1,32 +1,11 @@
-import { Component } from "react";
 import { Link } from "react-router-dom";
 
-export default class FacultyRegistration extends Component
+export default function FacultyRegistration()
 {
   
-      render()
-      {
-        let vadlidate = function()
-        {
-          'use strict'
-        
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.querySelectorAll('.needs-validation')
-        
-          // Loop over them and prevent submission
-          Array.prototype.slice.call(forms)
-            .forEach(function (form) {
-              form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                  event.preventDefault()
-                  event.stopPropagation()
-                }
-        
-                form.classList.add('was-validated')
-              }, false)
-            })
-        }
+     
             return(
+              <>
                   < div className="shadow-none p-3 xl-5 bg-info bg-gradient">
                   <section className="h-100 h-custom">
         <div className="container py-5 h-100">
@@ -123,6 +102,7 @@ export default class FacultyRegistration extends Component
         </div>
       </section>
             </div>
+            </>
             )
-      }
+      
 }
