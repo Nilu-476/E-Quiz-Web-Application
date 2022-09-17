@@ -72,37 +72,34 @@ public class QuizScheduleController {
 		
 	}
 	
-	@PostMapping(value="/updateschedule")//not working
-	public String  updateQuizSchedule(@RequestBody  QuizScheduleEntity  quiz_schedule,@PathVariable int quizid)
+	
+	@PutMapping(value="/editquizschedule/{quizid}")
+	public ResponseEntity<QuizScheduleEntity> editSchedule(@RequestBody QuizScheduleEntity q,@PathVariable int quizid)
 	{
+		Optional<QuizScheduleEntity> obj = quiz_schedule_repo.findById(quizid);
 		
-		if(quiz_schedule.getQuizName()!= "")
+		if(obj.isPresent())
 		{
-			quiz_schedule_repo.updateQuizName(quiz_schedule.getQuizName(), quiz_schedule.getQuizId());
+			QuizScheduleEntity obj1 = obj.get();
+			obj1.setQuizName(q.getQuizName());
+			obj1.setQuizDesc(q.getQuizDesc());
+			obj1.setScheduleDate(q.getScheduleDate());
+			obj1.setScheduleTime(q.getScheduleTime());
+			obj1.setDuration(q.getDuration());
+			try {
+				return new ResponseEntity<>(quiz_schedule_repo.save(obj1), HttpStatus.OK);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		}
-		if(quiz_schedule.getQuizDesc()!="")
+		else
 		{
-			quiz_schedule_repo.updateQuizDesc(quiz_schedule.getQuizDesc(), quiz_schedule.getQuizId());
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
-		if(quiz_schedule.getScheduleDate()!="")
-		{
-			quiz_schedule_repo.updateScheduleDate(quiz_schedule.getScheduleDate(), quiz_schedule.getQuizId());
-		}
-		if(quiz_schedule.getScheduleTime()!="")
-		{
-			quiz_schedule_repo.updateScheduleTime(quiz_schedule.getScheduleTime(), quiz_schedule.getQuizId());
-		}
-		if(quiz_schedule.getDuration()!= 0)
-		{
-			quiz_schedule_repo.updateDuration(quiz_schedule.getDuration(), quiz_schedule.getQuizId());
-		}
+		return null;
 		
-//		if(quiz_schedule.getTotalMarks()!=0)
-//		{
-//			quiz_schedule_repo.updateTotalMarks(quiz_schedule.getTotalMarks(), quiz_schedule.getQuizId());
-//		}*/
-		
-		return "Quiz schedule Updated...";
 		
 	}
 	
