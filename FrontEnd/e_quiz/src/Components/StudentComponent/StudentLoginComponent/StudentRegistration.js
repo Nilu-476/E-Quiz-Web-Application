@@ -49,7 +49,8 @@ export default function StudentRegistration()
     )
     .then((response)=>{
       console.log(response.data);
-      alert("Registration Sucessfull");
+    }).then(()=>{
+      alert("Registration Suceessfull");
       if(repassword === student.password)
       {
       navigate("/StudentLogin");
@@ -59,7 +60,7 @@ export default function StudentRegistration()
         alert("Password Does't Match ...")
       }
       
-    })
+  })
     .catch((e)=>
     {
       console.log(e)
