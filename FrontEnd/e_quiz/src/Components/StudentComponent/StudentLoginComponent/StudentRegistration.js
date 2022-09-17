@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -16,7 +15,6 @@ export default function StudentRegistration()
         mobileNo:"",
         gender:"",
         dateOfBirth:"",
-        
         username:"",
         password:"",
   })
@@ -139,7 +137,7 @@ export default function StudentRegistration()
             <div className="col-md-6 mb-4">
             <b>Select Gender :</b> 
             <select className="select" name='gender' onChange={HandleChange}  >
-            <option value="1" disabled>Gender</option>
+            <option >Gender</option>
             <option value="Male" name="Male">Male</option>
             <option value="Female" name="Female">Female</option>
             <option value="Other" name="Other">Other</option>

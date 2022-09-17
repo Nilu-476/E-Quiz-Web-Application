@@ -25,9 +25,12 @@ export default function StudentLogin()
   {
     console.log(result.data);
      alert('Login Successfull');
-   }).then(
+   })
+   .then(
     navigate("/StudentDashboard")
    )
+
+
    .catch(error=>{
      alert('invalid login');
      console.log(error);

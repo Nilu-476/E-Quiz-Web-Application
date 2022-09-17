@@ -1,11 +1,11 @@
-
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate, BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
 import {useState} from "react";
-
+import FacultyDashboard from '../Dashboard/FacultyDashboard';
 
 export default function FacultyLogin()
 {
+  let navigate= useNavigate();
   const [uname,setUname]=useState('')
   const [password,setPassword]=useState('')
   
@@ -21,18 +21,33 @@ export default function FacultyLogin()
   
   const handleApi=()=>{
    setPassword({uname,password})
-   axios.post(`http://localhost:8080/faculty/facultylogin/${uname}/${password}`,
-   {uname:uname,
-  password:password})
-    .then(result=>{console.log(result.data)
-     alert('success')
-     Navigate("/FacultyDashboard")
-   })
+   axios.post(`http://localhost:8080/faculty/facultylogin/${uname}/${password}`
+   )
+    .then((response)=>{
+     console.log(response.data);
+     alert('success');
+ 
+   })   //then block ends
+
+   
+   .then(
+    navigate("/FacultyDashboard")
+   )
+     
    .catch(error=>{
-     alert('invalid login')
-     console.log(error)
-   })
-  }  
+    console.log(error);
+     alert('invalid login'); 
+   })   //catch block ends
+  
+   
+  } //handle api ends
+
+  <BrowserRouter>
+  <Routes>
+    <Route path="/FacultyDashboard" element={<FacultyDashboard/>}></Route>
+    <Route path="/FacultyLogin" element={<FacultyLogin/>}></Route>
+  </Routes>
+  </BrowserRouter>
 
       
           return(

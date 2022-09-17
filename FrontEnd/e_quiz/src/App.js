@@ -17,6 +17,7 @@ import DemoQuiz from './Components/DemoQuiz';
 import Feedback from './feedback';
 import StartExam from './Components/StudentComponent/Exam/StartExam';
 import ViewQuiz from './Components/FacultyComponent/Question/ViewQuiz';
+import Result from './Components/ResultComponent/Result';
 
 function App() {
   return (
@@ -39,7 +40,7 @@ function App() {
         <Route exact path='/StartExam' element={<StartExam/>}></Route>
         <Route exact path='/Logout' element={<Logout/>}></Route>
         <Route exact path='/Feedback' element={<Feedback/>}></Route>
-
+        <Route exact path='/Result' element={<Result/>}></Route>
       </Routes>
       </BrowserRouter>
 </div>

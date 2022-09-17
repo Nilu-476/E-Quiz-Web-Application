@@ -1,11 +1,13 @@
-import { Component } from "react";
-import { Link } from "react-router-dom";
+import { Component, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import './FacultyDashboard.css';
-export default class FacultyDashboard extends Component
+import { useSelector } from "react-redux";
+import FacultyLogin from "../Login/FacultyLogin";
+
+export default function FacultyDashboard()
 {
       
-      render()
-      {
+     
             return(
                   <>
                   <body className="main">
@@ -90,6 +92,7 @@ export default class FacultyDashboard extends Component
 
    
                   </>
-            )
-      }
+            )//return ends here
+     
+            
 }

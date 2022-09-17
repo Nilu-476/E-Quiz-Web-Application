@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function DemoQuiz()
 {
       return(
@@ -234,6 +236,7 @@ export default function DemoQuiz()
                     <div className="row">
                         <div className="col-sm-6 sm-6"> 
                         <button type="submit" className="btn btn-success btn-sm mb-1" style={{alignSelf:"center"}}>Submit Quiz</button>
+                        <Link to="/Result" >Display Result</Link>
                         </div>
                     </div>
                   </form>
