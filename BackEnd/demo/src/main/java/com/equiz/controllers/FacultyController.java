@@ -1,10 +1,14 @@
 package com.equiz.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //import java.util.ArrayList;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,9 +18,9 @@ import com.equiz.entities.FacultyEntity;
 import com.equiz.repositories.FacultyRepo;
 
 
-@CrossOrigin
+@CrossOrigin("*")
 @RestController
-@RequestMapping(path = "/faculty")
+@RequestMapping("/faculty")
 public class FacultyController {
 	
 	@Autowired
@@ -27,7 +31,7 @@ public class FacultyController {
 		System.out.println("My Index controller created");
 	}
 	
-	@PostMapping(value="/addfaculty")
+	@PostMapping("/addfaculty")
 	public String insert(@RequestBody FacultyEntity faculty)
 	{
 			repo.save(faculty);
@@ -50,6 +54,16 @@ public class FacultyController {
 		return "Fail";
 	}
 
+	@GetMapping(value = "/getAllFaculty")
+	public String GetAll()
+	{
+		return "Hello From Spring MVC";
+	}
+	/*
+	 * public List<FacultyEntity> GetAll() { List<FacultyEntity> list=
+	 * repo.findAll(); return list; }
+	 */
+	
 	@PostMapping(value="/getfacultyprofile/{uname}")
 	public FacultyEntity getFacultyProfile(@PathVariable String uname)
 	{

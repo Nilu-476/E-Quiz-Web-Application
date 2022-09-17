@@ -6,11 +6,12 @@ export default function Homepage()
       
         return(
             <>
-      <body className="main">
-      <div className="header">
-            <h1>E-Quiz Web Application</h1>
+      <body className="main col-xl-12">
+      <div className='sticky-top class'>      
+      <div className="header sticky-top class">
+      <h1>E-Quiz Web Application</h1>
       </div>
-      <div className="navbar">
+      <div className="navbar navbar-brand sticky-top class">
             <Link to="/StudentLogin">Student Login</Link>
             <Link to="/FacultyLogin">Faculty Login</Link>
             <div className="dropdown">
@@ -22,7 +23,9 @@ export default function Homepage()
                         <Link to="/FacultyRegistration">Register as Faculty</Link>
                   </div>
             </div>
-            </div>    
+            </div> 
+            </div>
+   
             <div className="card  bg-secondary ">
       <img src="https://icon-library.com/images/questions-icon/questions-icon-8.jpg" className="card-img-top" style={{width:"300px",height:"300px",alignSelf:"center"}} alt="..."/>
       <div className="card-body">

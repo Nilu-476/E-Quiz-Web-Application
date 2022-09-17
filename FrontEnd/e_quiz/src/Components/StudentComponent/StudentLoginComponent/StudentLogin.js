@@ -1,17 +1,43 @@
-import { Component } from "react";
-import { Link } from "react-router-dom";
-export default class StudentLogin extends Component
+import axios from "axios";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+export default function StudentLogin()
 {
-      componentDidMount()
-      {
-
-      }
-
-      render()
-      {
-            return(
-                  < div className="shadow-none p-3 xl-5 bg-info bg-gradient">
-                  <section className="h-100 h-custom">
+  let navigate= useNavigate();
+  const [uname,setUname]=useState('')
+  const [password,setPassword]=useState('')
+  
+  const handleUname=(e)=>{
+     setUname(e.target.value)
+     
+  }
+   
+  const handlePassword=(e)=>{
+     setPassword(e.target.value)
+     
+  }
+  
+  const handleApi=()=>{
+   setPassword({uname,password})
+   axios.post(`http://localhost:8080/student/studentlogin/${uname}/${password}`,
+   {
+    uname:uname,
+    password:password
+  
+  }).then((result)=>
+  {
+    console.log(result.data)
+     alert('Login Successfull')
+     navigate("/StudentDashboard")
+   })
+   .catch(error=>{
+     alert('invalid login')
+     console.log(error)
+   })
+  }  
+  return(
+        <div className="shadow-none p-3 xl-5 bg-info bg-gradient">
+        <section className="h-100 h-custom">
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-lg-8 col-xl-6">
@@ -22,20 +48,19 @@ export default class StudentLogin extends Component
                   <h2 className="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2"><b>Student Login</b></h2>
       
                   <form className="px-md-1">
-                  
                   <div className="form-outline mb-4">
-                      <input type="number"  className="form-control" />
+                      <input type="number" name="uname" className="form-control"  onChange={handleUname} />
                       <label className="form-label"><b>Username :</b></label>
                     </div>
                     <div className="form-outline mb-4">
-                      <input type="number"  className="form-control" />
+                      <input type="number" name="password" className="form-control"  onChange={handlePassword}/>
                       <label className="form-label"><b>Password :</b></label>
                     </div>
                     
       
                     <div className="row">
                         <div className="col-md-4 mb-4"> 
-                        <button type="submit" className="btn btn-success btn-mb mb-1">Login</button>
+                        <button type="submit" className="btn btn-success btn-mb mb-1" onClick={handleApi}>Login</button>
                         </div>
                         <div className="col-md-4 mb-4"> 
                         <button type="reset" className="btn btn-danger btn-mb mb-1">Reset</button>
@@ -54,4 +79,3 @@ export default class StudentLogin extends Component
             </div>
             )
       }
-}

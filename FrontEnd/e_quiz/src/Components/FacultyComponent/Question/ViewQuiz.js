@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function ViewQuiz()
 {
       return(
-             <body className="main ">
+             <body >
             <div className="header">
             <h1>Quiz Details</h1>
             </div>
