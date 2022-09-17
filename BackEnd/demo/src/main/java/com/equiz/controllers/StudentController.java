@@ -21,7 +21,7 @@ import com.equiz.repositories.StudentRepo;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping(path = "/student")
+@RequestMapping(path = "student")
 public class StudentController {
 	
 	@Autowired
@@ -35,11 +35,11 @@ public class StudentController {
 		System.out.println("My Index controller created");
 	}
 	
-	@PostMapping("/insert")
+	@PostMapping("/inserts")
 	public String insert(@RequestBody StudentEntity stud)
 	{
 		repo.save(stud);
-		return "Suceess";
+		return "student added....";
 	}
 	
 	@PostMapping(value="/studentlogin/{username}/{password}")
@@ -47,22 +47,22 @@ public class StudentController {
 	{
 		
 		StudentEntity stud_obj = repo.findByUsername(username);
-		
-		if(stud_obj.getUsername().equals(username))
+		String uname = stud_obj.getUsername();
+		String passwd =stud_obj.getPassword();
+		if(uname.equals(username))
 		{
-			if(stud_obj.getPassword().equals(password))
+			if(passwd.equals(password))
 			{
-				return "Pass";
+				return "pass";
 			}
 		}
 		
-		return "Fail";
+		return "fail";
 	}
 	
 	@GetMapping(value="/getstudentprofile/{uname}")
 	public StudentEntity getStudentProfile(@PathVariable String uname)
 	{
-		System.out.println("4000 error");
 		StudentEntity stud_info = repo.findByUsername(uname);
 		return stud_info;
 		
@@ -104,7 +104,7 @@ public class StudentController {
 		{
 			repo.updateUsername(stud.getUsername(), stud.getPrnNo());
 		}
-		if(stud.getUsername()!="")
+		if(stud.getPassword()!="")
 		{
 			repo.updatePassword(stud.getPassword(), stud.getPrnNo());
 		}

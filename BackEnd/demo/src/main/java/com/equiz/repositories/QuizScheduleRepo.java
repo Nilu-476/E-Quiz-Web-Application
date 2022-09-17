@@ -5,7 +5,6 @@ package com.equiz.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,6 +13,10 @@ import com.equiz.entities.QuizScheduleEntity;
 
 @Repository
 public interface QuizScheduleRepo extends JpaRepository<QuizScheduleEntity, Integer>{
+	
+	
+	@Query(nativeQuery = true,value="select * from quiz_schedule where quizid=:quizid")
+	public QuizScheduleEntity findByQuizid(@Param("quizid")int quizid);
 	
 	@Modifying
 	@Transactional
