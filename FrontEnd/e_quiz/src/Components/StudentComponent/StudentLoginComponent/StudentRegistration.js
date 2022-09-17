@@ -1,11 +1,12 @@
 
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function StudentRegistration()
 {
 
+  let navigate = useNavigate();
   const[student ,setStudent] = useState({
         prnno:"",
         firstName:"",
@@ -33,7 +34,7 @@ export default function StudentRegistration()
   const Registration= (e) =>{
     e.preventDefault();
     console.log("Something ...")
-    axios.post("http://localhost:8080/student/insert",  {
+    axios.post("http://localhost:8080/student/inserts",  {
       prnno:student.prnno,
       firstName:student.firstName,
       middleName:student.middleName,
@@ -51,13 +52,19 @@ export default function StudentRegistration()
       alert("Registration Sucessfull");
       if(repassword === student.password)
       {
-      Navigate("/StudentLogin");
+      navigate("/StudentLogin");
       }
       else
-      alert("Password Does't Match ...")
+      {
+        alert("Password Does't Match ...")
+      }
+      
     })
     .catch((e)=>
-    {console.log(e)})
+    {
+      console.log(e)
+      navigate("/StudentRegistration")
+    })
   }
 
   //************************ Using Fetch ********************************** */
@@ -132,9 +139,9 @@ export default function StudentRegistration()
             <b>Select Gender :</b> 
             <select className="select" name='gender' onChange={HandleChange}  >
             <option value="1" disabled>Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
+            <option value="Male" name="Male">Male</option>
+            <option value="Female" name="Female">Female</option>
+            <option value="Other" name="Other">Other</option>
             </select>
             </div>
             <div className="col-md-6 mb-4">

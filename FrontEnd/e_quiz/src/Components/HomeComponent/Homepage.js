@@ -11,7 +11,7 @@ export default function Homepage()
       <div className="header sticky-top class">
       <h1>E-Quiz Web Application</h1>
       </div>
-      <div className="navbar navbar-brand sticky-top class">
+      <div className="navbar sticky-top class  navbar-brand ">
             <Link to="/StudentLogin">Student Login</Link>
             <Link to="/FacultyLogin">Faculty Login</Link>
             <div className="dropdown">

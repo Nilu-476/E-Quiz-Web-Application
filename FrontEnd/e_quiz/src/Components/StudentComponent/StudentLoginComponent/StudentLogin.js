@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes, useNavigate } from "react-router-dom";
+import StudentDashboard from '../Dashboard/StudentDashboard';
 export default function StudentLogin()
 {
   let navigate= useNavigate();
@@ -19,22 +20,26 @@ export default function StudentLogin()
   
   const handleApi=()=>{
    setPassword({uname,password})
-   axios.post(`http://localhost:8080/student/studentlogin/${uname}/${password}`,
-   {
-    uname:uname,
-    password:password
-  
-  }).then((result)=>
+   axios.post(`http://localhost:8080/student/studentlogin/${uname}/${password}`
+ ).then((result)=>
   {
-    console.log(result.data)
-     alert('Login Successfull')
-     navigate("/StudentDashboard")
-   })
+    console.log(result.data);
+     alert('Login Successfull');
+   }).then(
+    navigate("/StudentDashboard")
+   )
    .catch(error=>{
-     alert('invalid login')
-     console.log(error)
+     alert('invalid login');
+     console.log(error);
    })
   }  
+
+  <BrowserRouter>
+  <Routes>
+    <Route path="/StudentDashboard" element={<StudentDashboard/>}></Route>
+  </Routes>
+  </BrowserRouter>
+
   return(
         <div className="shadow-none p-3 xl-5 bg-info bg-gradient">
         <section className="h-100 h-custom">
@@ -49,11 +54,11 @@ export default function StudentLogin()
       
                   <form className="px-md-1">
                   <div className="form-outline mb-4">
-                      <input type="number" name="uname" className="form-control"  onChange={handleUname} />
+                      <input type="text" name="uname" className="form-control"  onChange={handleUname} />
                       <label className="form-label"><b>Username :</b></label>
                     </div>
                     <div className="form-outline mb-4">
-                      <input type="number" name="password" className="form-control"  onChange={handlePassword}/>
+                      <input type="text" name="password" className="form-control"  onChange={handlePassword}/>
                       <label className="form-label"><b>Password :</b></label>
                     </div>
                     

@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 export default function StartExam()
 {
        // ---------------------------------------------------------
+
     let { id } = useParams();
     let { category } = useParams();
 
@@ -19,20 +20,12 @@ export default function StartExam()
 
     useEffect(() => {
         async function getAllQuestions(){
-            let value = await axios.get(`http://localhost:8080/exam/${id}/question`);
+            let value = await axios.get(`http://localhost:8080/managequestion/getquestionbyid/${id}`);
             setAllQuestions(value.data);
             //console.log(value.data);
         }
         getAllQuestions();
     },[id]);
-
-    // ---------------------------------------------------------
-    
-    // const [userAnswer , setUserAnswer] = useState({
-    //     answer1:"",
-    //     answer2:"",
-    //     answer3:"",
-    // });
 
     const [answer , setAnswer] = useState({
         answer1:"",
@@ -43,7 +36,7 @@ export default function StartExam()
     });
 
 
-    let  correctAnswer  = [] ;
+    let  correctAnswer  = [] ; // array of all answers given by students
     
     function onRadioButtonChange(e){
        setAnswer({
@@ -108,7 +101,7 @@ export default function StartExam()
             <section className="h-100 h-custom">
             <div className="container py-5 h-100">
             <div className="row d-flex justify-content-center align-items-center h-100">
-            <div className="col-lg-8 col-xl-6">
+            <div className="col-xl-8 col-xl-6">
             <div className="card rounded-4">
             <img src="https://veeroesquotes.com/wp-content/uploads/2019/07/quote-Exam13.jpg"
             className="w-80"alt="" />
