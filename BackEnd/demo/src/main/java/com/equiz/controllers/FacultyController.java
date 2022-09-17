@@ -1,8 +1,5 @@
 package com.equiz.controllers;
 
-import java.util.ArrayList;
-import java.util.List;
-
 //import java.util.ArrayList;
 
 
@@ -18,9 +15,9 @@ import com.equiz.entities.FacultyEntity;
 import com.equiz.repositories.FacultyRepo;
 
 
-@CrossOrigin("*")
+@CrossOrigin
 @RestController
-@RequestMapping("/faculty")
+@RequestMapping(path = "faculty")
 public class FacultyController {
 	
 	@Autowired
@@ -31,11 +28,15 @@ public class FacultyController {
 		System.out.println("My Index controller created");
 	}
 	
-	@PostMapping("/addfaculty")
-	public String insert(@RequestBody FacultyEntity faculty)
+	@PostMapping(value="/addfaculty/{collegecode}")
+	public String insert(@RequestBody FacultyEntity faculty,@PathVariable int collegecode)
 	{
+		if(collegecode == 7834562)
+		{
 			repo.save(faculty);
-		return "Registrtion successfull..."; 
+			return "Registrtion Successfull...";
+		}
+		return "Registrtion unsuccessfull..."; 
 	}
 	
 	@PostMapping(value="/facultylogin/{username}/{password}")
@@ -43,9 +44,11 @@ public class FacultyController {
 	{
 		
 		FacultyEntity fac_obj = repo.findByUserName(username);
-		if(fac_obj.getUserName().equals(username) )
+		String uname = fac_obj.getUserName();
+		String passwd=fac_obj.getPassword();
+		if(uname.equals(username) )
 		{
-			if(fac_obj.getPassword().equals(password))
+			if(passwd.equals(password))
 			{
 				return "Pass";
 			}
@@ -54,17 +57,7 @@ public class FacultyController {
 		return "Fail";
 	}
 
-	@GetMapping(value = "/getAllFaculty")
-	public String GetAll()
-	{
-		return "Hello From Spring MVC";
-	}
-	/*
-	 * public List<FacultyEntity> GetAll() { List<FacultyEntity> list=
-	 * repo.findAll(); return list; }
-	 */
-	
-	@PostMapping(value="/getfacultyprofile/{uname}")
+	@GetMapping(value="/getfacultyprofile/{uname}")
 	public FacultyEntity getFacultyProfile(@PathVariable String uname)
 	{
 		FacultyEntity faculty_info = repo.findByUserName(uname);

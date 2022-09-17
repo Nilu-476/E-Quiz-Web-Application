@@ -1,9 +1,11 @@
 package com.equiz.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +18,7 @@ import com.equiz.entities.QuestionTypeText;
 import com.equiz.repositories.FacultyRepo;
 import com.equiz.repositories.QuestionTextRepo;
 
-@CrossOrigin
+@CrossOrigin("*")
 @RestController
 @RequestMapping(path = "managequestion")
 public class QuestionController {
@@ -38,7 +40,7 @@ public class QuestionController {
 		
 		String fac_name = question_info.getFacultyname();
 		FacultyEntity fac_obj = fac_repo.findByUserName(fac_name);
-		int facid=fac_obj.getFacultyId();
+		long facid=fac_obj.getFacultyId();
 		
 		List<QuestionTypeText> q_list = question_info.getQuestion_list();
 		
@@ -102,6 +104,14 @@ public class QuestionController {
 		
 	}
 	
+	@GetMapping(value="/getquestionbyid/{qid}")
+	public QuestionTypeText getQuestionById(@PathVariable int qid)
+	{
+		Optional<QuestionTypeText> question_obj = question_repo.findById(qid);
+		
+		return question_obj.get();
+		
+	}
 	
 	
 

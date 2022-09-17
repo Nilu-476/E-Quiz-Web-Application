@@ -2,6 +2,8 @@ package com.equiz.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 //import javax.persistence.GeneratedValue;
 //import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,6 +14,7 @@ import javax.persistence.Table;
 public class StudentEntity {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name="prnno")
 	private long prnno;
 	

@@ -22,7 +22,7 @@ import com.equiz.repositories.QuizScheduleRepo;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping(path = "quizscheule")
+@RequestMapping(path = "quizschedule")
 public class QuizScheduleController {
 	
 	@Autowired
@@ -58,7 +58,7 @@ public class QuizScheduleController {
 		List<QuizScheduleEntity> quiz_timetable =new ArrayList<QuizScheduleEntity>();
 		
 		FacultyEntity fac_obj = fac_repo.findByUserName(facuname);
-		int facid=fac_obj.getFacultyId();
+		long facid=fac_obj.getFacultyId();
 		List<QuizScheduleEntity> quiz_schedule = quiz_schedule_repo.findAll(); 
 		
 		for(QuizScheduleEntity q : quiz_schedule)
@@ -72,8 +72,8 @@ public class QuizScheduleController {
 		
 	}
 	
-	@PostMapping(value="/updateschedule")
-	public String  updateQuizSchedule(@RequestBody  QuizScheduleEntity  quiz_schedule)
+	@PostMapping(value="/updateschedule")//not working
+	public String  updateQuizSchedule(@RequestBody  QuizScheduleEntity  quiz_schedule,@PathVariable int quizid)
 	{
 		
 		if(quiz_schedule.getQuizName()!= "")
@@ -100,7 +100,7 @@ public class QuizScheduleController {
 //		if(quiz_schedule.getTotalMarks()!=0)
 //		{
 //			quiz_schedule_repo.updateTotalMarks(quiz_schedule.getTotalMarks(), quiz_schedule.getQuizId());
-//		}
+//		}*/
 		
 		return "Quiz schedule Updated...";
 		
@@ -121,6 +121,13 @@ public class QuizScheduleController {
 		}
 		
 		return "Quiz schedule deleted...";
+	}
+	
+	@GetMapping(value="/getschedulebyid/{quizid}")
+	public QuizScheduleEntity getQuizScheduleById(@PathVariable int quizid)
+	{
+		Optional<QuizScheduleEntity> quiz_obj = quiz_schedule_repo.findById(quizid);
+		return quiz_obj.get();
 	}
 	
 	

@@ -5,6 +5,8 @@ package com.equiz.entities;
 //import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 //import javax.persistence.GeneratedValue;
 //import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,8 +18,9 @@ import javax.persistence.Table;
 public class FacultyEntity {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name="facultyid")
-	private int facultyid;
+	private long facultyid;
 	
 	@Column(name="first_name")
 	private String firstName;
@@ -59,7 +62,7 @@ public class FacultyEntity {
 
 	
 
-	public FacultyEntity(int facultyId, String firstName, String middleName, String lastName, String email,
+	public FacultyEntity(long facultyId, String firstName, String middleName, String lastName, String email,
 			long mobileNo, String gender, String dateOfBirth, String userName, String password) {
 		super();
 		this.facultyid = facultyId;
@@ -76,11 +79,11 @@ public class FacultyEntity {
 
 
 
-	public int getFacultyId() {
+	public long getFacultyId() {
 		return facultyid;
 	}
 
-	public void setFacultyId(int facultyId) {
+	public void setFacultyId(long facultyId) {
 		this.facultyid = facultyId;
 	}
 
