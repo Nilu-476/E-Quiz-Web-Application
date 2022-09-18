@@ -20,8 +20,8 @@ public interface QuizScheduleRepo extends JpaRepository<QuizScheduleEntity, Inte
 	
 	@Modifying
 	@Transactional
-	@Query( nativeQuery = true,value="update quiz_schedule set quiz_name=:quizname where quizid=:quizid")
-	public void updateQuizName(@Param("quizname") String quizname,@Param("quizid") int quizid );
+	@Query( nativeQuery = true,value="update quiz_schedule set quiz_name=:quizname where quizid=:quizid and facultyid=:facid")
+	public void updateQuizName(@Param("quizname") String quizname,@Param("quizid") int quizid,@Param("facid")long facid );
 	
 	@Modifying
 	@Transactional

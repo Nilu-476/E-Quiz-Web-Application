@@ -1,15 +1,21 @@
 package com.equiz.controllers;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 //import java.util.Optional;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -73,6 +79,30 @@ public class QuizScheduleController {
 	}
 	
 	
+	@PostMapping(value="/deleteschedule/{quizid}")
+	public String delete_Quiz_schedule(@PathVariable int quizid)
+	{
+		Optional<QuizScheduleEntity> quiz = quiz_schedule_repo.findById(quizid);
+		
+		if(quiz.isPresent())
+		{
+			question_repo.deleteByQuizschedule(quizid);
+			quiz_schedule_repo.deleteById(quizid);
+		}
+		else {
+			return "Quiz schedule Not Availaible...";
+		}
+		
+		return "Quiz schedule deleted...";
+	}
+	
+	@GetMapping(value="/getschedulebyid/{quizid}")
+	public QuizScheduleEntity getQuizScheduleById(@PathVariable int quizid)
+	{
+		Optional<QuizScheduleEntity> quiz_obj = quiz_schedule_repo.findById(quizid);
+		return quiz_obj.get();
+	}
+	
 	@PutMapping(value="/editquizschedule/{quizid}")
 	public ResponseEntity<QuizScheduleEntity> editSchedule(@RequestBody QuizScheduleEntity q,@PathVariable int quizid)
 	{
@@ -103,30 +133,49 @@ public class QuizScheduleController {
 		
 	}
 	
-	@PostMapping(value="/deleteschedule/{quizid}")
-	public String delete_Quiz_schedule(@PathVariable int quizid)
+	@GetMapping(value="/getschedulebydate")
+	public List<QuizScheduleEntity> getQuizByScheduledDate()
 	{
-		Optional<QuizScheduleEntity> quiz = quiz_schedule_repo.findById(quizid);
 		
-		if(quiz.isPresent())
+		List<QuizScheduleEntity> list = quiz_schedule_repo.findAll();
+		List<QuizScheduleEntity> quiz_schedule = new ArrayList<QuizScheduleEntity>();
+		
+		
+		GregorianCalendar gcal = new GregorianCalendar();
+		 int day = gcal.get(Calendar.DATE);
+		 int month=gcal.get(Calendar.MONTH)+1;
+		 int year = gcal.get(Calendar.YEAR);
+		 String date="";
+		 String day1="";
+		 String mon = "";
+		 if(day<10)
+		 {
+			 day1 = "0"+day;
+		 }
+		 else
+		 {
+			 day1 = ""+day;
+		 }
+		 if(month<10)
+		 {
+			 mon = "0"+month;
+		 }
+		 else
+		 {
+			 mon = ""+month;
+		 }
+		  date = year+"-"+mon+"-"+day1;
+		for(QuizScheduleEntity q : list)
 		{
-			question_repo.deleteByQuizschedule(quizid);
-			quiz_schedule_repo.deleteById(quizid);
-		}
-		else {
-			return "Quiz schedule Not Availaible...";
+			String d=q.getScheduleDate();
+			if(d.equals(date))
+			{
+				quiz_schedule.add(q);
+			}
 		}
 		
-		return "Quiz schedule deleted...";
+		return quiz_schedule;
+		
 	}
-	
-	@GetMapping(value="/getschedulebyid/{quizid}")
-	public QuizScheduleEntity getQuizScheduleById(@PathVariable int quizid)
-	{
-		Optional<QuizScheduleEntity> quiz_obj = quiz_schedule_repo.findById(quizid);
-		return quiz_obj.get();
-	}
-	
-	
 
 }
