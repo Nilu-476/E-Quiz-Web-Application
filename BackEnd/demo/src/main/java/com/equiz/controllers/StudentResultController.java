@@ -74,4 +74,22 @@ public class StudentResultController {
 		}
 	}
 
+	@GetMapping(value = "/getallquizresult/{username}")
+	public List<ResultEntity> getAllResults(@PathVariable String username)
+	{
+		StudentEntity s = studrepo.findByUsername(username);
+		List<ResultEntity> l = new ArrayList<ResultEntity>();
+		
+		List<ResultEntity> results = resRepo.findAll();
+		for(ResultEntity r : results)
+		{
+			if(r.getStudent().getUsername().equals(s.getUsername()))
+			{
+				l.add(r);
+			}
+		}
+		
+		return l;
+	}
+
 }
