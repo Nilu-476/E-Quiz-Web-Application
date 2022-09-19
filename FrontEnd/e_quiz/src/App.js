@@ -6,7 +6,6 @@ import FacultyLogin from './Components/FacultyComponent/Login/FacultyLogin';
 import FacultyRegistration from './Components/FacultyComponent/Login/FacultyRegistration';
 import AddQuestion from './Components/FacultyComponent/Question/AddQuestion';
 import Homepage from './Components/HomeComponent/Homepage';
-import Logout from './Components/Logout';
 import StudentLogin from './Components/StudentComponent/StudentLoginComponent/StudentLogin';
 import StudentRegistration from './Components/StudentComponent/StudentLoginComponent/StudentRegistration';
 import StudentDashboard from './Components/StudentComponent/Dashboard/StudentDashboard';
@@ -18,6 +17,9 @@ import Feedback from './feedback';
 import StartExam from './Components/StudentComponent/Exam/StartExam';
 import ViewQuiz from './Components/FacultyComponent/Question/ViewQuiz';
 import Result from './Components/ResultComponent/Result';
+import FacultyLogout from './Components/FacultyComponent/Login/FacultyLogout';
+import StudentLogout from './Components/StudentComponent/StudentLoginComponent/StudentLogout';
+import StudentProfileEdit from './Components/StudentComponent/StudentLoginComponent/StudentProfileEdit';
 
 function App() {
   return (
@@ -28,6 +30,7 @@ function App() {
         <Route exact path='/StudentLogin' element={<StudentLogin/>}></Route>
         <Route exact path='/StudentRegistration' element={<StudentRegistration/>}></Route>
         <Route exact path='/StudentDashboard' element={<StudentDashboard/>}></Route>
+        <Route exact path='/StudentProfileEdit' element={<StudentProfileEdit/>}></Route>
         <Route exact path='/FacultyLogin' element={<FacultyLogin/>}></Route>
         <Route exact path='/FacultyRegistration' element={<FacultyRegistration/>}></Route>
         <Route exact path='/FacultyDashboard' element={<FacultyDashboard/>}></Route>
@@ -38,9 +41,10 @@ function App() {
         <Route exact path='/DeleteQuestion' element={<DeleteQuestion/>}></Route>
         <Route exact path='/DemoQuiz' element={<DemoQuiz/>}></Route>
         <Route exact path='/StartExam' element={<StartExam/>}></Route>
-        <Route exact path='/Logout' element={<Logout/>}></Route>
         <Route exact path='/Feedback' element={<Feedback/>}></Route>
         <Route exact path='/Result' element={<Result/>}></Route>
+        <Route exact path='/FacultyLogout' element={<FacultyLogout/>}></Route>
+        <Route exact path='/StudentLogout' element={<StudentLogout/>}></Route>
       </Routes>
       </BrowserRouter>
 </div>

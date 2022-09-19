@@ -21,22 +21,25 @@ export default function FacultyLogin()
   
   const handleApi=()=>{
    setPassword({uname,password})
-   axios.post(`http://localhost:8080/faculty/facultylogin/${uname}/${password}`
+   axios.post(`http://localhost:8080/faculty/facultylogin/${uname}/${password}`,uname,password
    )
-    .then((response)=>{
-     console.log(response.data);
-     alert('success');
- 
-   })   //then block ends
+    .then((result)=>
+  {
+     console.log(result);
+     if(result.data !== "")
+     {
+        alert('Login SuceessFull');
+        sessionStorage.setItem('faculty',JSON.stringify(result.data));
+     }
+     else{
+      alert('Invalid Login');
+      navigate("/FacultyLogin");
+     }
+   }) .then(
+      navigate("/FacultyDashboard")
 
-   
-   .then(
-    navigate("/FacultyDashboard")
-   )
-     
-   .catch(error=>{
-    console.log(error);
-     alert('invalid login'); 
+   ) .catch(error=>{
+    console.log(error); 
    })   //catch block ends
   
    

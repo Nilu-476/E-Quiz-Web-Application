@@ -1,21 +1,40 @@
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 export default function ViewQuiz()
 {
+  const data =sessionStorage.getItem('faculty');
+  const {firstName , middleName , lastName }=JSON.parse(data);
+      // ...................................
+
+     const [ViewQuiz ,setViewQuiz] = useState([]);
+     useEffect(()=>
+     {
+       async function GetViewQuiz()
+       {
+         let value=await axios.get('http://localhost:8080/quizschedule/getschedulebyid');
+         setViewQuiz(value.data);
+       }
+       GetViewQuiz();
+     },[]);
+
       return(
              <body >
-            <div className="header">
+            <div className="header main">
             <h1>Quiz Details</h1>
+            <div className="text-light">
+                  <h4> Welcome {firstName} {middleName} {lastName} </h4>
             </div>
-
-<div className="navbar">
+            </div>
+      <div className="navbar">
       <Link to="/FacultyDashboard">Back</Link>
       <Link to="/" >Home</Link>
       <Link to="/Logout">LogOut</Link>
       </div>                   
 
 
-<table className="table align-items-center container border border-dark  bg-white text-dark fw-bolder">
+<table className="table align-items-center container border border-dark  bg-gradient text-dark fw-bolder">
   <thead className="xl-6 bg-warning text-dark ">
     <tr>
       <th>Quiz ID</th>
@@ -25,30 +44,40 @@ export default function ViewQuiz()
     </tr>
   </thead>
   <tbody className="align-middle xl-3 border border-dark align-items-center">
-    <tr>
-      <td>
-          <div className="ms-3 fw-bolder">
-            2153
-          </div>
-      </td>
-      <td>
-          <div className="ms-3 fw-bolder">
-            ADVJ
-          </div>
-      </td>
-      <td><div className="ms-3 fw-bolder">
-            60 min
-      </div>
-      </td>
-      <td>
-      <div >
-      <Link to="/AddQuestion" id="" className="btn btn-success btn-sm mb-4 align-center">View Questions</Link>&emsp;
-      <Link to="/AddQuestion" id="" className="btn btn-dark btn-sm mb-4 align-center">Add Questions</Link>&emsp;
-      <Link to="/UpdateQuestion" id="" className="btn btn-primary btn-sm mb-4 align-center">Update Questions</Link>&emsp;
-      <Link to="/DeleteQuestion" id="" className="btn btn-danger btn-sm mb-4 align-center">Delete Question</Link>
-      </div>
-      </td>
-    </tr>
+   {
+    ViewQuiz.map((data,i)=>
+    {
+      return(
+        <tr key={i}>
+        <td>
+            <div className="ms-3 fw-bolder">
+            {data.quizId}
+            </div>
+        </td>
+        <td>
+            <div className="ms-3 fw-bolder">
+            {data.quizName}
+            </div>
+        </td>
+        <td><div className="ms-3 fw-bolder">
+             {data.quizDesc}
+        </div>
+        </td>
+        <td>
+        <div >
+        <NavLink exact to={`/AddQuestion/${data.quizId}`}>
+               <button>Add Questions</button>  
+        </NavLink> 
+        <Link to={`/ViewQuestion/${data.quizId}`} id="" className="btn btn-success btn-sm mb-4 align-center">View Questions</Link>&emsp;
+        <Link to={`/AddQuestion/${data.quizId}`} id="" className="btn btn-dark btn-sm mb-4 align-center">Add Questions</Link>&emsp;
+        <Link to={`/UpdateQuestion/${data.quizId}`} id="" className="btn btn-primary btn-sm mb-4 align-center">Update Questions</Link>&emsp;
+        <Link to={`/DeleteQuestion/${data.quizId}`} id="" className="btn btn-danger btn-sm mb-4 align-center">Delete Question</Link>
+        </div>
+        </td>
+      </tr>
+      )
+    })
+   }
   </tbody>
 </table>  
 <br/><br/> 
