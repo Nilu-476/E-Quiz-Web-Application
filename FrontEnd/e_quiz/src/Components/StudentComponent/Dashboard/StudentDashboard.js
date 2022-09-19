@@ -1,33 +1,48 @@
-import { Component } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './StudentDashboard.css';
-export default class StudentDashboard extends Component
+export default function StudentDashboard()
 {
-      render()
-      {     
+ 
+            const data =sessionStorage.getItem('student');
+            const {firstName , middleName , lastName }=JSON.parse(data);
 
+            //sessionStorage.removeItem()
+
+            const [StudentData,setStudentdata]=useState([]);
+
+            useEffect(()=>
+            {
+                  async function GetStudentQuiz()
+                  {
+                        let value = await axios.get('http://localhost:8080/quizschedule/getschedulebyid');
+                        setStudentdata(value.data);
+                  }
+                  GetStudentQuiz();
+            },[]);
+            
             return(
-                  <>
-                  <body className="main">
-
-                  <div className="header">
+            <>
+            <body className="main">
+            <div className="header">
             <h1>Student Dashboard</h1>
+            <div className="text-light">
+                  <h4> Welcome {firstName} {middleName} {lastName} </h4>
             </div>
-       
+            </div>
             <div className="navbar">
-                  <Link to="/StartExam" >Start Exam</Link>
-                  <a href="./CreatePaper.html">Attempt Quiz</a>
                   <a href="./Updatepaper.html">View Results</a>
                   <Link to="/Feedback">Give Feedback</Link>
                   <a href="./Results.html">Performance Statastics</a>
-                  <Link to="/">Home</Link>
-                  <Link to="/Logout">LogOut</Link>
+                  <Link to="/StudentProfileEdit">Edit Profile</Link>
+                  <Link to="/StudentLogout">LogOut</Link>
                   </div>                   
             </body>
             <br/><br/><br/><br/>
             <table className="table align-middle mb-0 border border-dark  bg-white text-dark">
 
-  <thead className="bg-warning text-dark align-items-center fw-bolder">
+  <thead className="bg-warning text-dark align-items-center fw-bolder ">
     <tr>
       <th>Quiz ID</th>
       <th>Quiz Topic</th>
@@ -39,34 +54,40 @@ export default class StudentDashboard extends Component
     </tr>
   </thead>
   <tbody className="border border-dark align-items-center">
-    <tr>
-      <td>
+    {
+      StudentData.map((data,i)=>
+      {
+            console.log(data);
+            return(
+                  
+            <tr key={i}>
+            <td>
           <div className="ms-3 fw-bolder">
-            ADVJ
+            {data.quizId}
           </div>
       </td>
       <td>
       <div className="ms-3 fw-bolder">
-            Advanced Java
+           {data.quizName}
           </div>
       </td>
       <td>
       <div className="ms-3 fw-bolder">
-            Spring Boot Rest Api
+           {data.quizDesc}
       </div> 
       </td>
       <td>
       <div className="ms-3 fw-bolder">
-            14/09/2022
+            {data.scheduleDate}
       </div>
       </td>
       <td>
       <div className="ms-3 fw-bolder">
-            4.00 PM
+            {data.scheduleTime}
       </div>
       </td>
       <td><div className="ms-3 fw-bolder">
-            60 min
+            {data.duration}
       </div>
       </td>
       <td>
@@ -75,13 +96,12 @@ export default class StudentDashboard extends Component
       </div>
       </td>
     </tr>
+            )
+      })
+    }
   </tbody>
 </table>  
-<br/><br/>
-<div className="col-md-4 mb-4">
-<Link to="/AddQuizSchedule" className="btn btn-dark text-light btn-mb mb-1">Add Quiz Schedule</Link>
-</div>   
+<br/><br/>  
       </>
             )
       }
-}

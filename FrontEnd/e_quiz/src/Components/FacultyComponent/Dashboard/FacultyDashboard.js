@@ -1,26 +1,40 @@
-import { Component, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import './FacultyDashboard.css';
-import { useSelector } from "react-redux";
-import FacultyLogin from "../Login/FacultyLogin";
 
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 export default function FacultyDashboard()
 {
       
-     
+      const data =sessionStorage.getItem('faculty');
+      const {firstName , middleName , lastName ,userName}=JSON.parse(data);
+      // ...................................
+
+     const [Quiz ,setQuiz]=useState([]);
+     useEffect(()=>
+     {
+      async function GetAllSchedule()
+      {
+            let value=await axios.get(`http://localhost:8080/quizschedule/viewschedule/${userName}`);
+            setQuiz(value.data);
+      }
+      GetAllSchedule();
+     },[]);
+
             return(
                   <>
                   <body className="main">
 
             <div className="header">
                   <h1>Faculty Dashboard</h1>
+            <div className="text-light">
+                  <h4> Welcome {firstName} {middleName} {lastName} </h4>
+            </div>
             </div>
        
-            <div className="navbar">
+            <div className=" navbar align-items-left ">
                   <Link to="/ViewQuiz">View Quiz</Link>
                   <a href="./Results.html">Results</a>
-                  <Link to="/" >Home</Link>
-                  <Link to="/Logout">LogOut</Link>
+                  <Link to="/FacultyLogout">LogOut</Link>
                   </div>                   
             </body>
     
@@ -43,49 +57,55 @@ export default function FacultyDashboard()
     </tr>
   </thead>
   <tbody className="border border-dark align-items-center">
-    <tr>
+   {
+      Quiz.map((data,i)=>
+      {
+            console.log(data);
+
+      return(
+      <tr key={i}>
       <td>
           <div className="ms-3 fw-bolder">
-            2153
-          </div>
+            {data.teacher.facultyId}
+            </div>
       </td>
       <td>
           <div className="ms-3 fw-bolder">
-            ADVJ
+            {data.quizId}
           </div>
       </td>
       <td>
       <div className="ms-3 fw-bolder">
-            Advanced Java
+            {data.quizName}
           </div>
       </td>
       <td>
       <div className="ms-3 fw-bolder">
-            Spring Boot Rest Api
+            {data.quizDesc}
       </div> 
       </td>
       <td>
       <div className="ms-3 fw-bolder">
-            14/09/2022
+            {data.scheduleDate}
       </div>
       </td>
       <td>
       <div className="ms-3 fw-bolder">
-            4.00 PM
+            {data.scheduleTime}
       </div>
       </td>
       <td><div className="ms-3 fw-bolder">
-            60 min
+            {data.duration}
       </div>
       </td>
       <td>
       <div >
-      <button type="submit" className="btn btn-success btn-sm mb-1 ">View</button>&emsp;
-      <Link to="/UpdateQuizSchedule" className="btn btn-primary btn-sm mb-1">Edit</Link>&emsp;
-      <button type="submit" className="btn btn-danger btn-sm mb-1">Delete</button>
+      <Link to="/UpdateQuizSchedule" className="btn btn-primary btn-sm mb-1" id={data.quizid}>Update</Link>&emsp;
+      <Link to="/..." type="submit" className="btn btn-danger btn-sm mb-1">Delete</Link>
       </div>
       </td>
     </tr>
+      )})}
   </tbody>
 </table>  
 <br/><br/>

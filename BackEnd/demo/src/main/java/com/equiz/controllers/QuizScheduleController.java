@@ -96,11 +96,11 @@ public class QuizScheduleController {
 		return "Quiz schedule deleted...";
 	}
 	
-	@GetMapping(value="/getschedulebyid/{quizid}")
-	public QuizScheduleEntity getQuizScheduleById(@PathVariable int quizid)
+	@GetMapping(value="/getschedulebyid") // for student side display
+	public List<QuizScheduleEntity> getQuizScheduleById()
 	{
-		Optional<QuizScheduleEntity> quiz_obj = quiz_schedule_repo.findById(quizid);
-		return quiz_obj.get();
+		List<QuizScheduleEntity> quiz_obj = quiz_schedule_repo.findAll();
+		return quiz_obj;
 	}
 	
 	@PutMapping(value="/editquizschedule/{quizid}")

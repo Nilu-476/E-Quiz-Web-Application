@@ -20,20 +20,26 @@ export default function StudentLogin()
   
   const handleApi=()=>{
    setPassword({uname,password})
-   axios.post(`http://localhost:8080/student/studentlogin/${uname}/${password}`
+   axios.post(`http://localhost:8080/student/studentlogin/${uname}/${password}` , uname , password
  ).then((result)=>
   {
-    console.log(result.data);
-     alert('Login Successfull');
-   })
-   .then(
-    navigate("/StudentDashboard")
-   )
+    console.log(result);
+    if(result.data !== "")
+     {
+      alert('Login Successfull');
+      sessionStorage.setItem('student',JSON.stringify(result.data));
+      
+     }
+     else
+     {
+      alert('Inavlid Login');
+      navigate("/StudentLogin")
 
-
+     }
+   }).then(navigate("/StudentDashboard"))
    .catch(error=>{
-     alert('invalid login');
      console.log(error);
+     
    })
   }  
 

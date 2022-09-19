@@ -41,8 +41,8 @@ public class QuestionController {
 	
 	@Autowired
 	QuizScheduleRepo quizrepo;
-
-
+	
+	//http://localhost:8080/managequestion/addquestion/{qid}
 	
 	@PostMapping(value = "/addquestion/{qid}")//add question by quiz id
 	public ResponseEntity<QuestionTypeText> addQuestion(@RequestBody QuestionTypeText question,@PathVariable  int qid)
