@@ -73,7 +73,7 @@ export default function ViewQuiz()
                <button>Add Questions</button>  
         </NavLink> 
         <Link to={`/ViewQuestion/${data.quizId}`} id="" className="btn btn-success btn-sm mb-4 align-center">View Questions</Link>&emsp;
-        <Link to={`/AddQuestion/${data.quizId}`} id="" className="btn btn-dark btn-sm mb-4 align-center">Add Questions</Link>&emsp;
+        <Link to={`/AddQuestion/${data.quizId}`} id="" className="btn btn-dark btn-sm mb-4 align-center">Questions</Link>&emsp;
         <Link to={`/UpdateQuestion/${data.quizId}`} id="" className="btn btn-primary btn-sm mb-4 align-center">Update Questions</Link>&emsp;
         <Link to={`/DeleteQuestion/${data.quizId}`} id="" className="btn btn-danger btn-sm mb-4 align-center">Delete Question</Link>
         </div>

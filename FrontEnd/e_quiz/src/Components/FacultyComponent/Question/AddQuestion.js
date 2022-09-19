@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function AddQuestion()
 {
     //const quizId=useParams('');
+       const {quizId}=useParams('quizId');
        
+       console.log(quizId);
       return(
         <>
         <div className="shadow-none p-4 xl-5 bg-info bg-gradient ">
@@ -23,7 +25,7 @@ export default function AddQuestion()
         <b>Faculty ID :</b> &emsp;<input type="number"  className="form-control" />
         </div>
         <div className="form-outline mb-4">
-        <b>Quiz ID :</b> &emsp;<input type="number"  className="form-control" />
+        <b>Quiz ID :</b> &emsp;<input type="number" value={quizId} className="form-control" />
         </div>
         <div className="form-outline mb-4">
         <b>Question :</b> &emsp;<textarea type="text"  className="form-control" />
