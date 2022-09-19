@@ -69,49 +69,36 @@ public class StudentController {
 	}
 	
 	
-	@PostMapping(value="/editstudentprofile")
-	public String editstudentprofile(@RequestBody StudentEntity stud)
+	@PutMapping(value = "/editstudentprofile/{prnno}")
+	public ResponseEntity<StudentEntity> editstudentprofile(@RequestBody StudentEntity stud, @PathVariable long prnno)
 	{
-		if(stud.getFirstName() != "")
-		{
-			repo.updateFirstName(stud.getFirstName(), stud.getPrnNo());
-		}
-		if(stud.getMiddleName() != "")
-		{
-			repo.updateMiddleName(stud.getMiddleName(),stud.getPrnNo());
-		}
-		if(stud.getLastName() != "")
-		{
-			repo.updateLastName(stud.getLastName(), stud.getPrnNo());
-		}
-		if(stud.getEmail() != "")
-		{
-			repo.updateEmail(stud.getEmail(), stud.getPrnNo());
-		}
-		if(stud.getMobileNo() != 0)
-		{
-		   repo.updateMobileNo(stud.getMobileNo(), stud.getPrnNo());
-		}
-		if(stud.getGender()!= "")
-		{
-			repo.updateGender(stud.getGender(), stud.getPrnNo());
-		}
-		if(stud.getDateOfBirth()!="")
-		{
-			repo.updateDateOfBirth(stud.getDateOfBirth(), stud.getPrnNo());
-		}
-		if(stud.getUsername()!="")
-		{
-			repo.updateUsername(stud.getUsername(), stud.getPrnNo());
-		}
-		if(stud.getPassword()!="")
-		{
-			repo.updatePassword(stud.getPassword(), stud.getPrnNo());
-		}
+		Optional<StudentEntity> obj = repo.findById(prnno);
 		
-		return "profile updated Sucessfully....";
-		
-		
+		if(obj.isPresent())
+		{
+			StudentEntity s = obj.get();
+			s.setFirstName(stud.getFirstName());
+			s.setMiddleName(stud.getMiddleName());
+			s.setLastName(stud.getLastName());
+			s.setEmail(stud.getEmail());
+			s.setMobileNo(stud.getMobileNo());
+			s.setGender(stud.getGender());
+			s.setDateOfBirth(stud.getDateOfBirth());
+			s.setUsername(stud.getUsername());
+			s.setPassword(stud.getPassword());
+			
+			try {
+				return new ResponseEntity<>(repo.save(s), HttpStatus.OK);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		else
+		{
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		return null;
 	}
 	
 	
