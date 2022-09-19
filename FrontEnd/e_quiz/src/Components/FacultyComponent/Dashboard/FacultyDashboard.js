@@ -22,29 +22,26 @@ export default function FacultyDashboard()
 
             return(
                   <>
-                  <body className="main">
-
+            <body className="main">
             <div className="header">
                   <h1>Faculty Dashboard</h1>
             <div className="text-light">
                   <h4> Welcome {firstName} {middleName} {lastName} </h4>
             </div>
             </div>
-       
-            <div className=" navbar align-items-left ">
+            <div className=" navbar ">
                   <Link to="/ViewQuiz">View Quiz</Link>
                   <a href="./Results.html">Results</a>
                   <Link to="/FacultyLogout">LogOut</Link>
                   </div>                   
             </body>
-    
+            <div className="about  p-3 col-xl-12">
             <br/><br/><br/><br/>
             <div className="col-md-4 mb-4">
-            <Link to="/AddQuizSchedule" className="btn btn-dark text-light btn-mb mb-1">Add Quiz Schedule</Link>
-            </div>
-            
-      <table className="table align-items-center container border border-dark  bg-white text-dark fw-bolder">
-      <thead className="bg-warning text-dark ">
+            <Link to="/AddQuizSchedule" className="btn btn-secondary text-light btn-mb mb-1">Add Quiz Schedule</Link>
+            </div>     
+      <table className="table align-middle mb-0 border border-light bg-transparent text-light">
+      <thead className="bg-secondary text-light" style={{fontSize:"20px"}}>
       <tr>
       <th>Faculty ID</th>
       <th>Quiz ID</th>
@@ -56,7 +53,7 @@ export default function FacultyDashboard()
       <th>Actions</th>
     </tr>
   </thead>
-  <tbody className="border border-dark align-items-center">
+  <tbody className="border border-light align-items-center" style={{fontSize:"18px"}}>
    {
       Quiz.map((data,i)=>
       {
@@ -109,6 +106,8 @@ export default function FacultyDashboard()
   </tbody>
 </table>  
 <br/><br/>
+</div>
+
 
    
                   </>

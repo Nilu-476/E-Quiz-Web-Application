@@ -8,11 +8,38 @@
       font-family: 'Times New Roman', Times, serif;
       color: aqua;
     }
+
+    .demo
+    {
+      background-image: url("https://wallpaperaccess.com/full/5651990.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+    }
+
+    .contactus
+    {
+      background-image: url("https://wallpaperaccess.com/full/3124541.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+    }
+
+    .about
+    {  
+      background-image: url("https://www.vnaya.com/VnayaSite/assets/Backend/upload/blogs/website-design-background-1.jpg");
+      background-repeat: no-repeat;
+    }
   
 .header 
 {
   padding: 10px; /* some padding */
   text-align: center; /* center the text */
+  background-image: url("https://previews.123rf.com/images/kurkalukas/kurkalukas2003/kurkalukas200300204/143579193-abstract-dark-black-and-grey-modern-material-header-technology-banner-vector-abstract-widescreen-bac.jpg");
+  background-position: center;
+  background-size: cover;
   background:#19547c ; /* green background */
   color: wheat; /* white text color */
 }

@@ -50,12 +50,13 @@ export default function StudentLogin()
   </BrowserRouter>
 
   return(
-        <div className="shadow-none p-3 xl-5 bg-info bg-gradient">
+        <div style={{backgroundImage:'url("https://c0.wallpaperflare.com/preview/335/160/43/background-beverage-coffee-compose.jpg")', backgroundRepeat:"no-repeat" , backgroundSize:"cover" }}>
+        <div className="p-3 xl-5 ">
         <section className="h-100 h-custom">
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
-            <div className="col-lg-8 col-xl-6">
-              <div className="card rounded-4">
+            <div className="col-lg-8 col-xl-6 ">
+              <div className="card rounded-4 border border-dark">
                 <img src="https://thumbs.dreamstime.com/b/user-login-digital-screen-digitally-generated-43652194.jpg"
                   className="w-80"alt="" />
                 <div className="card-body p-4 p-md-8">
@@ -90,6 +91,7 @@ export default function StudentLogin()
           </div>
         </div>
       </section>
+            </div>
             </div>
             )
       }

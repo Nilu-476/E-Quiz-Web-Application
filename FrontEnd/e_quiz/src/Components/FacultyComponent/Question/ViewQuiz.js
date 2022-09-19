@@ -33,9 +33,12 @@ export default function ViewQuiz()
       <Link to="/Logout">LogOut</Link>
       </div>                   
 
+<div className="about p-3 xl-5">
+<br/><br/> 
+<br/><br/> 
 
-<table className="table align-items-center container border border-dark  bg-gradient text-dark fw-bolder">
-  <thead className="xl-6 bg-warning text-dark ">
+<table className="table align-items-center border border-light  bg-transparent text-light fw-bolder">
+  <thead className="xl-6 bg-secondary text-light" style={{fontSize:"20px"}}>
     <tr>
       <th>Quiz ID</th>
       <th>Quiz Topic</th>
@@ -43,7 +46,7 @@ export default function ViewQuiz()
       <th>Actions</th>
     </tr>
   </thead>
-  <tbody className="align-middle xl-3 border border-dark align-items-center">
+  <tbody className="align-middle xl-3 border border-light align-items-center" style={{fontSize:"18px"}}>
    {
     ViewQuiz.map((data,i)=>
     {
@@ -81,6 +84,7 @@ export default function ViewQuiz()
   </tbody>
 </table>  
 <br/><br/> 
+</div>
 </body>  
       )
 }

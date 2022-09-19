@@ -98,12 +98,13 @@ export default function StudentRegistration()
   
       
           return(
-            <div className="shadow-none p-3 xl-5 bg-info bg-gradient">
+            <div style={{backgroundImage:'url("https://c1.wallpaperflare.com/preview/250/615/762/all-black-black-business-desk.jpg")', backgroundRepeat:"no-repeat" , backgroundSize:"cover" }}>
+            <div className="shadow-none p-3 xl-5 ">
             <section className="h-100 h-custom">
             <div className="container py-5 h-100">
             <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-lg-8 col-xl-6">
-            <div className="card rounded-3">
+            <div className="card rounded-3 border border-dark">
             <img src="https://mds.healthcare/wp-content/uploads/2021/07/18-7-1.png"
             className="w-100" alt='...' />
             <div className="card-body p-4 p-md-5">
@@ -180,6 +181,7 @@ export default function StudentRegistration()
     </div>
   </div>
 </section>
+      </div>
       </div>
             )
       }

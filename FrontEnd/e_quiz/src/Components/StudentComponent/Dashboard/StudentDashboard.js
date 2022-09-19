@@ -24,7 +24,7 @@ export default function StudentDashboard()
             
             return(
             <>
-            <body className="main">
+            <body className="main ">
             <div className="header">
             <h1>Student Dashboard</h1>
             <div className="text-light">
@@ -39,10 +39,11 @@ export default function StudentDashboard()
                   <Link to="/StudentLogout">LogOut</Link>
                   </div>                   
             </body>
+            <div className="about p-3 xl-5">
             <br/><br/><br/><br/>
-            <table className="table align-middle mb-0 border border-dark  bg-white text-dark">
+            <table className="table align-middle mb-0 border border-light bg-transparent text-light">
 
-  <thead className="bg-warning text-dark align-items-center fw-bolder ">
+  <thead className="bg-secondary text-light align-items-center fw-bolder" style={{fontSize:"20px"}}>
     <tr>
       <th>Quiz ID</th>
       <th>Quiz Topic</th>
@@ -53,7 +54,7 @@ export default function StudentDashboard()
       <th>Actions</th>
     </tr>
   </thead>
-  <tbody className="border border-dark align-items-center">
+  <tbody className="border border-light align-items-center" style={{fontSize:"18px"}}>
     {
       StudentData.map((data,i)=>
       {
@@ -102,6 +103,8 @@ export default function StudentDashboard()
   </tbody>
 </table>  
 <br/><br/>  
+</div>
+
       </>
             )
       }
