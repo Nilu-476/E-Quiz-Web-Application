@@ -38,7 +38,7 @@ function App() {
         <Route exact path='/ViewQuiz' element={<ViewQuiz/>}></Route>
         <Route exact path='/AddQuizSchedule' element={<AddQuizSchedule/>}></Route>
         <Route exact path='/UpdateQuizSchedule' element={<UpdateQuizSchedule/>}></Route>
-        <Route exact path='/AddQuestion' element={<AddQuestion/>} ></Route>
+        <Route exact path='/AddQuestion/:quizId' element={<AddQuestion/>} ></Route>
         <Route exact path='/UpdateQuestion' element={<UpdateQuestion/>}></Route>
         <Route exact path='/DeleteQuestion' element={<DeleteQuestion/>}></Route>
         <Route exact path='/DemoQuiz' element={<DemoQuiz/>}></Route>
