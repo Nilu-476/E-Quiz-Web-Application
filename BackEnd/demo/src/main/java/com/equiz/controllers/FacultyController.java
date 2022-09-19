@@ -1,17 +1,23 @@
 package com.equiz.controllers;
 
+import java.util.Optional;
+
 //import java.util.ArrayList;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.equiz.entities.FacultyEntity;
+import com.equiz.entities.StudentEntity;
 import com.equiz.repositories.FacultyRepo;
 
 
@@ -40,7 +46,7 @@ public class FacultyController {
 	}
 	
 	@PostMapping(value="/facultylogin/{username}/{password}")
-	public FacultyEntity faculty_Login(@PathVariable String username,@PathVariable String password)
+	public String faculty_Login(@PathVariable String username,@PathVariable String password)
 	{
 		
 		FacultyEntity fac_obj = repo.findByUserName(username);
@@ -50,11 +56,11 @@ public class FacultyController {
 		{
 			if(passwd.equals(password))
 			{
-				return fac_obj;
+				return "Pass";
 			}
 		}
 		
-		return null;
+		return "Fail";
 	}
 
 	@GetMapping(value="/getfacultyprofile/{uname}")
@@ -65,7 +71,37 @@ public class FacultyController {
 		
 	}
 	
-	
+	@PutMapping(value = "/editfacultyprofile/{facultyid}")
+	public ResponseEntity<FacultyEntity> editfacultyprofile(@RequestBody FacultyEntity fac, @PathVariable long facultyid)
+	{
+		Optional<FacultyEntity> obj = repo.findById(facultyid);
+		
+		if(obj.isPresent())
+		{
+			FacultyEntity f = obj.get();
+			f.setFirstName(fac.getFirstName());
+			f.setMiddleName(fac.getMiddleName());
+			f.setLastName(fac.getLastName());
+			f.setEmail(fac.getEmail());
+			f.setMobileNo(fac.getMobileNo());
+			f.setGender(fac.getGender());
+			f.setDateOfBirth(fac.getDateOfBirth());
+			f.setUserName(fac.getUserName());
+			f.setPassword(fac.getPassword());
+			
+			try {
+				return new ResponseEntity<>(repo.save(f), HttpStatus.OK);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		else
+		{
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		return null;
+	}
 	
 	
 	

@@ -2,19 +2,24 @@ package com.equiz.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 //import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.equiz.entities.QuestionTypeText;
+import com.equiz.entities.QuizScheduleEntity;
 import com.equiz.entities.StudentEntity;
 import com.equiz.repositories.QuestionTextRepo;
 import com.equiz.repositories.StudentRepo;
@@ -43,7 +48,7 @@ public class StudentController {
 	}
 	
 	@PostMapping(value="/studentlogin/{username}/{password}")
-	public StudentEntity student_Login(@PathVariable String username,@PathVariable String password)
+	public String student_Login(@PathVariable String username,@PathVariable String password)
 	{
 		
 		StudentEntity stud_obj = repo.findByUsername(username);
@@ -53,11 +58,11 @@ public class StudentController {
 		{
 			if(passwd.equals(password))
 			{
-				return stud_obj;
+				return "pass";
 			}
 		}
 		
-		return null;
+		return "fail";
 	}
 	
 	@GetMapping(value="/getstudentprofile/{uname}")
@@ -66,39 +71,6 @@ public class StudentController {
 		StudentEntity stud_info = repo.findByUsername(uname);
 		return stud_info;
 		
-	}
-	
-	
-	@PutMapping(value = "/editstudentprofile/{prnno}")
-	public ResponseEntity<StudentEntity> editstudentprofile(@RequestBody StudentEntity stud, @PathVariable long prnno)
-	{
-		Optional<StudentEntity> obj = repo.findById(prnno);
-		
-		if(obj.isPresent())
-		{
-			StudentEntity s = obj.get();
-			s.setFirstName(stud.getFirstName());
-			s.setMiddleName(stud.getMiddleName());
-			s.setLastName(stud.getLastName());
-			s.setEmail(stud.getEmail());
-			s.setMobileNo(stud.getMobileNo());
-			s.setGender(stud.getGender());
-			s.setDateOfBirth(stud.getDateOfBirth());
-			s.setUsername(stud.getUsername());
-			s.setPassword(stud.getPassword());
-			
-			try {
-				return new ResponseEntity<>(repo.save(s), HttpStatus.OK);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		else
-		{
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-		return null;
 	}
 	
 	

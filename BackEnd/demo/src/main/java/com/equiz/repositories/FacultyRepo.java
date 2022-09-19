@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import com.equiz.entities.FacultyEntity;
 
 @Repository
-public interface FacultyRepo extends JpaRepository<FacultyEntity, Integer>{
+public interface FacultyRepo extends JpaRepository<FacultyEntity, Long>{
 
 //	public List<FacultyEntity> findByUserName(String uname);
 //	

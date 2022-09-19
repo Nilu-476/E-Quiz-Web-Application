@@ -54,20 +54,20 @@ public class StudentResultController {
 	{
 		String studUname=result.getStudent().getUsername();
 		StudentEntity obj = studrepo.findByUsername(studUname);
-		Date date = new Date();
+		Date date = new Date(); 
 		try {
 			Optional<QuizScheduleEntity> quiz = qrepo.findById(quizid);
 			QuizScheduleEntity quizobj = quiz.get();
 			
-			int totalMarks=0;
+			int totalMarks=0;//
 			List<QuestionTypeText> qlist = queRepo.findByQuizschedule(quizid);
 			for(QuestionTypeText q: qlist)
 			{
-				totalMarks += q.getMarks();
+				totalMarks = totalMarks + q.getMarks();
 			}
 			
 			ResultEntity res = resRepo.save(new ResultEntity(0,date,result.getMarksObtained(),
-					totalMarks,obj,quizobj));
+					totalMarks,obj,quizobj)); //changed
 			return new ResponseEntity<>(res, HttpStatus.CREATED);
 			
 		}catch(Exception e)
@@ -75,12 +75,12 @@ public class StudentResultController {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR); 
 		}
 	}
-
+	
 	@GetMapping(value = "/getallquizresult/{username}")
 	public List<ResultEntity> getAllResults(@PathVariable String username)
 	{
 		StudentEntity s = studrepo.findByUsername(username);
-		List<ResultEntity> l = new ArrayList <ResultEntity>();
+		List<ResultEntity> l = new ArrayList<ResultEntity>();
 		
 		List<ResultEntity> results = resRepo.findAll();
 		for(ResultEntity r : results)
@@ -93,8 +93,8 @@ public class StudentResultController {
 		
 		return l;
 	}
-          
-         @GetMapping(value = "/getallquizresultbyid/{quizid}")
+	
+	@GetMapping(value = "/getallquizresultbyid/{quizid}")
 	public List<ResultEntity> getAllResults(@PathVariable int quizid)
 	{
 		QuizScheduleEntity q = qrepo.findByQuizid(quizid);
@@ -137,7 +137,29 @@ public class StudentResultController {
 		else
 			return "Results not deleted";
 	}
-
-
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

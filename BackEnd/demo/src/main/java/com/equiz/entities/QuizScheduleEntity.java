@@ -22,6 +22,9 @@ public class QuizScheduleEntity {
 	@Column(name="quizid")
 	private int quizid;
 	
+	
+	 
+	
 	@ManyToOne
 	@JoinColumn(name="facultyid")
 	private FacultyEntity teacher;
