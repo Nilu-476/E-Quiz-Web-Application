@@ -91,6 +91,38 @@ public class StudentController {
 		return questionlist;
 		
 	}
+
+        @PutMapping(value = "/editstudentprofile/{prnno}")
+	public ResponseEntity<StudentEntity> editstudentprofile(@RequestBody StudentEntity stud, @PathVariable long prnno)
+	{
+		Optional<StudentEntity> obj = repo.findById(prnno);
+		
+		if(obj.isPresent())
+		{
+			StudentEntity s = obj.get();
+			s.setFirstName(stud.getFirstName());
+			s.setMiddleName(stud.getMiddleName());
+			s.setLastName(stud.getLastName());
+			s.setEmail(stud.getEmail());
+			s.setMobileNo(stud.getMobileNo());
+			s.setGender(stud.getGender());
+			s.setDateOfBirth(stud.getDateOfBirth());
+			s.setUsername(stud.getUsername());
+			s.setPassword(stud.getPassword());
+			
+			try {
+				return new ResponseEntity<>(repo.save(s), HttpStatus.OK);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		else
+		{
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		return null;
+	}
 	
 	
 	
