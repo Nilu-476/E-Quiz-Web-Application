@@ -103,6 +103,14 @@ public class QuizScheduleController {
 		return quiz_obj.get();
 	}
 	
+	//Please do no change this .....
+	@GetMapping(value="/getschedule")
+	public List<QuizScheduleEntity> GetAllSchedule()
+	{
+		List<QuizScheduleEntity> list = quiz_schedule_repo.findAll();
+		return list;	
+	}
+	
 	@PutMapping(value="/editquizschedule/{quizid}")
 	public ResponseEntity<QuizScheduleEntity> editSchedule(@RequestBody QuizScheduleEntity q,@PathVariable int quizid)
 	{

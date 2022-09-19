@@ -5,7 +5,8 @@ import { Link, NavLink } from "react-router-dom";
 export default function ViewQuiz()
 {
   const data =sessionStorage.getItem('faculty');
-  const {firstName , middleName , lastName }=JSON.parse(data);
+  const {firstName , middleName , lastName ,userName }=JSON.parse(data);
+
       // ...................................
 
      const [ViewQuiz ,setViewQuiz] = useState([]);
@@ -13,7 +14,7 @@ export default function ViewQuiz()
      {
        async function GetViewQuiz()
        {
-         let value=await axios.get('http://localhost:8080/quizschedule/getschedulebyid');
+         let value=await axios.get(`http://localhost:8080/quizschedule/viewschedule/${userName}`);
          setViewQuiz(value.data);
        }
        GetViewQuiz();

@@ -45,8 +45,9 @@ public class FacultyController {
 		return "Registrtion unsuccessfull..."; 
 	}
 	
+	//Please do no change this .....
 	@PostMapping(value="/facultylogin/{username}/{password}")
-	public String faculty_Login(@PathVariable String username,@PathVariable String password)
+	public FacultyEntity faculty_Login(@PathVariable String username,@PathVariable String password)
 	{
 		
 		FacultyEntity fac_obj = repo.findByUserName(username);
@@ -56,11 +57,11 @@ public class FacultyController {
 		{
 			if(passwd.equals(password))
 			{
-				return "Pass";
+				return fac_obj;
 			}
 		}
 		
-		return "Fail";
+		return null;
 	}
 
 	@GetMapping(value="/getfacultyprofile/{uname}")

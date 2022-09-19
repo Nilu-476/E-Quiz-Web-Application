@@ -48,7 +48,7 @@ public class StudentController {
 	}
 	
 	@PostMapping(value="/studentlogin/{username}/{password}")
-	public String student_Login(@PathVariable String username,@PathVariable String password)
+	public StudentEntity student_Login(@PathVariable String username,@PathVariable String password)
 	{
 		
 		StudentEntity stud_obj = repo.findByUsername(username);
@@ -58,11 +58,11 @@ public class StudentController {
 		{
 			if(passwd.equals(password))
 			{
-				return "pass";
+				return stud_obj ;
 			}
 		}
 		
-		return "fail";
+		return null;
 	}
 	
 	@GetMapping(value="/getstudentprofile/{uname}")

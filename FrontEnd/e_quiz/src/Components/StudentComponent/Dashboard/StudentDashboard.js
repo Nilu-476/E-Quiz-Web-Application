@@ -16,7 +16,7 @@ export default function StudentDashboard()
             {
                   async function GetStudentQuiz()
                   {
-                        let value = await axios.get('http://localhost:8080/quizschedule/getschedulebyid');
+                        let value = await axios.get('http://localhost:8080/quizschedule/getschedule');
                         setStudentdata(value.data);
                   }
                   GetStudentQuiz();

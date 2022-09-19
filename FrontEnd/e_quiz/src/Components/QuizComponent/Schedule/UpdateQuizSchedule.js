@@ -1,32 +1,16 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
-export default function AddQuizSchedule()
+export default function UpdateQuizSchedule()
 {
     const teacher =sessionStorage.getItem('faculty');
     let navigate=useNavigate('');
-  //   {
-  //     "quizid":14,
-  //     "teacher":{
-  //         "firstName": "Bhartesh",
-  //         "middleName": "Rajkumar",
-  //         "lastName": "Girmal",
-  //         "email": "bharteshgirmal@gmail.com",
-  //         "mobileNo": 9503042573,
-  //         "gender": "male",
-  //         "dateOfBirth": "2022-09-11",
-  //         "userName": "Bhartesh123",
-  //         "password": "Bhartesh123",
-  //         "facultyId": 6
-  //     },
-  //     "quizName":"JAVA",
-  //     "quizDesc":"Java",
-  //     "scheduleDate":"18/08/2022",
-  //    "scheduleTime":"10.00",
-  //     "duration":"60"  
-  // }
 
+    let Id= useParams('');
+    
+    const UpdateData = sessionStorage.getItem('schedule');
+    const {quizName,quizDesc,scheduleDate,scheduleTime,duration}=JSON.parse(UpdateData);
    const [Schedule , setSchedule] = useState({
     teacher:JSON.parse(teacher),
     quizName:'',
@@ -71,7 +55,7 @@ function handleInput(e){
           <img src="https://www.datamaran.com/wp-content/uploads/2018/09/Quiz-How-well-do-you-know-the-ESG-regulatory-landscape.jpg"
             className="w-100" alt="" />
           <div className="card-body p-4 p-md-5">
-            <h2 className="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2"><b>Add Quiz Schedule</b></h2>
+            <h2 className="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2"><b>Update Quiz Schedule</b></h2>
 
             <form className="px-md-1">
             
@@ -79,36 +63,36 @@ function handleInput(e){
                 <input type="number" name="quizid" className="form-control" onChange={(e) => handleInput(e)}/>
                 <label className="form-label"><b>Faculty ID :</b></label>
               </div> */}
-
+{/* 
               <div className="form-outline mb-4">
                 <input type="number" name="quizid" className="form-control"onChange={(e) => handleInput(e) }/>
                 <label className="form-label"><b>Quiz ID :</b></label>
-              </div>
+              </div> */}
 
               <div className="form-outline mb-4">
-                <input type="text" name="quizName" className="form-control"onChange={(e) => handleInput(e)} />
+                <input type="text" name="quizName" placeholder={quizName} className="form-control"onChange={(e) => handleInput(e)} />
                 <label className="form-label"><b>Quiz Topic :</b></label>
               </div>
 
               <div className="form-outline mb-4">
-                  <textarea type="text" name="quizDesc" className="form-control" onChange={(e) => handleInput(e)}/>
+                  <textarea type="text" name="quizDesc" placeholder={quizDesc} className="form-control" onChange={(e) => handleInput(e)}/>
                 <label className="form-label"><b>Quiz Description :</b></label>
               </div>
               
               <div className="row">
               <div className="col-md-6 mb-4">
-                <input type="date" name="scheduleDate" className="form-control" onChange={(e) => handleInput(e)}/>
+                <input type="date" name="scheduleDate" placeholder={scheduleDate} className="form-control" onChange={(e) => handleInput(e)}/>
                 <label className="form-label"><b>Schedule Date :</b></label>
               </div>
 
               <div className="col-md-6 mb-4">
-                <input type="time" name="scheduleTime" className="form-control" onChange={(e) => handleInput(e)}/>
+                <input type="time" name="scheduleTime" placeholder={scheduleTime} className="form-control" onChange={(e) => handleInput(e)}/>
                 <label className="form-label"><b>Schedule Time :</b></label>
               </div>
               </div>
 
               <div className="form-outline mb-4">
-                <input type="number" name="duration" className="form-control" onChange={(e) => handleInput(e)}/>
+                <input type="number" name="duration" placeholder={duration} className="form-control" onChange={(e) => handleInput(e)}/>
                 <label className="form-label"><b>Duration :</b></label>
               </div>
 

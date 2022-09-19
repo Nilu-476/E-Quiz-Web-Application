@@ -60,16 +60,18 @@ export default function StudentProfileEdit()
       }
             
           return(
-            <div className="shadow-none p-3 xl-5 bg-info bg-gradient">
+            <div style={{backgroundImage:'url("https://i.pinimg.com/564x/6b/8e/97/6b8e974572105a1e4096c1a8e2b6a7bc.jpg")', backgroundRepeat:"no-repeat" , backgroundSize:"cover" }}>
+            <div className="shadow-none p-3 xl-5 ">
             <section className="h-100 h-custom">
             <div className="container py-5 h-100">
             <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-lg-8 col-xl-6">
-            <div className="card rounded-3">
-            <img src="https://t4.ftcdn.net/jpg/04/07/01/73/360_F_407017362_lBJsGPIUkKSGTSvUIGBhYEh5SW1hFsxr.jpg"
-            className="w-100" alt='...' />
+            <div className="card rounded-3 border border-dark">
+            <br/><br/>
+            <img src="https://www.shareicon.net/data/2016/06/30/788856_edit_512x512.png" style={{alignSelf:'center'}}
+            className="w-50" alt='...' />
             <div className="card-body p-4 p-md-5">
-            <h2 className="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2"><b>Edit your Profile</b></h2>
+            <h2 className="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2"><b>Student Profile Details</b></h2>
             <form className="px-md-1">
             <div className="form-outline mb-4">
             <input type="number"  className="form-control" name='prnno' value={prnno} preventDefault />
@@ -142,6 +144,7 @@ export default function StudentProfileEdit()
     </div>
   </div>
 </section>
+      </div>
       </div>
       )
 }
