@@ -72,7 +72,7 @@ public class FacultyController {
 		
 	}
 	
-	@PutMapping(value = "/editfacultyprofile/{facultyid}")
+	@PostMapping(value = "/editfacultyprofile/{facultyid}")
 	public ResponseEntity<FacultyEntity> editfacultyprofile(@RequestBody FacultyEntity fac, @PathVariable long facultyid)
 	{
 		Optional<FacultyEntity> obj = repo.findById(facultyid);

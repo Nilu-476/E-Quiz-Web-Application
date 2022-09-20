@@ -37,6 +37,7 @@ export default function FacultyDashboard()
                   <Link to="/ViewQuiz">View Quiz</Link>
                   <a href="./Results.html">Results</a>
                   <Link to="/FacultyLogout">LogOut</Link>
+                  <Link to="/FacultyProfileEdit">Edit Profile</Link>
                   </div>                   
             </body>
             <div className="about  p-3 col-xl-12">
