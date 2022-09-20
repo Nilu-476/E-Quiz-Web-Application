@@ -5,19 +5,20 @@ import { Link, useNavigate } from "react-router-dom";
 export default function StudentProfileEdit()
 {
       const data=sessionStorage.getItem('student');
-      const {prnno,firstName , middleName , lastName ,email , mobileNo , gender, dateOfBirth, username,password}=JSON.parse(data);
+      const {prnNo,firstName , middleName , lastName ,email , mobileNo , gender, dateOfBirth, username,password}=JSON.parse(data);
 
+      console.log(prnNo,firstName , middleName , lastName ,email , mobileNo , gender, dateOfBirth, username,password);
       let navigate = useNavigate();
       const[student ,setStudent] = useState({
-            firstName:"",
-            middleName:"",
-            lastName:"",
-            email:"",
-            mobileNo:"",
-            gender:"",
-            dateOfBirth:"",
-            username:"",
-            password:"",
+            fName:"",
+            mName:"",
+            lName:"",
+            Email:"",
+            MobileNo:"",
+            Gender:"",
+            DateOfBirth:"",
+            Username:"",
+            Password:"",
       })
     
       const HandleChange = (e) => {
@@ -29,21 +30,23 @@ export default function StudentProfileEdit()
       const[repassword ,setRepassword]= useState("");
     
       function HandlePassword(e){ setRepassword(e.target.value) }
+
+      console.log(prnNo);
     
       const ProfileEdit= (e) =>{
         e.preventDefault();
         console.log("Something ...")
-        axios.post("http://localhost:8080/student/editstudentprofile",  {
-          prnno:student.prnno,
-          firstName:student.firstName,
-          middleName:student.middleName,
-          lastName:student.lastName,
-          email:student.email,
-          mobileNo:student.mobileNo,
-          gender:student.gender,
-          dateOfBirth:student.dateOfBirth,
-          username:student.username,
-          password:student.password
+        axios.post(`http://localhost:8080/student/editstudentprofile/${prnNo}`,
+          {
+          firstName:student.fName,
+          middleName:student.mName,
+          lastName:student.lName,
+          email:student.Email,
+          mobileNo:student.MobileNo,
+          gender:student.Gender,
+          dateOfBirth:student.DateOfBirth,
+          username:student.Username,
+          password:student.Password
         }    
         )
         .then((response)=>{
@@ -74,33 +77,33 @@ export default function StudentProfileEdit()
             <h2 className="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2"><b>Student Profile Details</b></h2>
             <form className="px-md-1">
             <div className="form-outline mb-4">
-            <input type="number"  className="form-control" name='prnno' value={prnno} preventDefault />
+            <input type="number"  className="form-control" value={prnNo} preventDefault />
             <label className="form-label"><b>Student PRN</b></label>
             </div>
             <div className="form-outline mb-4">
-            <input type="text"  className="form-control" name='firstName' placeholder={firstName} onChange={HandleChange} />
+            <input type="text"  className="form-control" name='fName' placeholder={firstName} onChange={HandleChange} />
             <label className="form-label"><b>First Name :</b></label>
             </div>
             <div className="form-outline mb-4">
-            <input type="text"  className="form-control" name='middleName' placeholder={middleName} onChange={HandleChange}  />
+            <input type="text"  className="form-control" name='mName' placeholder={middleName} onChange={HandleChange}  />
             <label className="form-label"><b>Middle Name :</b></label>
             </div>
             <div className="form-outline mb-4">
-            <input type="text"  className="form-control" name='lastName' placeholder={lastName} onChange={HandleChange}  />
+            <input type="text"  className="form-control" name='lName' placeholder={lastName} onChange={HandleChange}  />
             <label className="form-label"><b>Last Name :</b></label>
             </div>  
             <div className="form-outline mb-4">
-            <input type="text"  className="form-control" name='email' placeholder={email} onChange={HandleChange} />
+            <input type="text"  className="form-control" name='Email' placeholder={email} onChange={HandleChange} />
             <label className="form-label"><b>E-Mail :</b></label>
             </div>  
             <div className="form-outline mb-4">
-            <input type="number"  className="form-control" name='mobileNo' placeholder={mobileNo} onChange={HandleChange} />
+            <input type="number"  className="form-control" name='MobileNo' placeholder={mobileNo} onChange={HandleChange} />
             <label className="form-label" placeholder={mobileNo}><b>Mobile Number :</b></label>
             </div>  
             <div className="row">
             <div className="col-md-6 mb-4">
             <b>Select Gender :</b> 
-            <select className="select" name='gender' placeholder={gender} onChange={HandleChange}  >
+            <select className="select" name='Gender' placeholder={gender} onChange={HandleChange}  >
             <option >Gender</option>
             <option value="Male" name="Male">Male</option>
             <option value="Female" name="Female">Female</option>
@@ -109,23 +112,23 @@ export default function StudentProfileEdit()
             </div>
             <div className="col-md-6 mb-4">
             <div className="form-outline datepicker">
-            <input type="date" className="form-control" name='dateOfBirth' placeholder={dateOfBirth} onChange={HandleChange}  />
+            <input type="date" className="form-control" name='DateOfBirth' placeholder={dateOfBirth} onChange={HandleChange}  />
             <label className="form-label"><b>Date Of Birth :</b></label>
             </div>
             </div>
             </div>
             <div className="form-outline mb-4">
-            <input type="text"  className="form-control" name='username' placeholder={username} onChange={HandleChange}  />
+            <input type="text"  className="form-control" name='Username' placeholder={username} onChange={HandleChange}  />
             <label className="form-label"><b>UserName :</b></label>
             </div>
             <div className="form-outline mb-4">
-            <input type="password"  className="form-control" name='password'placeholder={password} onChange={HandleChange} />
+            <input type="password"  className="form-control" name='Password'placeholder={password} onChange={HandleChange} />
             <label className="form-label"><b>Password :</b></label>
             </div>
-            <div className="form-outline mb-4">
+            {/* <div className="form-outline mb-4">
             <input type="password"  className="form-control" name='repassword' onChange={(e)=>HandlePassword(e)} />
             <label className="form-label"><b>ReEnter Password :</b></label>
-            </div>  
+            </div>   */}
             <div className="row">
               <div className="col-md-4 mb-4">
                 <button type="submit" className="btn btn-success btn-mb mb-1" onClick={ProfileEdit}>Save</button>

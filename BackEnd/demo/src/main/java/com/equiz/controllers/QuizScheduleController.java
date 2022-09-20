@@ -111,7 +111,7 @@ public class QuizScheduleController {
 		return list;	
 	}
 	
-	@PutMapping(value="/editquizschedule/{quizid}")
+	@PostMapping(value="/editquizschedule/{quizid}")
 	public ResponseEntity<QuizScheduleEntity> editSchedule(@RequestBody QuizScheduleEntity q,@PathVariable int quizid)
 	{
 		Optional<QuizScheduleEntity> obj = quiz_schedule_repo.findById(quizid);

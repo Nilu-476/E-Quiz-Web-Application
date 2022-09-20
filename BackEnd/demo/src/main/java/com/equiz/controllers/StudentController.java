@@ -93,8 +93,8 @@ public class StudentController {
 		
 	}
 
-        @PutMapping(value = "/editstudentprofile/{prnno}")
-	public ResponseEntity<StudentEntity> editstudentprofile(@RequestBody StudentEntity stud, @PathVariable long prnno)
+    @PostMapping(value = "/editstudentprofile/{prnno}")
+	public ResponseEntity<StudentEntity> editstudentprofile( @PathVariable long prnno ,@RequestBody StudentEntity stud)
 	{
 		Optional<StudentEntity> obj = repo.findById(prnno);
 		

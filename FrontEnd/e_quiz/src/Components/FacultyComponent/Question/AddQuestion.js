@@ -66,12 +66,13 @@ export default function AddQuestion()
        
       return(
         <>
-        <div className="shadow-none p-4 xl-5 bg-info bg-gradient ">
+        <div style={{backgroundImage:'url("https://wallpaperaccess.com/full/1683028.jpg")', backgroundRepeat:"no-repeat" , backgroundSize:"cover" }}>
+        <div className="shadow-none p-4 xl-5">
         <section className="h-100 h-custom">
         <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
         <div className="col-lg-8 col-xl-6">
-        <div className="card rounded-3">
+        <div className="card rounded-3 border border-dark">
         <img src="https://www.datamaran.com/wp-content/uploads/2018/09/Quiz-How-well-do-you-know-the-ESG-regulatory-landscape.jpg"
         className="w-100" alt=""/>
       <div className="card-body p-4 p-md-5">
@@ -80,7 +81,7 @@ export default function AddQuestion()
         <form className="px-md-1">
     
         <div className="form-outline mb-4">
-        <b>Faculty ID :</b> &emsp;<input type="number" data={facultyId} className="form-control" value={question.teacher} />
+        <b>Faculty ID :</b> &emsp;<input type="number" placeholder={facultyId} className="form-control" value={question.teacher} />
         </div>
         <div className="form-outline mb-4">
         <b>Quiz ID :</b> &emsp;<input type="number" value={quizId} className="form-control"  />
@@ -125,7 +126,8 @@ export default function AddQuestion()
 </div>
 </div>
 </section>
-  </div>   
+  </div>  
+  </div> 
 </>
 )
       }

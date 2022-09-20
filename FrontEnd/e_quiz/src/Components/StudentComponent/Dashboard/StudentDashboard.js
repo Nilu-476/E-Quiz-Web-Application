@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './StudentDashboard.css';
 export default function StudentDashboard()
 {
@@ -93,7 +93,9 @@ export default function StudentDashboard()
       </td>
       <td>
       <div >
-      <Link to="/StartExam" className="btn btn-primary btn-sm mb-1">Start Quiz</Link>&emsp;
+      <NavLink exact to={`/StartExam/${data.quizId}`}>
+            <button className="btn btn-primary btn-sm mb-1">Start Exam</button>
+      </NavLink>
       </div>
       </td>
     </tr>

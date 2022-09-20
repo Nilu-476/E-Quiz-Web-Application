@@ -1,7 +1,7 @@
 
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useNavigate, useParams } from "react-router-dom";
 export default function FacultyDashboard()
 {
       
@@ -9,7 +9,11 @@ export default function FacultyDashboard()
       const {firstName , middleName , lastName ,userName}=JSON.parse(data);
       // ...................................
 
-     const [Quiz ,setQuiz]=useState([]);
+      let id=useParams('quizId');
+      console.log(id.quizId);
+      let navigate =useNavigate('');
+      const [Quiz ,setQuiz]=useState([]);
+
      useEffect(()=>
      {
       async function GetAllSchedule()
@@ -97,8 +101,12 @@ export default function FacultyDashboard()
       </td>
       <td>
       <div >
-      <Link to="/UpdateQuizSchedule" className="btn btn-primary btn-sm mb-1" id={data.quizid}>Update</Link>&emsp;
-      <Link to="/..." type="submit" className="btn btn-danger btn-sm mb-1">Delete</Link>
+      <NavLink exact to={`/UpdateQuizSchedule/${data.quizId}`}>
+               <button className="btn btn-primary btn-sm mb-1">Update Schedule</button>  
+      </NavLink>&emsp;
+      <NavLink exact to={`/DeleteQuizSchedule/${data.quizId}`}>
+               <button className="btn btn-danger btn-sm mb-1">Delete</button>  
+      </NavLink>
       </div>
       </td>
     </tr>

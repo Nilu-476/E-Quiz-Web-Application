@@ -70,16 +70,10 @@ export default function ViewQuiz()
         <td>
         <div >
         <NavLink exact to={`/ViewAllQuestion/${data.quizId}`}>
-               <button className="btn btn-success btn-sm sm-4 align-center ">View Questions</button>  
+               <button className="btn btn-success btn-sm sm-4 align-center ">View All Questions</button>  
         </NavLink>&emsp;
         <NavLink exact to={`/AddQuestion/${data.quizId}`}>
-               <button className="btn btn-info btn-sm sm-4 ">Add Question</button>  
-        </NavLink>&emsp;
-        <NavLink exact to={`/UpdateQuestion/${data.quizId}`}>
-               <button className="btn btn-primary btn-sm sm-4">Update Questions</button>  
-        </NavLink>&emsp;
-        <NavLink exact to={`/AddQuestion/${data.quizId}`}>
-               <button className="btn btn-danger btn-sm sm-4 ">Delete Questions</button>  
+               <button className="btn btn-info btn-sm sm-4 text-dark fw-bold">Add Question</button>  
         </NavLink> 
  </div>
         </td>

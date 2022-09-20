@@ -16,7 +16,7 @@ public class StudentEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name="prnno")
-	private long prnno;
+	private long PRNno;
 	
 	@Column(name="first_name")
 	private String firstName;
@@ -55,7 +55,7 @@ public class StudentEntity {
 	public StudentEntity(long prnNo, String firstName, String middleName, String lastName, String email, long mobileNo,
 			String gender, String dateOfBirth, String username, String password) {
 		super();
-		this.prnno = prnNo;
+		this.PRNno = prnNo;
 		this.firstName = firstName;
 		this.middleName = middleName;
 		this.lastName = lastName;
@@ -70,12 +70,12 @@ public class StudentEntity {
 
 
 	public long getPrnNo() {
-		return prnno;
+		return PRNno;
 	}
 
 
 	public void setPrnNo(long prnNo) {
-		this.prnno = prnNo;
+		this.PRNno = prnNo;
 	}
 
 

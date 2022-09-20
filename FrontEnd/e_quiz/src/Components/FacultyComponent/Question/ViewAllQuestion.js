@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 
 export default function ViewAllQuestion()
 {
@@ -34,6 +34,7 @@ export default function ViewAllQuestion()
                       {
                         AllQuestions.map((data,i)=>
                         {
+                              sessionStorage.setItem('questionId',data);
                               return(
                                     <div key={i}>
                                     <div className="container xl-6"> <div className="row">
@@ -52,6 +53,14 @@ export default function ViewAllQuestion()
                                     <input type="radio" name="box1" id="eight"/> 
                                     <span className="subject"> {data.option4} </span> 
                                     </div> 
+                                    <br/>
+                                    <NavLink exact to={`/UpdateQuestion/${JSON.stringify(data.questionId)}/${quizId}`}>
+                                    <button className="btn btn-success btn-sm mb-1">Update</button>
+                                    </NavLink>
+                                     &emsp;&emsp;
+                                    <NavLink exact to={`/DeleteQuestion/${JSON.stringify(data.questionId)}/${quizId}`}>
+                                     <button className="btn btn-danger btn-sm mb-1">Delete</button>
+                                     </NavLink>
                                     <h6>__________________________________________________________________________________________</h6>
                                     </div> 
                                     </div> 
@@ -61,13 +70,7 @@ export default function ViewAllQuestion()
                               )
                         })
                       }
-      
-                        <div className="row">
-                            <div className="col-sm-6 sm-6" style={{alignItems:'center'}}> 
-                            <Link to="/" className="btn btn-dark btn-mb mb-1" >Homepage</Link>
-                            &emsp;&emsp;<Link to="/Result" className="btn btn-success btn-mb mb-1" >Submit Quiz</Link>
-                            </div>
-                        </div>
+                      <Link to="/ViewQuiz" className="btn btn-dark btn-sm mb-1">Back</Link>
                       </form>
                     </div>
                   </div>

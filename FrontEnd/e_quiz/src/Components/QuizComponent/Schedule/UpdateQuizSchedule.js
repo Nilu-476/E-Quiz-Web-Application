@@ -6,39 +6,36 @@ export default function UpdateQuizSchedule()
 {
     const teacher =sessionStorage.getItem('faculty');
     let navigate=useNavigate('');
+    const {quizId}=useParams('quizId');
+    console.log("Quiz Id : ",quizId);
 
-    let Id= useParams('');
+    // const {UpdateData} = sessionStorage.getItem('schedule');
+    // const {quizName,quizDesc,scheduleDate,scheduleTime,duration}=JSON.parse(UpdateData);
     
-    const UpdateData = sessionStorage.getItem('schedule');
-    const {quizName,quizDesc,scheduleDate,scheduleTime,duration}=JSON.parse(UpdateData);
    const [Schedule , setSchedule] = useState({
-    teacher:JSON.parse(teacher),
     quizName:'',
     quizDesc:'',
     scheduleDate:'',
     scheduleTime:'',
     duration:''
  });
- sessionStorage.setItem('quizschedule' , JSON.stringify(Schedule));
 
 function handleInput(e){
     const name = e.target.name;
     const value = e.target.value;
     setSchedule({ ...Schedule, [name]: value });
-     // console.log(exam);
  }
 
- const Registration= (e) =>
+ const UpdateSchedule= (e) =>
  {
     console.log(Schedule);
     e.preventDefault();
     console.log("Inside Function ...");
-     axios.post(`http://localhost:8080/quizschedule/addquizschedule` , 
+     axios.post(`http://localhost:8080/quizschedule/editquizschedule/${quizId}` ,
      Schedule
      ).then((e)=>{
       console.log(e);
       navigate("/FacultyDashboard");
-      sessionStorage.setItem('schedule',JSON.stringify(Schedule));
      }).catch((error)=>{
       console.log(error);
      });
@@ -63,45 +60,42 @@ function handleInput(e){
                 <input type="number" name="quizid" className="form-control" onChange={(e) => handleInput(e)}/>
                 <label className="form-label"><b>Faculty ID :</b></label>
               </div> */}
-{/* 
-              <div className="form-outline mb-4">
-                <input type="number" name="quizid" className="form-control"onChange={(e) => handleInput(e) }/>
-                <label className="form-label"><b>Quiz ID :</b></label>
-              </div> */}
 
               <div className="form-outline mb-4">
-                <input type="text" name="quizName" placeholder={quizName} className="form-control"onChange={(e) => handleInput(e)} />
+                <input type="number" name="quizid" className="form-control" value={quizId}/>
+                <label className="form-label"><b>Quiz ID :</b></label>
+              </div>
+
+              <div className="form-outline mb-4">
+                <input type="text" name="quizName" className="form-control"onChange={(e) => handleInput(e)} />
                 <label className="form-label"><b>Quiz Topic :</b></label>
               </div>
 
               <div className="form-outline mb-4">
-                  <textarea type="text" name="quizDesc" placeholder={quizDesc} className="form-control" onChange={(e) => handleInput(e)}/>
+                  <textarea type="text" name="quizDesc" className="form-control" onChange={(e) => handleInput(e)}/>
                 <label className="form-label"><b>Quiz Description :</b></label>
               </div>
               
               <div className="row">
               <div className="col-md-6 mb-4">
-                <input type="date" name="scheduleDate" placeholder={scheduleDate} className="form-control" onChange={(e) => handleInput(e)}/>
+                <input type="date" name="scheduleDate"  className="form-control" onChange={(e) => handleInput(e)}/>
                 <label className="form-label"><b>Schedule Date :</b></label>
               </div>
 
               <div className="col-md-6 mb-4">
-                <input type="time" name="scheduleTime" placeholder={scheduleTime} className="form-control" onChange={(e) => handleInput(e)}/>
+                <input type="time" name="scheduleTime" className="form-control" onChange={(e) => handleInput(e)}/>
                 <label className="form-label"><b>Schedule Time :</b></label>
               </div>
               </div>
 
               <div className="form-outline mb-4">
-                <input type="number" name="duration" placeholder={duration} className="form-control" onChange={(e) => handleInput(e)}/>
+                <input type="number" name="duration"  className="form-control" onChange={(e) => handleInput(e)}/>
                 <label className="form-label"><b>Duration :</b></label>
               </div>
 
               <div className="row">
                   <div className="col-md-4 mb-4"> 
-                  <button type="submit" className="btn btn-success btn-mb mb-1" onClick={Registration}>Schedule</button>
-                  </div>
-                  <div className="col-md-4 mb-4"> 
-                  <button type="submit" className="btn btn-danger btn-mb mb-1">Reset</button>
+                  <button type="submit" className="btn btn-success btn-mb mb-1" onClick={UpdateSchedule}>Schedule</button>
                   </div>
                   <div className="col-md-4 mb-4">
                       <Link to="/FacultyDashboard" className="btn btn-info btn-mb mb-1">Back</Link>

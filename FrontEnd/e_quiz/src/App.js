@@ -22,7 +22,7 @@ import StudentLogout from './Components/StudentComponent/StudentLoginComponent/S
 import StudentProfileEdit from './Components/StudentComponent/StudentLoginComponent/StudentProfileEdit';
 import UpdateQuizSchedule from './Components/QuizComponent/Schedule/UpdateQuizSchedule';
 import ViewAllQuestion from './Components/FacultyComponent/Question/ViewAllQuestion';
-
+import DeleteQuizSchedule from './Components/QuizComponent/Schedule/DeleteQuizSchedule';
 function App() {
   return (
     <div>
@@ -38,13 +38,14 @@ function App() {
         <Route exact path='/FacultyDashboard' element={<FacultyDashboard/>}></Route>
         <Route exact path='/ViewQuiz' element={<ViewQuiz/>}></Route>
         <Route exact path='/AddQuizSchedule' element={<AddQuizSchedule/>}></Route>
-        <Route exact path='/UpdateQuizSchedule' element={<UpdateQuizSchedule/>}></Route>
+        <Route exact path='/UpdateQuizSchedule/:quizId' element={<UpdateQuizSchedule/>}></Route>
+        <Route exact path='/DeleteQuizSchedule/:quizId' element={<DeleteQuizSchedule/>}></Route>
         <Route exact path='/AddQuestion/:quizId' element={<AddQuestion/>} ></Route>
-        <Route exact path='/UpdateQuestion/:quizId' element={<UpdateQuestion/>}></Route>
-        <Route exact path='/DeleteQuestion/:quizId' element={<DeleteQuestion/>}></Route>
+        <Route exact path='/UpdateQuestion/:questionId/:quizId' element={<UpdateQuestion/>}></Route>
+        <Route exact path='/DeleteQuestion/:questionId/:quizId' element={<DeleteQuestion/>}></Route>
         <Route exact path='/ViewAllQuestion/:quizId' element={<ViewAllQuestion/>}></Route>
         <Route exact path='/DemoQuiz' element={<DemoQuiz/>}></Route>
-        <Route exact path='/StartExam' element={<StartExam/>}></Route>
+        <Route exact path='/StartExam/:quizId' element={<StartExam/>}></Route>
         <Route exact path='/Feedback' element={<Feedback/>}></Route>
         <Route exact path='/Result' element={<Result/>}></Route>
         <Route exact path='/FacultyLogout' element={<FacultyLogout/>}></Route>

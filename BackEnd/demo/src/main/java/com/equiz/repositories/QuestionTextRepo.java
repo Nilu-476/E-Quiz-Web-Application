@@ -16,7 +16,7 @@ public interface QuestionTextRepo extends JpaRepository<QuestionTypeText,Integer
 
 	@Modifying
 	@Transactional
-	@Query(nativeQuery=true,value="delete from text_question where quizid =: quiz_id ")
+	@Query(nativeQuery=true,value="delete from text_question where quizid =:quiz_id ")
 	public void deleteByQuizschedule(@Param("quiz_id")int quiz_id);
 	
 	

@@ -107,7 +107,7 @@ public class QuestionController {
 	}
 	
 	
-	@PutMapping(value="/editquestion/{qid}")
+	@PostMapping(value="/editquestion/{qid}")
 	public ResponseEntity<QuestionTypeText> editQuestionDetails(@RequestBody QuestionTypeText question,@PathVariable int qid)
 	{
 		Optional<QuestionTypeText> obj = question_repo.findById(qid);
