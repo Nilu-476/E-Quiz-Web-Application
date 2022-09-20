@@ -23,6 +23,7 @@ import StudentProfileEdit from './Components/StudentComponent/StudentLoginCompon
 import UpdateQuizSchedule from './Components/QuizComponent/Schedule/UpdateQuizSchedule';
 import ViewAllQuestion from './Components/FacultyComponent/Question/ViewAllQuestion';
 import DeleteQuizSchedule from './Components/QuizComponent/Schedule/DeleteQuizSchedule';
+import FacultyProfileEdit from './Components/FacultyComponent/Login/FacultyProfileEdit';
 function App() {
   return (
     <div>
@@ -50,6 +51,7 @@ function App() {
         <Route exact path='/Result' element={<Result/>}></Route>
         <Route exact path='/FacultyLogout' element={<FacultyLogout/>}></Route>
         <Route exact path='/StudentLogout' element={<StudentLogout/>}></Route>
+        <Route exact path='/FacultyProfileEdit' element={<FacultyProfileEdit/>}></Route>
       </Routes>
       </BrowserRouter>
 </div>
