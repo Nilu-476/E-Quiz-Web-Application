@@ -4,12 +4,13 @@ export default function DemoQuiz()
 {
       return(
             <>
-           < div className="shadow-none p-3 xl-5 bg-info bg-gradient">
-                  <section className="h-100 h-custom">
+        <div style={{backgroundImage:'url("https://thumbs.dreamstime.com/b/question-mark-seamless-pattern-trivia-poster-design-template-quiz-loading-page-random-punctuation-marks-background-vector-182361400.jpg")', backgroundRepeat:"no-repeat" , backgroundSize:"cover" }}>
+        <div className="shadow-none p-3 xl-5 ">
+        <section className="h-100 h-custom">
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100 ">
-            <div className="col-lg-8 col-xl-6">
-              <div className="card rounded-4">
+            <div className="col-lg-8 col-xl-8">
+              <div className="card rounded-4 border border-dark">
                 <img src="https://img.freepik.com/free-vector/quiz-neon-sign_1262-19629.jpg?w=2000"
                   className="w-80"alt="" />
                 <div className="card-body p-4 p-md-8">      
@@ -234,9 +235,9 @@ export default function DemoQuiz()
 </div>
       
                     <div className="row">
-                        <div className="col-sm-6 sm-6"> 
-                        <button type="submit" className="btn btn-success btn-sm mb-1" style={{alignSelf:"center"}}>Submit Quiz</button>
-                        <Link to="/Result" >Display Result</Link>
+                        <div className="col-sm-6 sm-6" style={{alignItems:'center'}}> 
+                        <Link to="/" className="btn btn-dark btn-mb mb-1" >Homepage</Link>
+                        &emsp;&emsp;<Link to="/Result" className="btn btn-success btn-mb mb-1" >Submit Quiz</Link>
                         </div>
                     </div>
                   </form>
@@ -246,6 +247,7 @@ export default function DemoQuiz()
           </div>
         </div>
       </section>
+            </div>
             </div>
             </>
       )

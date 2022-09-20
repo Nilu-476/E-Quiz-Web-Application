@@ -21,6 +21,7 @@ import FacultyLogout from './Components/FacultyComponent/Login/FacultyLogout';
 import StudentLogout from './Components/StudentComponent/StudentLoginComponent/StudentLogout';
 import StudentProfileEdit from './Components/StudentComponent/StudentLoginComponent/StudentProfileEdit';
 import UpdateQuizSchedule from './Components/QuizComponent/Schedule/UpdateQuizSchedule';
+import ViewAllQuestion from './Components/FacultyComponent/Question/ViewAllQuestion';
 
 function App() {
   return (
@@ -39,8 +40,9 @@ function App() {
         <Route exact path='/AddQuizSchedule' element={<AddQuizSchedule/>}></Route>
         <Route exact path='/UpdateQuizSchedule' element={<UpdateQuizSchedule/>}></Route>
         <Route exact path='/AddQuestion/:quizId' element={<AddQuestion/>} ></Route>
-        <Route exact path='/UpdateQuestion' element={<UpdateQuestion/>}></Route>
-        <Route exact path='/DeleteQuestion' element={<DeleteQuestion/>}></Route>
+        <Route exact path='/UpdateQuestion/:quizId' element={<UpdateQuestion/>}></Route>
+        <Route exact path='/DeleteQuestion/:quizId' element={<DeleteQuestion/>}></Route>
+        <Route exact path='/ViewAllQuestion/:quizId' element={<ViewAllQuestion/>}></Route>
         <Route exact path='/DemoQuiz' element={<DemoQuiz/>}></Route>
         <Route exact path='/StartExam' element={<StartExam/>}></Route>
         <Route exact path='/Feedback' element={<Feedback/>}></Route>

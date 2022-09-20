@@ -69,14 +69,19 @@ export default function ViewQuiz()
         </td>
         <td>
         <div >
+        <NavLink exact to={`/ViewAllQuestion/${data.quizId}`}>
+               <button className="btn btn-success btn-sm sm-4 align-center ">View Questions</button>  
+        </NavLink>&emsp;
         <NavLink exact to={`/AddQuestion/${data.quizId}`}>
-               <button>Add Questions</button>  
+               <button className="btn btn-info btn-sm sm-4 ">Add Question</button>  
+        </NavLink>&emsp;
+        <NavLink exact to={`/UpdateQuestion/${data.quizId}`}>
+               <button className="btn btn-primary btn-sm sm-4">Update Questions</button>  
+        </NavLink>&emsp;
+        <NavLink exact to={`/AddQuestion/${data.quizId}`}>
+               <button className="btn btn-danger btn-sm sm-4 ">Delete Questions</button>  
         </NavLink> 
-        <Link to={`/ViewQuestion/${data.quizId}`} id="" className="btn btn-success btn-sm mb-4 align-center">View Questions</Link>&emsp;
-        <Link to={`/AddQuestion/${data.quizId}`} id="" className="btn btn-dark btn-sm mb-4 align-center">Questions</Link>&emsp;
-        <Link to={`/UpdateQuestion/${data.quizId}`} id="" className="btn btn-primary btn-sm mb-4 align-center">Update Questions</Link>&emsp;
-        <Link to={`/DeleteQuestion/${data.quizId}`} id="" className="btn btn-danger btn-sm mb-4 align-center">Delete Question</Link>
-        </div>
+ </div>
         </td>
       </tr>
       )

@@ -6,12 +6,13 @@ export default function AddQuestion()
 {
     
        const {quizId}=useParams('quizId');
-       console.log(quizId);
+       console.log("Quiz Id : ",quizId);
 
        const data =sessionStorage.getItem('faculty');
        let navigate=useNavigate('');
 
-       const {facultyid}=JSON.parse(data);
+       const {facultyId}=JSON.parse(data);
+       console.log("Faculty Id : ",facultyId);
 
        const [question,setQuestion]=useState({
         questionId:"",
@@ -56,6 +57,7 @@ export default function AddQuestion()
           console.log(question);
         //  navigate("/");
         alert("question added");
+        navigate(`/AddQuestion/${quizId}`);
           sessionStorage.setItem('question',JSON.stringify(question));
          }).catch((error)=>{
           console.log(error);
@@ -77,12 +79,12 @@ export default function AddQuestion()
 
         <form className="px-md-1">
     
-        {/* <div className="form-outline mb-4">
-        <b>Faculty ID :</b> &emsp;<input type="number"  className="form-control" value={question.teacher} />
+        <div className="form-outline mb-4">
+        <b>Faculty ID :</b> &emsp;<input type="number" data={facultyId} className="form-control" value={question.teacher} />
         </div>
         <div className="form-outline mb-4">
         <b>Quiz ID :</b> &emsp;<input type="number" value={quizId} className="form-control"  />
-        </div> */}
+        </div>
         <div className="form-outline mb-4">
         <b>Question :</b> &emsp;<textarea type="text" name="questionText" className="form-control" onChange={(e) => handleInput(e) }/>
         </div>
