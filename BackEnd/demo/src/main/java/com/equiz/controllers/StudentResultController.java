@@ -114,29 +114,7 @@ public class StudentResultController {
 	}
 	
 	
-	@GetMapping(value = "/deletestudentresult/{username}")
-	public String deleteStudentResult(@PathVariable String username)
-	{
-		StudentEntity s = studrepo.findByUsername(username);
-		
-		boolean flag = false;
-		
-		List<ResultEntity> results = resRepo.findAll();
-		for(ResultEntity r : results)
-		{
-			if(r.getStudent().getUsername().equals(s.getUsername()))
-			{
-				resRepo.delete(r);
-				flag = true;
-			}
-		
-		}
-		
-		if(flag)
-			return "Results deleted successfully ";
-		else
-			return "Results not deleted";
-	}
+	
 	
 	
 	
