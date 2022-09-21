@@ -46,7 +46,7 @@ export default function StartExam()
                                     <div key={i}>
                                     <div className="container xl-6"> <div className="row">
                                     <div className="col-12">
-                                    <p className="fw-bold">{i+1} {data.questionText}</p><div> 
+                                    <p className="fw-bold">{i+1}. {data.questionText}</p><div> 
                                     <div> 
                                     <input type="radio" name="box1" id="five"/> 
                                     <span className="subject">{data.option1} </span> 
@@ -70,7 +70,7 @@ export default function StartExam()
                               )
                         })
                       }
-                      <Link to="/Results" className="btn btn-success btn-sm mb-1">Submit Quiz</Link>
+                      <Link to="/Results/${i}/${status}/${score}/${quizId}" className="btn btn-success btn-sm mb-1">Submit Quiz</Link>
                       </form>
                     </div>
                   </div>

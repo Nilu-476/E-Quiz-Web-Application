@@ -24,6 +24,7 @@ export default function StudentDashboard()
             
             return(
             <>
+        <div style={{backgroundImage:'url("https://wallpaperaccess.com/full/1683028.jpg")', height:'1000px', backgroundRepeat:"no-repeat" , backgroundSize:"cover" }}>
             <body className="main ">
             <div className="header">
             <h1>Student Dashboard</h1>
@@ -39,11 +40,11 @@ export default function StudentDashboard()
                   <Link to="/StudentLogout">LogOut</Link>
                   </div>                   
             </body>
-            <div className="about p-3 xl-5">
+            <div className="p-3 xl-5">
             <br/><br/><br/><br/>
             <table className="table align-middle mb-0 border border-light bg-transparent text-light">
 
-  <thead className="bg-secondary text-light align-items-center fw-bolder" style={{fontSize:"20px"}}>
+  <thead className="bg-dark text-light align-items-center fw-bolder" style={{fontSize:"20px"}}>
     <tr>
       <th>Quiz ID</th>
       <th>Quiz Topic</th>
@@ -105,6 +106,7 @@ export default function StudentDashboard()
   </tbody>
 </table>  
 <br/><br/>  
+</div>
 </div>
 
       </>

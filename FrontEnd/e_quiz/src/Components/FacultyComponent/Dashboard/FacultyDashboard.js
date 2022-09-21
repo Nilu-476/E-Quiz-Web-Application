@@ -26,6 +26,7 @@ export default function FacultyDashboard()
 
             return(
                   <>
+        <div style={{backgroundImage:'url("https://wallpaperaccess.com/full/1683028.jpg")', height:'1000px', backgroundRepeat:"no-repeat" , backgroundSize:"cover" }}>
             <body className="main">
             <div className="header">
                   <h1>Faculty Dashboard</h1>
@@ -40,13 +41,13 @@ export default function FacultyDashboard()
                   <Link to="/FacultyProfileEdit">Edit Profile</Link>
                   </div>                   
             </body>
-            <div className="about  p-3 col-xl-12">
+            <div className=" p-3 col-xl-12">
             <br/><br/><br/><br/>
             <div className="col-md-4 mb-4">
             <Link to="/AddQuizSchedule" className="btn btn-secondary text-light btn-mb mb-1">Add Quiz Schedule</Link>
             </div>     
       <table className="table align-middle mb-0 border border-light bg-transparent text-light">
-      <thead className="bg-secondary text-light" style={{fontSize:"20px"}}>
+      <thead className="bg-dark text-light" style={{fontSize:"20px"}}>
       <tr>
       <th>Faculty ID</th>
       <th>Quiz ID</th>
@@ -116,10 +117,8 @@ export default function FacultyDashboard()
 </table>  
 <br/><br/>
 </div>
-
-
-   
-                  </>
+</div>
+</>
             )//return ends here
      
             

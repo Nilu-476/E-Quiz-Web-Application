@@ -21,9 +21,8 @@ export default function FacultyLogin()
   
   const handleApi=()=>{
    setPassword({uname,password})
-   axios.post(`http://localhost:8080/faculty/facultylogin/${uname}/${password}`,uname,password
-   )
-    .then((result)=>
+   axios.post(`http://localhost:8080/faculty/facultylogin/${uname}/${password}`,uname,password)
+  .then((result)=>
   {
      console.log(result);
      if(result.data !== "")
@@ -35,10 +34,10 @@ export default function FacultyLogin()
       alert('Invalid Login');
       navigate("/FacultyLogin");
      }
-   }) .then(
+   }).then(
       navigate("/FacultyDashboard")
 
-   ) .catch(error=>{
+   ).catch(error=>{
     console.log(error); 
    })   //catch block ends
   

@@ -21,7 +21,7 @@ import com.equiz.entities.StudentEntity;
 import com.equiz.repositories.FacultyRepo;
 
 
-@CrossOrigin
+@CrossOrigin("*")
 @RestController
 @RequestMapping(path = "faculty")
 public class FacultyController {
