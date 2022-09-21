@@ -66,7 +66,19 @@ public class QuestionController {
 	}
 	
 
-	@PostMapping(value="/deletequestion/{questionid}")
+	
+	
+	@GetMapping(value="/getquestionbyid/{qid}")
+	public QuestionTypeText getQuestionById(@PathVariable int qid)
+	{
+		Optional<QuestionTypeText> question_obj = question_repo.findById(qid);
+		
+		return question_obj.get();
+		
+	}
+
+
+        @PostMapping(value="/deletequestion/{questionid}")
 	public String DeleteQuestion(@PathVariable int questionid)
 	{
 		if(questionid !=0)
@@ -76,15 +88,6 @@ public class QuestionController {
 		
 		return "Question deleted......";
 		
-		
-	}
-	
-	@GetMapping(value="/getquestionbyid/{qid}")
-	public QuestionTypeText getQuestionById(@PathVariable int qid)
-	{
-		Optional<QuestionTypeText> question_obj = question_repo.findById(qid);
-		
-		return question_obj.get();
 		
 	}
 	
