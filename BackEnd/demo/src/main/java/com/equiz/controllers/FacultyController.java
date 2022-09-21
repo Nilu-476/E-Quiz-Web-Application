@@ -64,13 +64,7 @@ public class FacultyController {
 		return null;
 	}
 
-	@GetMapping(value="/getfacultyprofile/{uname}")
-	public FacultyEntity getFacultyProfile(@PathVariable String uname)
-	{
-		FacultyEntity faculty_info = repo.findByUserName(uname);
-		return faculty_info;
-		
-	}
+	
 	
 	@PostMapping(value = "/editfacultyprofile/{facultyid}")
 	public ResponseEntity<FacultyEntity> editfacultyprofile(@RequestBody FacultyEntity fac, @PathVariable long facultyid)
