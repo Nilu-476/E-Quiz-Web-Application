@@ -173,7 +173,7 @@ export default function Homepage()
     </tr>
     <tr>
     <td>
-          <div className="fw-bolder" >Rushikesh Petkar
+          <div className="fw-bolder" >Rushikesh Prakash Petkar
             </div>
       </td>
       <td>

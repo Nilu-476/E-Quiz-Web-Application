@@ -39,6 +39,7 @@ export default function StartExam()
       option4:""
     });
 
+    let Answer=[]
     let count = 0;
     var CorrectAnswer  = [] ; // Array of Correct Answers
 
@@ -72,72 +73,18 @@ export default function StartExam()
         let score = 0;
 
         console.log("CorrectAnswer : ",CorrectAnswer);
-        // for(let j=0 ; j<CorrectAnswer.length ;j++)
-        // {
-        //   var x="option"+(j+1);
-        //   console.log(x);
-        //   console.log("inside for Loop2 ...",Option.x);
-        //   console.log(Option.option(j));
-        //   if(CorrectAnswer[j] === Option[j].option[j+1]) 
-        //   {
-        //     score++;
-        //     console.log("inside If Loop Score : ",score);
-        //   }
-        // }
+        for(let j=0 ; j<CorrectAnswer.length ;j++)
+        {
+          var x="option"+(j+1);
+          console.log(x);
+          console.log("inside for Loop2 ...",Option.x);
+          if(CorrectAnswer[j] === Option[x]) 
+          {
+            score++;
+            console.log("inside If Loop Score : ",score);
+          }
+        }
         
-
-            if(CorrectAnswer[0] === Option.option1) score++;
-            if(CorrectAnswer[1] === Option.option2) score++;
-            if(CorrectAnswer[2] === Option.option3) score++;
-            if(CorrectAnswer[3] === Option.option4) score++;
-            if(CorrectAnswer[4] === Option.option5) score++;
-            if(CorrectAnswer[5] === Option.option6) score++;
-            if(CorrectAnswer[6] === Option.option7) score++;
-            if(CorrectAnswer[7] === Option.option8) score++;
-            if(CorrectAnswer[8] === Option.option9) score++;
-            // if(CorrectAnswer[9] === option.option10) score++;
-            // if(CorrectAnswer[10] === option.option11) score++;
-            // if(CorrectAnswer[11] === option.option12) score++;
-            // if(CorrectAnswer[12] === option.option13) score++;
-            // if(CorrectAnswer[13] === option.option14) score++;
-            // if(CorrectAnswer[14] === option.option15) score++;
-            // if(CorrectAnswer[15] === option.option16) score++;
-            // if(CorrectAnswer[16] === option.option17) score++;
-            // if(CorrectAnswer[17] === option.option18) score++;
-            // if(CorrectAnswer[18] === option.option19) score++;
-            // if(CorrectAnswer[19] === option.option20) score++;
-            // if(CorrectAnswer[20] === option.option21) score++;
-            // if(CorrectAnswer[21] === option.option22) score++;
-            // if(CorrectAnswer[22] === option.option23) score++;
-            // if(CorrectAnswer[23] === option.option24) score++;
-            // if(CorrectAnswer[24] === option.option25) score++;
-            // if(CorrectAnswer[25] === option.option26) score++;
-            // if(CorrectAnswer[26] === option.option27) score++;
-            // if(CorrectAnswer[27] === option.option28) score++;
-            // if(CorrectAnswer[28] === option.option29) score++;
-            // if(CorrectAnswer[29] === option.option30) score++;
-            // if(CorrectAnswer[30] === option.option31) score++;
-            // if(CorrectAnswer[31] === option.option32) score++;
-            // if(CorrectAnswer[32] === option.option33) score++;
-            // if(CorrectAnswer[33] === option.option34) score++;
-            // if(CorrectAnswer[34] === option.option35) score++;
-            // if(CorrectAnswer[35] === option.option36) score++;
-            // if(CorrectAnswer[36] === option.option37) score++;
-            // if(CorrectAnswer[37] === option.option38) score++;
-            // if(CorrectAnswer[38] === option.option39) score++;
-            // if(CorrectAnswer[39] === option.option40) score++;
-            // if(CorrectAnswer[40] === option.option41) score++;
-            // if(CorrectAnswer[41] === option.option42) score++;
-            // if(CorrectAnswer[42] === option.option43) score++;
-            // if(CorrectAnswer[43] === option.option44) score++;
-            // if(CorrectAnswer[44] === option.option45) score++;
-            // if(CorrectAnswer[45] === option.option46) score++;
-            // if(CorrectAnswer[46] === option.option47) score++;
-            // if(CorrectAnswer[47] === option.option48) score++;
-            // if(CorrectAnswer[48] === option.option49) score++;
-            // if(CorrectAnswer[49] === option.option50) score++;
-            // if(CorrectAnswer[50] === option.option51) score++;
-
         
         var date = new Date();
         var d =  date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() ;

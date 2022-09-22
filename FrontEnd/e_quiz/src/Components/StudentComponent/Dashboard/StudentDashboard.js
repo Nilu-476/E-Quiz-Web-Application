@@ -33,7 +33,7 @@ export default function StudentDashboard()
             </div>
             </div>
             <div className="navbar">
-                  <a href="./Updatepaper.html">View Results</a>
+                  <Link to="./ExamResult/:quizid">View Results</Link>
                   <Link to="/Feedback">Give Feedback</Link>
                   <a href="./Results.html">Performance Statastics</a>
                   <Link to="/StudentProfileEdit">Edit Profile</Link>
