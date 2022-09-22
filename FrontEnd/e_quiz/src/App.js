@@ -24,6 +24,8 @@ import UpdateQuizSchedule from './Components/QuizComponent/Schedule/UpdateQuizSc
 import ViewAllQuestion from './Components/FacultyComponent/Question/ViewAllQuestion';
 import DeleteQuizSchedule from './Components/QuizComponent/Schedule/DeleteQuizSchedule';
 import FacultyProfileEdit from './Components/FacultyComponent/Login/FacultyProfileEdit';
+import ExamResult from './Components/StudentComponent/Exam/ExamResult';
+import DemoQuizResult from './Components/DemoQuizResult';
 function App() {
   return (
     <div>
@@ -47,11 +49,12 @@ function App() {
         <Route exact path='/ViewAllQuestion/:quizId' element={<ViewAllQuestion/>}></Route>
         <Route exact path='/DemoQuiz' element={<DemoQuiz/>}></Route>
         <Route exact path='/StartExam/:quizId' element={<StartExam/>}></Route>
+        <Route exact path='/ExamResult/:quizId' element={<ExamResult/>}></Route>
         <Route exact path='/Feedback' element={<Feedback/>}></Route>
-        <Route exact path='/Result' element={<Result/>}></Route>
         <Route exact path='/FacultyLogout' element={<FacultyLogout/>}></Route>
         <Route exact path='/StudentLogout' element={<StudentLogout/>}></Route>
         <Route exact path='/FacultyProfileEdit' element={<FacultyProfileEdit/>}></Route>
+        <Route exact path='/DemoQuizResult/:score' element={<DemoQuizResult/>}></Route>
       </Routes>
       </BrowserRouter>
 </div>

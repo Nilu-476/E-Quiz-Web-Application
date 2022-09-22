@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Homepage.css';
 export default function Homepage()
 {
@@ -96,17 +96,102 @@ export default function Homepage()
   </div>
 </div>
 </div>
-<div className="card contactus ">
+<div className="contactus " style={{textAlign:'justify'}}>
       <br/><br/><br/><br/>
-      <br/><br/><br/><br/>
-      <img src="https://cdn.pixabay.com/photo/2018/08/31/11/17/quiz-3644414_960_720.png" className="card-img-top" style={{width:"300px",height:"300px",alignSelf:"center"}} alt="..."/>
-      <div className="card-body">
-      <div className="card-title" style={{textAlign:"center"}}><h3>Take a Demo Test</h3>
-            <Link to="/DemoQuiz" className="btn btn-success btn-lg lg-12">START</Link>
-      <br/><br/><br/><br/>
-      <br/><br/><br/><br/>
+      
+
+      <table className="border box text-justify border border-0 bg-transparent text-warning col-xl-6" style={{alignItems:'left'}}>
+      <thead className="bg-dark  border border-warning  text-warning col-xl-6" style={{fontSize:"25px"}}>
+      <tr>
+      <th colSpan={3} style={{textAlign:'center'}}><h1>Contact Us</h1></th>
+    </tr>
+  </thead>
+  <tbody style={{fontSize:"25px"}}>
+      <tr>
+      <td>
+          <div className="ms-3 fw-bolder" >Nilima Govind Panasare
             </div>
-  </div>
+      </td>
+      <td>
+          <div className="fw-bolder" >
+           &emsp;9898989898
+          </div>
+      </td>
+      <td>
+      <div className="fw-bolder">
+      &emsp;nilimapansare@gmail.com
+          </div>
+      </td>
+    </tr>
+    <tr>
+    <td>
+          <div className="fw-bolder" >&emsp;Bhartesh Rajkumar Girmal
+            </div>
+      </td>
+      <td>
+          <div className="fw-bolder">
+          &emsp;9503042573
+          </div>
+      </td>
+      <td>
+      <div className="fw-bolder">
+      &emsp;bharteshgirmal@gmail.com
+          </div>
+      </td>
+    </tr>
+    <tr>
+    <td>
+          <div className="fw-bolder">&emsp;Hardik Narayan Parab
+            </div>
+      </td>
+      <td>
+          <div className="fw-bolder" >
+          &emsp;9924181577
+          </div>
+      </td>
+      <td>
+      <div className="fw-bolder" >
+      &emsp;hardikparab@gmail.com
+          </div>
+      </td>
+    </tr>
+    <tr >
+    <td>
+          <div className="fw-bolder" >&emsp;Shhubham Santosh Sharma
+            </div>
+      </td>
+      <td>
+          <div className="fw-bolder" >
+          &emsp;9767433606
+          </div>
+      </td>
+      <td >
+      <div className="fw-bolder">
+      &emsp;shubhamsharma@gmail.com
+          </div>
+      </td>
+    </tr>
+    <tr>
+    <td>
+          <div className="fw-bolder" >Rushikesh Petkar
+            </div>
+      </td>
+      <td>
+          <div className="fw-bolder" >
+          &emsp;9527249446
+          </div>
+      </td>
+      <td>
+      <div className="fw-bolder">
+      &emsp;rushikeskpetkar@gmail.com
+          </div>
+      </td>
+    </tr>
+  </tbody>
+</table>  
+      <br/><br/><br/><br/>
+      <br/><br/><br/><br/>
+      <br/><br/><br/><br/>
 </div>
 </div> 
       <div className="footer main">

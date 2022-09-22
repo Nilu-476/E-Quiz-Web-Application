@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function DemoQuiz()
 {
@@ -22,7 +22,7 @@ export default function DemoQuiz()
     }
 
     let count = 0;
-
+    let navigate=useNavigate()
      function submitTest()
     {
     
@@ -39,14 +39,13 @@ export default function DemoQuiz()
             if(correctAnswer[7] === answer.answer8) score++;
             if(correctAnswer[8] === answer.answer9) score++;
             if(correctAnswer[9] === answer.answer10) score++;
+            
+            return(
+                <>
+                your Score is : {score}
+                </>
+            )
         
-            if(score >= 3) 
-            {
-                status="Pass";
-                console.log("Youe Score is : ",score);
-            }
-            else 
-                status = "Fail";
         
     } 
 
