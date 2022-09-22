@@ -32,8 +32,10 @@ export default function StudentDashboard()
                   <h4> Welcome {firstName} {middleName} {lastName} </h4>
             </div>
             </div>
-            <div className="navbar">
-                  <Link to="./ExamResult/:quizid">View Results</Link>
+            <div className="navbar navbar-brand">
+                  <NavLink exact to={`/ExamResult/7`}>
+                                    View Results 
+                  </NavLink>
                   <Link to="/Feedback">Give Feedback</Link>
                   <a href="./Results.html">Performance Statastics</a>
                   <Link to="/StudentProfileEdit">Edit Profile</Link>

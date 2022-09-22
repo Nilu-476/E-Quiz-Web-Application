@@ -34,9 +34,9 @@ export default function FacultyDashboard()
                   <h4> Welcome {firstName} {middleName} {lastName} </h4>
             </div>
             </div>
-            <div className=" navbar ">
+            <div className=" navbar navbar-brand ">
                   <Link to="/ViewQuiz">View Quiz</Link>
-                  <a href="./Results.html">Results</a>
+                  <Link to="/AllStudentResult">Results</Link>
                   <Link to="/FacultyLogout">LogOut</Link>
                   <Link to="/FacultyProfileEdit">Edit Profile</Link>
                   </div>                   

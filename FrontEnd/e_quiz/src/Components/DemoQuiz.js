@@ -7,7 +7,7 @@ export default function DemoQuiz()
         answer1:"",
         answer2:"",
         answer3:"",
-        answer4:"",
+        answer4:""
     });
 
     let  correctAnswer  = ['EntityFactory','hibernate.cfg.xml','Scheduler','LIFO-stack','Both of the above'
@@ -22,11 +22,12 @@ export default function DemoQuiz()
     }
 
     let count = 0;
+    let score = 0;
+
     let navigate=useNavigate()
-     function submitTest()
+
+    const submitTest=async()=>
     {
-    
-        let score = 0;
         let status = "";
 
             if(correctAnswer[0] === answer.answer1) score++;
@@ -39,23 +40,18 @@ export default function DemoQuiz()
             if(correctAnswer[7] === answer.answer8) score++;
             if(correctAnswer[8] === answer.answer9) score++;
             if(correctAnswer[9] === answer.answer10) score++;
-            
-            return(
-                <>
-                your Score is : {score}
-                </>
-            )
-        
+
+            alert("Your Demo Quiz is Over...your score is "+score
+                 +" Register yourself !!!")
         
     } 
 
-    count++;
-
+  count++;
       return(
             <>
         <div style={{backgroundImage:'url("https://thumbs.dreamstime.com/b/question-mark-seamless-pattern-trivia-poster-design-template-quiz-loading-page-random-punctuation-marks-background-vector-182361400.jpg")', backgroundRepeat:"no-repeat" , backgroundSize:"cover" }}>
         <div className="shadow-none p-3 xl-5 ">
-        <section className="h-100 h-custom">
+            <section className="h-100 h-custom" style={{fontSize:'20px'}}>
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100 ">
             <div className="col-lg-8 col-xl-8">
@@ -326,7 +322,7 @@ export default function DemoQuiz()
                     <div className="row">
                         <div className="col-sm-6 sm-6" style={{alignItems:'center'}}> 
                         <Link to="/" className="btn btn-dark btn-mb mb-1" >Homepage</Link>
-                        &emsp;&emsp;<button className="btn btn-success btn-mb mb-1" onClick={submitTest()} >Submit Quiz</button>
+                        &emsp;&emsp;<button className="btn btn-success btn-mb mb-1" onClick={submitTest} >Submit Quiz</button>
                         </div>
                     </div>
                   </form>

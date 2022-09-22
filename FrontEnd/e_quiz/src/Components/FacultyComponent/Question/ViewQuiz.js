@@ -23,13 +23,15 @@ export default function ViewQuiz()
       return(
         <div style={{backgroundImage:'url("https://wallpaperaccess.com/full/1683028.jpg")', height:'1000px', backgroundRepeat:"no-repeat" , backgroundSize:"cover" }}>
         <body >
-            <div className="header main">
+            <div className="main">
+            <div className="header">
             <h1>Quiz Details</h1>
             <div className="text-light">
                   <h4> Welcome {firstName} {middleName} {lastName} </h4>
             </div>
+            </div> 
             </div>
-      <div className="navbar">
+      <div className="navbar navbar-brand">
       <Link to="/FacultyDashboard">Back</Link>
       <Link to="/" >Home</Link>
       <Link to="/Logout">LogOut</Link>

@@ -11,7 +11,7 @@ export default function Homepage()
       <div className=" header">
       <h1>E-Quiz Web Application</h1>
       </div>
-      <div className="navbar sticky-top class  navbar-brand ">
+      <div className="navbar navbar-brand sticky-top class   ">
             <Link to="/StudentLogin">Student Login</Link>
             <Link to="/FacultyLogin">Faculty Login</Link>
             <div className="dropdown">
@@ -98,6 +98,7 @@ export default function Homepage()
 </div>
 <div className="contactus " style={{textAlign:'justify'}}>
       <br/><br/><br/><br/>
+      <br/><br/><br/><br/>
       
 
       <table className="border box text-justify border border-0 bg-transparent text-warning col-xl-6" style={{alignItems:'left'}}>
@@ -109,7 +110,7 @@ export default function Homepage()
   <tbody style={{fontSize:"25px"}}>
       <tr>
       <td>
-          <div className="ms-3 fw-bolder" >Nilima Govind Panasare
+          <div className="ms-3 fw-bolder" >Nilima Panasare
             </div>
       </td>
       <td>
@@ -125,7 +126,7 @@ export default function Homepage()
     </tr>
     <tr>
     <td>
-          <div className="fw-bolder" >&emsp;Bhartesh Rajkumar Girmal
+          <div className="fw-bolder" >&emsp;Bhartesh Girmal
             </div>
       </td>
       <td>
@@ -141,7 +142,7 @@ export default function Homepage()
     </tr>
     <tr>
     <td>
-          <div className="fw-bolder">&emsp;Hardik Narayan Parab
+          <div className="fw-bolder">&emsp;Hardik Parab
             </div>
       </td>
       <td>
@@ -157,7 +158,7 @@ export default function Homepage()
     </tr>
     <tr >
     <td>
-          <div className="fw-bolder" >&emsp;Shhubham Santosh Sharma
+          <div className="fw-bolder" >&emsp;Shhubham Sharma
             </div>
       </td>
       <td>
@@ -173,7 +174,7 @@ export default function Homepage()
     </tr>
     <tr>
     <td>
-          <div className="fw-bolder" >Rushikesh Prakash Petkar
+          <div className="fw-bolder" >Rushikesh Petkar
             </div>
       </td>
       <td>

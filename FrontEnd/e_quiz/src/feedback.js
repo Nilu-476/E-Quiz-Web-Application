@@ -5,7 +5,8 @@ export default function Feedback()
 {
     return(
         <>
-        < div className="shadow-none p-3 xl-5 bg-info bg-gradient">
+        <div style={{backgroundImage:'url("https://media.istockphoto.com/photos/the-perfect-setting-to-complete-work-picture-id1251629816?b=1&k=20&m=1251629816&s=170667a&w=0&h=HFCKUXMAXu_gsKwAaVJ5Yfc5CpXhkok4Nu1KigsAXIQ=")', backgroundRepeat:"no-repeat" , backgroundSize:"cover" }}>
+        <div className="shadow-none p-3 xl-5 ">
                   <section className="h-100 h-custom">
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100 ">
@@ -13,7 +14,10 @@ export default function Feedback()
               <div className="card rounded-4">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmroRrLZOAELBCWAK7NKN4P-BM8S4c0BJtlQ&usqp=CAU"
                   className="w-80" alt="" />
-                <div className="card-body p-4 p-md-8">      
+                <div className="card-body p-4 p-md-8">  
+                <div className="col-md-4 mb-4 ">
+                &emsp;<Link to="/StudentDashboard" className="btn btn-warning btn-mb mb-8">Back to Dashboard</Link>
+                </div>    
                   <form className="px-md-1">
 
 {/*----------------------------------------------------------------------------------------------------*/}
@@ -88,9 +92,7 @@ export default function Feedback()
       <div className="row">    
         <input type="submit" value="Submit"/>    
       </div> 
-      <div className="col-md-4 mb-4 ">
-      <Link to="/" className="btn btn-warning btn-mb mb-1">Home</Link>
-      </div>
+      
     </form>    
   </div> 
 
@@ -101,6 +103,7 @@ export default function Feedback()
           </div>
         </div>
       </section>
+            </div>
             </div>
             
         </>

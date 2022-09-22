@@ -113,6 +113,13 @@ public class StudentResultController {
 		return l;
 	}
 	
+	@GetMapping(value = "/GetAllResult")
+	public List<ResultEntity> GetAll()
+	{
+		List<ResultEntity> list=resRepo.findAll();
+		return list;
+	}
+	
 	@GetMapping(value = "/deletestudentresult/{username}")
 	public String deleteStudentResult(@PathVariable String username)
 	{
