@@ -2,8 +2,6 @@ package com.equiz.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 //import javax.persistence.GeneratedValue;
 //import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,9 +12,8 @@ import javax.persistence.Table;
 public class StudentEntity {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name="prnno")
-	private long PRNno;
+	private long prnno;
 	
 	@Column(name="first_name")
 	private String firstName;
@@ -55,7 +52,7 @@ public class StudentEntity {
 	public StudentEntity(long prnNo, String firstName, String middleName, String lastName, String email, long mobileNo,
 			String gender, String dateOfBirth, String username, String password) {
 		super();
-		this.PRNno = prnNo;
+		this.prnno = prnNo;
 		this.firstName = firstName;
 		this.middleName = middleName;
 		this.lastName = lastName;
@@ -70,12 +67,12 @@ public class StudentEntity {
 
 
 	public long getPrnNo() {
-		return PRNno;
+		return prnno;
 	}
 
 
 	public void setPrnNo(long prnNo) {
-		this.PRNno = prnNo;
+		this.prnno = prnNo;
 	}
 
 
@@ -167,22 +164,5 @@ public class StudentEntity {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
-
-
-
-
-
-	
-
-
-
-
-
-	
-
-
-
 	
 }

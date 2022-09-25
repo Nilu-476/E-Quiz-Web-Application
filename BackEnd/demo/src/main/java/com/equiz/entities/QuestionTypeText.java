@@ -1,13 +1,10 @@
 package com.equiz.entities;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Type;
@@ -49,21 +46,19 @@ public class QuestionTypeText {
 	@Column(name="marks")
 	private int marks;
 	
-	@ManyToOne
-	@JoinColumn(name="quizid")
-	private QuizScheduleEntity quizschedule;
+	@Column(name="quizid")
+	private int quizid;
 
-	@ManyToOne
-	@JoinColumn(name="facultyid")
-	private FacultyEntity facultyentity;
+	@Column(name="facultyid")
+	private long facultyid;
 
 	public QuestionTypeText() {
 		super();
 	}
 
 	public QuestionTypeText(int questionId, String questionText, String option1, String option2, String option3,
-			String option4, String correctAnswer, int marks, QuizScheduleEntity quizschedule,
-			FacultyEntity facultyentity) {
+			String option4, String correctAnswer, int marks, int quizschedule,
+			long facultyentity) {
 		super();
 		this.questionId = questionId;
 		this.questionText = questionText;
@@ -73,8 +68,8 @@ public class QuestionTypeText {
 		this.option4 = option4;
 		this.correctAnswer = correctAnswer;
 		this.marks = marks;
-		this.quizschedule = quizschedule;
-		this.facultyentity = facultyentity;
+		this.quizid = quizschedule;
+		this.facultyid = facultyentity;
 	}
 
 	public int getQuestionId() {
@@ -141,26 +136,20 @@ public class QuestionTypeText {
 		this.marks = marks;
 	}
 
-	public QuizScheduleEntity getQuizschedule() {
-		return quizschedule;
+	public int getQuizid() {
+		return quizid;
 	}
 
-	public void setQuizschedule(QuizScheduleEntity quizschedule) {
-		this.quizschedule = quizschedule;
+	public void setQuizid(int quizid) {
+		this.quizid = quizid;
 	}
 
-	public FacultyEntity getFacultyentity() {
-		return facultyentity;
+	public long getFacultyid() {
+		return facultyid;
 	}
 
-	public void setFacultyentity(FacultyEntity facultyentity) {
-		this.facultyentity = facultyentity;
+	public void setFacultyid(long facultyid) {
+		this.facultyid = facultyid;
 	}
-
-	
-	
-	
-	
-	
 
 }

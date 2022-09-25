@@ -1,16 +1,11 @@
 package com.equiz.entities;
 
-//import java.util.List;
 
-//import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-//import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,12 +17,8 @@ public class QuizScheduleEntity {
 	@Column(name="quizid")
 	private int quizid;
 	
-	
-	 
-	
-	@ManyToOne
-	@JoinColumn(name="facultyid")
-	private FacultyEntity teacher;
+	@Column(name="facultyid")
+	private long facultyid;
 	
 	@Column(name="quiz_name")
 	private String quizName;
@@ -44,19 +35,16 @@ public class QuizScheduleEntity {
 	@Column(name="duration")
 	private int duration;
 	
-	
-
-	
 	public QuizScheduleEntity() {
 		super();
 	}
 
 
-	public QuizScheduleEntity(int quizId, FacultyEntity teacher, String quizName, String quizDesc, String scheduleDate,
+	public QuizScheduleEntity(int quizId, long facid, String quizName, String quizDesc, String scheduleDate,
 			String scheduleTime, int duration) {
 		super();
 		this.quizid = quizId;
-		this.teacher = teacher;
+		this.facultyid = facid;
 		this.quizName = quizName;
 		this.quizDesc = quizDesc;
 		this.scheduleDate = scheduleDate;
@@ -74,17 +62,6 @@ public class QuizScheduleEntity {
 	public void setQuizId(int quizId) {
 		this.quizid = quizId;
 	}
-
-
-	public FacultyEntity getTeacher() {
-		return teacher;
-	}
-
-
-	public void setTeacher(FacultyEntity teacher) {
-		this.teacher = teacher;
-	}
-
 
 	public String getQuizName() {
 		return quizName;
@@ -136,20 +113,24 @@ public class QuizScheduleEntity {
 	}
 
 
-	
+	public int getQuizid() {
+		return quizid;
+	}
 
-	
-	
 
-//	public List<QuestionEntity> getQuestions() {
-//		return questions;
-//	}
-//
-//	public void setQuestions(List<QuestionEntity> questions) {
-//		this.questions = questions;
-//	}
+	public void setQuizid(int quizid) {
+		this.quizid = quizid;
+	}
 
-	
+
+	public long getFacultyid() {
+		return facultyid;
+	}
+
+
+	public void setFacultyid(long facultyid) {
+		this.facultyid = facultyid;
+	}
 	
 	
 }

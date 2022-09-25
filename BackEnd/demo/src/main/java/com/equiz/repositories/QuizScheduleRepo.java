@@ -14,14 +14,10 @@ import com.equiz.entities.QuizScheduleEntity;
 @Repository
 public interface QuizScheduleRepo extends JpaRepository<QuizScheduleEntity, Integer>{
 	
-	
-	@Query(nativeQuery = true,value="select * from quiz_schedule where quizid=:quizid")
-	public QuizScheduleEntity findByQuizid(@Param("quizid")int quizid);
-	
 	@Modifying
 	@Transactional
-	@Query( nativeQuery = true,value="update quiz_schedule set quiz_name=:quizname where quizid=:quizid and facultyid=:facid")
-	public void updateQuizName(@Param("quizname") String quizname,@Param("quizid") int quizid,@Param("facid")long facid );
+	@Query( nativeQuery = true,value="update quiz_schedule set quiz_name=:quizname where quizid=:quizid")
+	public void updateQuizName(@Param("quizname") String quizname,@Param("quizid") int quizid );
 	
 	@Modifying
 	@Transactional
@@ -43,14 +39,6 @@ public interface QuizScheduleRepo extends JpaRepository<QuizScheduleEntity, Inte
 	@Transactional
 	@Query( nativeQuery = true,value="update quiz_schedule set duration=:duration where quizid=:quizid")
 	public void updateDuration(@Param("duration") int duration,@Param("quizid") int quizid );
-	
-//	@Modifying
-//	@Transactional
-//	@Query( nativeQuery = true,value="update quiz_schedule set total_marks=:totalmarks where quizid=:quizid")
-//	public void updateTotalMarks(@Param("totalmarks") int totalmarks,@Param("quizid") int quizid );
-
-//	@Query(nativeQuery = true,value="select * from quiz_schedule where facultyid =: facid AND schedule_date=:CURDATE()")
-//	public List<QuizScheduleEntity> findByQuizid(@Param("facid") long facid);
 	
 }
 

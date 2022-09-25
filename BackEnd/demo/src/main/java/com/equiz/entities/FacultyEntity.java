@@ -1,16 +1,10 @@
 package com.equiz.entities;
 
-//import java.util.List;
-
-//import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,8 +12,8 @@ import javax.persistence.Table;
 public class FacultyEntity {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name="facultyid")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long facultyid;
 	
 	@Column(name="first_name")
@@ -48,13 +42,6 @@ public class FacultyEntity {
 	
 	@Column(name="password")
 	private String password;
-	
-//	@Column 
-//	@OneToMany(mappedBy = "teacher",cascade = CascadeType.ALL)
-//	private List<QuizScheduleEntity> quizTimetable;
-//
-//	@OneToMany(mappedBy = "faculty",cascade = CascadeType.ALL)
-//	private List<QuestionEntity> questions; 
 	
 	public FacultyEntity() {
 		super();
@@ -159,21 +146,6 @@ public class FacultyEntity {
 		this.password = password;
 	}
 
-//	public List<QuizScheduleEntity> getQuizTimetable() {
-//		return quizTimetable;
-//	}
-//
-//	public void setQuizTimetable(List<QuizScheduleEntity> quizTimetable) {
-//		this.quizTimetable = quizTimetable;
-//	}
-
-//	public List<QuestionEntity> getQuestions() {
-//		return questions;
-//	}
-//
-//	public void setQuestions(List<QuestionEntity> questions) {
-//		this.questions = questions;
-//	}
 
 	
 	

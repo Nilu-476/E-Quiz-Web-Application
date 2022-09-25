@@ -1,25 +1,20 @@
 package com.equiz.controllers;
 
-import java.util.ArrayList;
+
+
 import java.util.List;
-import java.util.Optional;
 
 //import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.equiz.entities.QuestionTypeText;
-import com.equiz.entities.QuizScheduleEntity;
 import com.equiz.entities.StudentEntity;
 import com.equiz.repositories.QuestionTextRepo;
 import com.equiz.repositories.StudentRepo;
@@ -47,26 +42,25 @@ public class StudentController {
 		return "student added....";
 	}
 	
-	//Please do no change this .....
 	@PostMapping(value="/studentlogin/{username}/{password}")
-	public StudentEntity student_Login(@PathVariable String username,@PathVariable String password)
+	public String student_Login(@PathVariable String username,@PathVariable String password)
 	{
 		
 		StudentEntity stud_obj = repo.findByUsername(username);
-		String uname = stud_obj.getUsername();
-		String passwd =stud_obj.getPassword();
-		if(uname.equals(username))
+		if(stud_obj != null)
 		{
-			if(passwd.equals(password))
+		if(stud_obj.getUsername().equals(username))
+		{
+			if(stud_obj.getPassword().equals(password))
 			{
-				return stud_obj ;
+				return "pass";
 			}
-		}
+		}}
 		
-		return null;
+		return "fail";
 	}
 	
-	@GetMapping(value="/getstudentprofile/{uname}")
+	@PostMapping(value="/getstudentprofile/{uname}")
 	public StudentEntity getStudentProfile(@PathVariable String uname)
 	{
 		StudentEntity stud_info = repo.findByUsername(uname);
@@ -75,58 +69,56 @@ public class StudentController {
 	}
 	
 	
-	@GetMapping(value="/getallquestion/{quizid}")
-	public List<QuestionTypeText> Getallquestions(@PathVariable int quizid)
+	@PostMapping(value="/editstudentprofile")
+	public String editstudentprofile(@RequestBody StudentEntity stud)
 	{
-		List<QuestionTypeText> qlist = question_repo.findAll();
-		List<QuestionTypeText> questionlist =new ArrayList<QuestionTypeText>();
-		
-		for(QuestionTypeText q : qlist)
+		if(stud.getFirstName() != "")
 		{
-			if(q.getQuizschedule().getQuizId() == quizid)
-			{
-				questionlist.add(q);
-			}
+			repo.updateFirstName(stud.getFirstName(), stud.getPrnNo());
+		}
+		if(stud.getMiddleName() != "")
+		{
+			repo.updateMiddleName(stud.getMiddleName(),stud.getPrnNo());
+		}
+		if(stud.getLastName() != "")
+		{
+			repo.updateLastName(stud.getLastName(), stud.getPrnNo());
+		}
+		if(stud.getEmail() != "")
+		{
+			repo.updateEmail(stud.getEmail(), stud.getPrnNo());
+		}
+		if(stud.getMobileNo() != 0)
+		{
+		   repo.updateMobileNo(stud.getMobileNo(), stud.getPrnNo());
+		}
+		if(stud.getGender()!= "")
+		{
+			repo.updateGender(stud.getGender(), stud.getPrnNo());
+		}
+		if(stud.getDateOfBirth()!="")
+		{
+			repo.updateDateOfBirth(stud.getDateOfBirth(), stud.getPrnNo());
+		}
+		if(stud.getUsername()!="")
+		{
+			repo.updateUsername(stud.getUsername(), stud.getPrnNo());
+		}
+		if(stud.getUsername()!="")
+		{
+			repo.updatePassword(stud.getPassword(), stud.getPrnNo());
 		}
 		
-		return questionlist;
+		return "profile updated Sucessfully....";
 		
 	}
-
-    @PostMapping(value = "/editstudentprofile/{prnno}")
-	public ResponseEntity<StudentEntity> editstudentprofile( @PathVariable long prnno ,@RequestBody StudentEntity stud)
+	
+	@GetMapping(value="/getallstudentinfo")
+	public List<StudentEntity> getAllStudentsDetails()
 	{
-		Optional<StudentEntity> obj = repo.findById(prnno);
+		List<StudentEntity> studentList =  repo.findAll();
+		return studentList;
 		
-		if(obj.isPresent())
-		{
-			StudentEntity s = obj.get();
-			s.setFirstName(stud.getFirstName());
-			s.setMiddleName(stud.getMiddleName());
-			s.setLastName(stud.getLastName());
-			s.setEmail(stud.getEmail());
-			s.setMobileNo(stud.getMobileNo());
-			s.setGender(stud.getGender());
-			s.setDateOfBirth(stud.getDateOfBirth());
-			s.setUsername(stud.getUsername());
-			s.setPassword(stud.getPassword());
-			
-			try {
-				return new ResponseEntity<>(repo.save(s), HttpStatus.OK);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		else
-		{
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-		return null;
 	}
 	
-	
-	
-
-
 }

@@ -1,7 +1,5 @@
 package com.equiz.repositories;
 
-import java.util.List;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -17,7 +15,7 @@ public interface QuestionTextRepo extends JpaRepository<QuestionTypeText,Integer
 	@Modifying
 	@Transactional
 	@Query(nativeQuery=true,value="delete from text_question where quizid =:quiz_id ")
-	public void deleteByQuizschedule(@Param("quiz_id")int quiz_id);
+	public void deleteByQuizid(@Param("quiz_id")int quiz_id);
 	
 	
 	@Modifying
@@ -58,8 +56,7 @@ public interface QuestionTextRepo extends JpaRepository<QuestionTypeText,Integer
 	public void updateMarks(@Param("marks") int marks,@Param("question_id") int question_id );
 	
 	
-	@Query(nativeQuery = true,value="Select * from text_question where quizid=:quizid")
-	public List<QuestionTypeText> findByQuizschedule(@Param("quizid")int quizid);
+	
 	
 	
 	

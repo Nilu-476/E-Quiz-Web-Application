@@ -1,15 +1,11 @@
 package com.equiz.entities;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,105 +17,95 @@ public class ResultEntity {
 	@Column(name="result_id")
 	private int resultId;
 	
-	@Column(name="quiz_given_date")
-	private Date quizGivenDate;
+	@Column(name = "prn_no")
+	private long prnNo;
 	
-	@Column(name="marks_obtained")
-	private int marksObtained;
+	@Column(name = "quiz_id")
+	private int quizid;
 	
-	@Column(name="total_marks")
-	private int totalMarks;	
+	@Column(name = "marks")
+	private int marks;
 	
+	@Column(name = "student_name")
+	private String studentName;
 	
-	@OneToOne
-	@JoinColumn(name="prnno")
-	private StudentEntity student;
+	@Column(name = "quiz_name")
+	private String quizName;
 	
-	@OneToOne
-	@JoinColumn(name="quizid")
-	private QuizScheduleEntity quiz;
-
+	@Column(name = "total_marks")
+	private int totalMarks;
 	
 	public ResultEntity() {
-		super();
+		// TODO Auto-generated constructor stub
 	}
 
-
-	public ResultEntity(int resultId, Date quizGivenDate, int marksObtained, int totalMarks, StudentEntity student,
-			QuizScheduleEntity quiz) {
+	public ResultEntity(int resultId, long prnNo, int quizid, int marks, String studentName, String quizName,int total) {
 		super();
 		this.resultId = resultId;
-		this.quizGivenDate = quizGivenDate;
-		this.marksObtained = marksObtained;
-		this.totalMarks = totalMarks;
-		this.student = student;
-		this.quiz = quiz;
+		this.prnNo = prnNo;
+		this.quizid = quizid;
+		this.marks = marks;
+		this.studentName = studentName;
+		this.quizName = quizName;
+		this.totalMarks = total;
 	}
-
 
 	public int getResultId() {
 		return resultId;
 	}
 
-
 	public void setResultId(int resultId) {
 		this.resultId = resultId;
 	}
 
-
-	public Date getQuizGivenDate() {
-		return quizGivenDate;
+	public long getPrnNo() {
+		return prnNo;
 	}
 
-
-	public void setQuizGivenDate(Date quizGivenDate) {
-		this.quizGivenDate = quizGivenDate;
+	public void setPrnNo(long prnNo) {
+		this.prnNo = prnNo;
 	}
 
-
-	public int getMarksObtained() {
-		return marksObtained;
+	public int getQuizid() {
+		return quizid;
 	}
 
-
-	public void setMarksObtained(int marksObtained) {
-		this.marksObtained = marksObtained;
+	public void setQuizid(int quizid) {
+		this.quizid = quizid;
 	}
 
+	public int getMarks() {
+		return marks;
+	}
+
+	public void setMarks(int marks) {
+		this.marks = marks;
+	}
+
+	public String getStudentName() {
+		return studentName;
+	}
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+
+	public String getQuizName() {
+		return quizName;
+	}
+
+	public void setQuizName(String quizName) {
+		this.quizName = quizName;
+	}
 
 	public int getTotalMarks() {
 		return totalMarks;
 	}
 
-
 	public void setTotalMarks(int totalMarks) {
 		this.totalMarks = totalMarks;
 	}
-
-
-	public StudentEntity getStudent() {
-		return student;
-	}
-
-
-	public void setStudent(StudentEntity student) {
-		this.student = student;
-	}
-
-
-	public QuizScheduleEntity getQuiz() {
-		return quiz;
-	}
-
-
-	public void setQuiz(QuizScheduleEntity quiz) {
-		this.quiz = quiz;
-	}
-
-
 	
-
-
 	
 	
 }

@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -41,14 +39,11 @@ public class QuestionEntity {
 	@Column(name="marks")
 	private int marks;
 	
-	@ManyToOne
-	@JoinColumn(name="quizid")
-	private QuizScheduleEntity quiz;
+	@Column(name="quizid")
+	private int quizid;
 
-	@ManyToOne
-	@JoinColumn(name="facultyid")
-	private FacultyEntity faculty;
-
+	@Column(name="facultyid")
+	private long facultyid;
 	
 	public QuestionEntity() {
 		super();
@@ -56,7 +51,7 @@ public class QuestionEntity {
 
 
 	public QuestionEntity(int questionId, byte[] question, byte[] option1, byte[] option2, byte[] option3,
-			byte[] option4, byte[] correctAnswer, int marks, QuizScheduleEntity quiz, FacultyEntity faculty) {
+			byte[] option4, byte[] correctAnswer, int marks, int quiz, long faculty) {
 		super();
 		this.questionId = questionId;
 		this.question = question;
@@ -66,8 +61,8 @@ public class QuestionEntity {
 		this.option4 = option4;
 		this.correctAnswer = correctAnswer;
 		this.marks = marks;
-		this.quiz = quiz;
-		this.faculty = faculty;
+		this.quizid = quiz;
+		this.facultyid = faculty;
 	}
 
 
@@ -151,30 +146,23 @@ public class QuestionEntity {
 	}
 
 
-	public QuizScheduleEntity getQuiz() {
-		return quiz;
+	public int getQuizid() {
+		return quizid;
 	}
 
 
-	public void setQuiz(QuizScheduleEntity quiz) {
-		this.quiz = quiz;
+	public void setQuizid(int quizid) {
+		this.quizid = quizid;
 	}
 
 
-	public FacultyEntity getFaculty() {
-		return faculty;
+	public long getFacultyid() {
+		return facultyid;
 	}
 
 
-	public void setFaculty(FacultyEntity faculty) {
-		this.faculty = faculty;
+	public void setFacultyid(long facultyid) {
+		this.facultyid = facultyid;
 	}
-	
-	
-
-	
-	
-	
-	
 	
 }
