@@ -1,6 +1,4 @@
-<p align="center">
-<img height="300" width="300"  src="https://github.com/Nilu-476/E-Quiz-Web-Application/blob/main/Doc/equiz.jpg">
-</p>
+
 
 #### Group No:05
 # E-Quiz-Web-Application
