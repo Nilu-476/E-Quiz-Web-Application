@@ -71,8 +71,8 @@ J2EE,SpringBoot(Version 2.7.3), JPA ,Hibernate , MySql.
  <br>this will launch your website on "localhost:3000".
  <br>5.After that switch to the another workspace in your spring boot- and click on "File->Open Projects From File System->Directory" 
  <br>then browse for backend/demo      folder and select it and then click on Finish button this will take some while minutes to build 
- <br>your project/installing dependencies
- <br>for your project, after build up finish run the "DemoApplication.java" file  this will start your tomcat server on "localhost:8080".
+ <br>your project/installing dependencies for your project, after build up finish run the "DemoApplication.java" file  this will start
+ <br>your tomcat server on "localhost:8080".
  <br>6.Now you are ready to use "E-quiz web Application".
   </p>
 
