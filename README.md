@@ -7,10 +7,10 @@ The E-Quiz Application project developed to overcome the time consuming problem 
 The objective of this project is to manage the details of students, Quiz papers, marks, Quiz topics, and papers in a good manner.The performance of  the  student  will  be  fully  monitored  by Faculty. The project will reduce the manual process in managing Quiz and all issues regarding that.
 It provides a common platform to connect student and teacher online. The registered teacher can create Quiz and registered student can give quiz and can access himself/herself at given schedule
 
-Group Leader: Nilima Govind Pansare
+######Group Leader: Nilima Govind Pansare
 
-Group Members:
-Name                      PRN No          Role
+######Group Members:
+####Name                      PRN No          Role
 1.Nilima Pansare       220345920065      worked on back-end(spring boot)
 2.Rushikesh Petkar     220345920087      worked on back-end(spring boot)
 3.Shubham sharma       220345920098      worked on back-end(spring boot)
@@ -26,7 +26,7 @@ Name                      PRN No          Role
                 1.Faculty Registration
                 2.Student Registration
 
-2.Faculty Dashboard:
+######2.Faculty Dashboard:
      -My Profile(view , edit)
      -Add Quiz Schedule
      -Add Questions
@@ -34,7 +34,7 @@ Name                      PRN No          Role
      -View Registered Students
      -View Student Results
 
-3.Student Dashboard:
+######3.Student Dashboard:
         -My Profile(view , edit)
         -View Schedule
         -Attempt Quiz
@@ -49,7 +49,7 @@ J2EE,SpringBoot(Version 2.7.3), JPA ,Hibernate , MySql.
 
 #### **How to run the project at your end , follow the steps....**
 
-Installation Steps:
+######Installation Steps:
 
 1. Clone the repository by using the github url.
 2. Run .SQL file by using this command ' source "file path"; ' on your mysql command line.
