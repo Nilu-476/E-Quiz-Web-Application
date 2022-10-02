@@ -30,7 +30,7 @@ It provides a common platform to connect student and teacher online. The registe
 </tr>
 </table>
 <div>
-###### Modules of E-quiz Web Application
+<b> Modules of E-quiz Web Application</b>
 
 ###### 1.HomePage:
      -Faculty login
@@ -70,7 +70,7 @@ J2EE,SpringBoot(Version 2.7.3), JPA ,Hibernate , MySql.
  <br>4. go to the front end/equiz folder and open the command prompt from here and then type " npm start " command on command prompt
  <br>this will launch your website on "localhost:3000".
  <br>5.After that switch to the another workspace in your spring boot- and click on "File->Open Projects From File System->Directory" then browse for
- <br>"backend/demo" folder and select it and then click on Finish button this will take some while minutes to build your project/installing dependencies
+ <br>backend/demo folder and select it and then click on Finish button this will take some while minutes to build your project/installing dependencies
  <br>for your project, after build up finish run the "DemoApplication.java" file  this will start your tomcat server on "localhost:8080".
  <br>6.Now you are ready to use "E-quiz web Application".
   </p>
